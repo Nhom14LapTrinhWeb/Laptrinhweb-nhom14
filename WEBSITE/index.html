@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="ico/favicon.png">
+
+    <title>Code.vn</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <script src="jquery/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="scripts/script.js"></script>
+	<script src="scripts/scr.js"></script>
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+  <!-- header -->
+  	<!-- made row -->
+    <div class="row"> 
+    	<!-- made nav -->
+	    <nav class="navbar navbar-default">
+	      <div class="container">
+	          <div class="container-fluid">
+	            <div class="navbar-header">
+	              <a class="navbar-brand" href="D:/KÌ 1/LẬP TRÌNH WEB/html css/WEBSITE/index.html">CODE.VN</a>
+	            </div>
+	            <form class="navbar-form navbar-left">
+	                <div class="form-group">
+	                    <input type="text" class="form-control" placeholder="Search">
+	                </div>
+	                  <a href="#" class="btn btn-info btn-md">
+	                    <span class="glyphicon glyphicon-search"></span>
+	                  </a>
+	             </form>
+	            <ul class="nav navbar-nav">
+	              <li><a href="#">Học miễn phí</a></li>
+	              <li><a href="#">Khóa học</a></li> 
+	              <li><a href="#">Giao khóa học</a></li>
+	              <li><a href="#">Hướng dẫn</a></li>
+	            </ul>
+	            <ul class="nav navbar-nav navbar-right">
+	              <li><button type="button" class="btn btn-info btn-md pull-right" onclick="window.location.href='D:/KÌ 1/LẬP TRÌNH WEB/html css/WEBSITE/Dangki.html'">
+	              <span class="glyphicon glyphicon-user"></span>
+	              Đăng ký 
+	              </button>
+	              </li>
+	              <li><button type="button" class="btn btn-info btn-md pull-right" data-toggle="modal" data-target="#loginModal">
+	               <span class="glyphicon glyphicon-log-in"></span>
+	               Đăng nhập
+	               </button>
+	               </li>
+	            </ul>
+	          </div>
+	          <!--  login form -->
+	          <div class="modal" id="loginModal" role="dialog">
+	            <div class="modal-dialog">
+	            
+	              <div class="modal-content">
+	                <div class="modal-header">
+	                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+	                  <h4 class="modal-title" align="center">Đăng nhập</h4>
+	                </div>
+	                <div class="modal-body">
+	                  <form>
+	                    <div class="form-group">
+	                      <input type="radio" name="quyen" checked="true">Học viên
+	                      <input type="radio" name="quyen">Giảng viên
+	                      <input type="radio" name="quyen">Quản trị viên
+	                    </div>
+	                    <div class="form-group">
+	                      <label for="inputUserName">Tên đăng nhập</label>
+	                      <input type="text" class="form-control" placeholder="Username" id="inputUserName">
+	                    </div>
+	                    <div class="form-group">
+	                      <label for="inputPassword">Mật khẩu</label>
+	                      <input type="password" class="form-control" placeholder="Password" id="inputPassword">
+	                    </div>
+	                    <div class="form-group">
+	                      <input type="checkbox">Ghi nhớ tài khoản
+	                    </div>
+	                  </form>
+	                  <a href="#">Quên mật khẩu?</a>
+	                </div>
+	                <div class="modal-footer">
+	                  <button class="btn btn-primary" type="submit">Đăng nhập</button>
+	                  <button type="button" class="btn btn-primary" data-dismiss="modal">Thoát</button>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	          <!-- end login form -->
+	        </div>
+	    </nav> 
+    </div> 
+    <!-- End header -->
+    <!-- body -->
+    <div class="container" style="background-color: white; padding-top: 5px;">
+    	<div class="content col-md-12 ">
+    		<div class="content-left col-md-3 col-sm-6 col-xs-6">
+    			<ul class="nav nav-pills nav-stacked">
+				  <li class="active"><a href="#"><b>Danh sách khóa học</b></a></li>
+				  <li><a href="#"><b>Lập trình di động</b></a></li>
+				  <li><a href="#"><b>Lập trình Game</b></a></li>
+				  <li><a href="#"><b>Lập trình phần mềm</b></a></li>
+				  <li><a href="#"><b>Lập trình Website</b></a></li>
+				  <li><a href="#"><b>CEO</b></a></li>
+				  <li><a href="#"><b>Lập trình mạng</b></a></li>
+				</ul>
+    		</div>
+    		<div class="content-right col-md-9 col-sm-6 col-xs-6">
+    			<div class="row">
+		            <div class="col-md-10">
+		                <h1>Danh sách các khóa học</h1>
+		            </div>
+		            <div class="col-md-2">
+		            	<div class="btn-group btn-group-md">
+		                	<button class="btn btn-primary">Sắp xếp</button>
+		                	<button class="btn btn-primary dropdown toggle" data-toggle="dropdown">
+		                		<span class="caret"></span>
+		                	</button>
+		                	<ul class="dropdown-menu">
+		                		<li><a href="#">Mới nhất</a></li>
+		                		<li><a href="#">Miễn phí</a></li>
+		                		<li><a href="#">Khuyến mãi</a></li>
+		                	</ul>
+		                </div>
+		            </div>            
+		            <div class="col-lg-4 col-sm-6 images">
+		                <a href="Chitietkhoahoc.html" class="thumbnail">
+		                    
+		                    <img src="images/1.png">
+		                    <h3><b>Lập trình C# </b></h3>
+		                    	Giảng viên:Phi Hổ<br />
+		                    	Khai Giảng:21/12/2016<br />
+		                    	Thời gian học:3 tháng<br />
+		                    	Lịch học:sáng 17h thứ T7,CN
+		                </a>
+		            </div>
+		            <div class="col-lg-4 col-sm-6 images">
+		                <a href="images/9.png" class="thumbnail">
+		                    
+		                    <img src="images/9.png">
+		                    <h3><b>Lập trình C++ </b></h3>
+		                    	Giảng viên:Phi Hùng<br />
+		                    	Khai Giảng:20/01/2017<br />
+		                    	Thời gian học:3 tháng<br />
+		                    	Lịch học:sáng 7h thứ 2,4,6
+		                    
+		                   
+		                </a>
+		            </div>
+		            <div class="col-lg-4 col-sm-6 images">
+		                <a href="images/3.png" class="thumbnail">
+		                    
+		                    <img src="images/3.png">
+		                    <h3><b>Lập trình PHP </b></h3>
+		                    	Giảng viên:Hoàng long<br />
+		                    	Khai Giảng:25/01/2017<br />
+		                    	Thời gian học:6 tháng<br />
+		                    	Lịch học:sáng 7h thứ 2,4,6
+		                </a>
+		            </div>
+		            <div class="col-lg-4 col-sm-6 images">
+		                <a href="images/4.png" class="thumbnail">
+		                    
+		                    <img src="images/4.png">
+		                    <h3><b>Lập trình ASP.NET </b></h3>
+		                    	Giảng viên:Kim Hoa<br />
+		                    	Khai Giảng:22/01/2017<br />
+		                    	Thời gian học:6 tháng<br />
+		                    	Lịch học:sáng 18h thứ 2,4,6
+		                </a>
+		            </div>
+		            <div class="col-lg-4 col-sm-6 images">
+		                <a href="images/6.jpg" class="thumbnail">
+		                    
+		                    <img src="images/6.jpg">
+		                    <h3><b>Lập trình Android và IOS </b></h3>
+		                    	Giảng viên:Nguyễn Tuân<br />
+		                    	Khai Giảng:29/01/2017<br />
+		                    	Thời gian học:6 tháng<br />
+		                    	Lịch học:sáng 7h thứ 3,5,7
+		                </a>
+		            </div>
+		            <div class="col-lg-4 col-sm-6 images">
+		                <a href="images/7.jpg" class="thumbnail">
+		                    
+		                    <img src="images/7.jpg">
+		                    <h3><b>Lập trình Mạng máy tính </b></h3>
+		                    	Giảng viên:Phi Hùng<br />
+		                    	Khai Giảng:20/02/2017<br />
+		                    	Thời gian học:3 tháng<br />
+		                    	Lịch học:sáng 19h thứ 3,5,7
+		                </a>
+		            </div>
+		            <div class="col-lg-4 col-sm-6  images">
+		                <a href="images/8.jpg" class="thumbnail">
+		                    
+		                    <img src="images/8.jpg">
+		                    <h3><b>CEO </b></h3>
+		                    	Giảng viên:Thiên Bảo<br />
+		                    	Khai Giảng:28/01/2017<br />
+		                    	Thời gian học:3 tháng<br />
+		                    	Lịch học:sáng 7h thứ 2,4,6
+		                </a>
+		            </div>
+		            <div class="col-lg-4 col-sm-6 images">
+		                <a href="images/2.png" class="thumbnail">
+		                    
+		                    <img src="images/2.png">
+		                    <h3><b>Lập trình JAVA </b></h3>
+		                    	Giảng viên:Nguyễn Hưng<br />
+		                    	Khai Giảng:18/02/2017<br />
+		                    	Thời gian học:3 tháng<br />
+		                    	Lịch học:sáng 14h thứ 2,4,6
+		                </a>
+		            </div>
+				</div>
+    		</div>
+    	</div>
+    </div>
+    <!-- end body -->
+   <!-- Footer -->
+   <footer >
+   <div class="well-md">
+   	<h3 align="right">Copyright © <a href="http://itclass.vn">ITclass.vn</a></h3>
+   	<ol class="breadcrumb">
+   		<li class="active"><a href="#">Home</a></li>
+   		<li><a href="#">Contact</a></li>   		
+   		<li><a href="#">About</a></li>
+   		<li><a href="#">Products</a></li>
+   		<li id="time">
+   			<script type="text/javascript">
+   				document.getElementById('time').innerHTML=Date();
+   			</script>
+   		</li>
+   	</ol>
+   </div>
+   	
+   </footer>
+  </body>
+</html>
+

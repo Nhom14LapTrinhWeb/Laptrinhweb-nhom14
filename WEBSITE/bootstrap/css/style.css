@@ -1,0 +1,67 @@
+ul.topnav {
+list-style: none;
+padding: 0 20px;
+margin: 0;
+width: 100%;
+float: left;
+background: #222;
+font-size: 1.2em;
+background: url(http://2.bp.blogspot.com/-Kaf9HfRuWDA/T2iS7MkbBTI/AAAAAAAAAqM/8rJGaRYXcM0/s1600/topnav_bg-namkna-ngoctra.png) repeat-x;
+z-index:100}
+ul.topnav li {
+float: left;
+margin: 0;
+padding: 0 15px 0 0;
+position: relative; /*--Declare X and Y axis base--*/
+z-index:100}
+ul.topnav li a{
+padding: 10px 5px;
+color: #fff;
+display: block;
+text-decoration: none;
+float: left;
+}
+ul.topnav li a:hover{
+background: url(http://2.bp.blogspot.com/-CRgEAoidGa0/T2iTgzaU-5I/AAAAAAAAAqY/PHUu4pX6dCY/s1600/topnav_hover-namkna-ngoctra.png) no-repeat center top;
+z-index:100}
+ul.topnav li span { /*--Drop down trigger styles--*/
+width: 17px;
+height: 35px;
+float: left;
+background: url(http://3.bp.blogspot.com/-m5NznjXoy7Q/T2iUUfmzZoI/AAAAAAAAAqk/AHWaJjYuClw/s1600/subnav_btn-namkna-blogspot-ngoctra.png) no-repeat center top;
+}
+ul.topnav li span.subhover {background-position: center bottom; cursor: pointer;} /*--Hover effect for trigger--*/
+ul.topnav li ul.subnav {
+list-style: none;
+position: absolute; /*--Important - Keeps subnav from affecting main navigation flow--*/
+left: 0; top: 35px;
+background: #333;
+margin: 0; padding: 0;
+display: none;
+float: left;
+width: 170px;
+-moz-border-radius-bottomleft: 5px;
+-moz-border-radius-bottomright: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-webkit-border-bottom-right-radius: 5px;
+border: 1px solid #111;
+}
+ul.topnav li ul.subnav li{
+margin: 0; padding: 0;
+border-top: 1px solid #252525; /*--Create bevel effect--*/
+border-bottom: 1px solid #444; /*--Create bevel effect--*/
+clear: both;
+width: 170px;
+}
+html ul.topnav li ul.subnav li a {
+float: left;
+width: 145px;
+background: #333 url(http://4.bp.blogspot.com/-vOhQ9Sksamo/T2iU3gCjvgI/AAAAAAAAAqw/O3qcYNEwIZk/s1600/dropdown_linkbg-namkna-blogspot-ngoctra.png) no-repeat 10px center;
+padding-left: 20px;
+}
+html ul.topnav li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
+background: #222 url(http://4.bp.blogspot.com/-vOhQ9Sksamo/T2iU3gCjvgI/AAAAAAAAAqw/O3qcYNEwIZk/s1600/dropdown_linkbg-namkna-blogspot-ngoctra.png) no-repeat 10px center;
+}
+#header img {
+margin: 20px 0 10px;
+}
