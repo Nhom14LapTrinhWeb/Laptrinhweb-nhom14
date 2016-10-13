@@ -1,14 +1,16 @@
-
-<!DOCTYPE html>
-<html lang="en" ng-app>
-  <head>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Code.vn</title>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
-    <title>Code.vn</title>
-
     <meta name="author" content="">
     <!-- js -->
     <script src="jquery/jquery.min.js"></script>
@@ -16,7 +18,7 @@
 	<script src="jquery/script.js"></script> 
 	<script src="jquery/main.js"></script>
 	<script type="text/javascript" src="jquery/angular.min.js"></script>
-	
+	<script type="text/javascript" src="ajax/ajax.js"></script>
 	
 
     <link rel="shortcut icon" href="ico/favicon.png">
@@ -25,23 +27,26 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">	    
 		
+</head>
+<body>
 	
 
-  </head>
-
-  <body ng-app>
-  <!-- Tao form hoi dang ki -->
-  	<div id="boxes">
-	  <div style="top: 199.5px; left: 551.5px; display: none;" id="dialog" class="window"> Bạn đã sẵn sàng chưa?
-		    <div id="lorem">
-		     <p>Website học lập trình uy tín nhất hiện nay.Với đầy đủ các ngôn ngữ lập trình khác nhau.Luôn luôn là người bạn vững vàng cho bạn trong hành trình đến với thế giới lập tình!</p>
-    		</div>
-    		<div id="popupfoot"> <a href="#" class="close agree">I agree</a>  </div>
-	 	 	</div>
-		<div style="width: 1478px; font-size: 32pt; color:white; height: 602px; display: none; opacity: 0.8;" id="mask"></div>
-	</div>
+	<!-- Tao form hoi dang ki -->
+  <div class="col-md-12">
+  
+  		<div id="boxes">
+		  <div style="top: 199.5px; left: 551.5px; display: none;" id="dialog" class="window"> Bạn đã sẵn sàng chưa?
+			    <div id="lorem">
+			     <p>Website học lập trình uy tín nhất hiện nay.Với đầy đủ các ngôn ngữ lập trình khác nhau.Luôn luôn là người bạn vững vàng cho bạn trong hành trình đến với thế giới lập tình!</p>
+	    		</div>
+	    		<div id="popupfoot"> <a href="#" class="close agree">I agree</a>  </div>
+		 	 	</div>
+			<div style="width: 1478px; font-size: 32pt; color:white; height: 602px; display: none; opacity: 0.8;" id="mask"></div>
+		</div>
+  </div>
+  	
 	
-	
+	<div id="wrapper">
   <!-- end form tao dang ki -->
   <!-- header -->
   	<!-- made row -->
@@ -59,7 +64,7 @@
 	        <div class="carousel-caption">
 	          <h1 style="color: red"><b>Học Lập trình</b></h1>
 	          <p style="color: blue">Đăng kí thành viên để trở thành thành viên của website ngay bạn nhé!!</p>
-	          <p><a class="btn btn-lg btn-primary" href="dangki.html" role="button">Đăng kí</a></p>
+	          <p><a class="btn btn-lg btn-primary" href="dangki.jsp" role="button">Đăng kí</a></p>
 	        </div>
 	      </div>
 	    </div>
@@ -94,7 +99,7 @@
 	      <div class="container">
 	          <div class="container-fluid">
 	            <div class="navbar-header">
-	              <a class="navbar-brand" href="index.html">CODE.VN</a>
+	              <a class="navbar-brand" href="index.jsp">CODE.VN</a>
 	            </div>
 	            <form class="navbar-form navbar-left">
 	                <div class="form-group">
@@ -105,14 +110,14 @@
 	                  </a>
 	             </form>
 	            <ul class="nav navbar-nav">
-	              <li><a href="#">Học miễn phí</a></li>
-	              <li><a href="#">Khóa học</a></li> 
-	              <li><a href="#">Đăng kí khóa học</a></li>
-	              <li><a href="#">Hướng dẫn</a></li>
-	              <li><a href="tinnhan.html">Góp ý</a></li>
+	              <li><a href="#" id="mienphi">Học miễn phí</a></li>
+	              <li><a href="#" id="khoahoc">Khóa học</a></li> 
+	              <li><a href="#" id="dangkikhoahoc">Đăng kí khóa học</a></li>
+	              <li><a href="#" id="huongdan1">Hướng dẫn</a></li>
+	              <li><a href="#" id="gopy">Góp ý</a></li>
 	            </ul>
 	            <ul class="nav navbar-nav navbar-right">
-	              <li><button type="button" class="btn btn-info btn-md pull-right" onclick="window.location.href='dangki.html'">
+	              <li><button type="button" class="btn btn-info btn-md pull-right" onclick="window.location.href='dangki.jsp'">
 	              <span class="glyphicon glyphicon-user"></span>
 	              Đăng ký 
 	              </button>
@@ -135,7 +140,7 @@
 	                  <h4 class="modal-title" align="center">Đăng nhập</h4>
 	                </div>
 	                <div class="modal-body">
-	                  <form>
+	                  <form action="DoAnNhom14/Dulieu" method="post">
 	                    <div class="form-group">
 	                      <input type="radio" name="quyen" checked="true">Học viên
 	                      <input type="radio" name="quyen">Giảng viên
@@ -143,11 +148,11 @@
 	                    </div>
 	                    <div class="form-group">
 	                      <label for="inputUserName">Tên đăng nhập</label>
-	                      <input type="text" class="form-control" placeholder="Username" id="inputUserName">
+	                      <input type="text" class="form-control" placeholder="Username" id="inputUserName" name="inputUserName">
 	                    </div>
 	                    <div class="form-group">
 	                      <label for="inputPassword">Mật khẩu</label>
-	                      <input type="password" class="form-control" placeholder="Password" id="inputPassword">
+	                      <input type="password" class="form-control" placeholder="Password" id="inputPassword" name="inputPassword">
 	                    </div>
 	                    <div class="form-group">
 	                      <input type="checkbox">Ghi nhớ tài khoản
@@ -156,7 +161,7 @@
 	                  <a href="#">Quên mật khẩu?</a>
 	                </div>
 	                <div class="modal-footer">
-	                  <button class="btn btn-primary" type="submit">Đăng nhập</button>
+	                  <button class="btn btn-primary" type="submit" id="submit">Đăng nhập</button>
 	                  <button type="button" class="btn btn-primary" data-dismiss="modal">Thoát</button>
 	                </div>
 	              </div>
@@ -165,9 +170,9 @@
 	          <!-- end login form -->
 	        </div>
 	    </nav>  	
-	<div>
+	</div>
 	<!-- end header -->
-	
+	<div id="noidungchinh">
     <!-- body -->
     <div class="container" style="background-color: white; padding-top: 5px;">
     	<div class="content col-md-12 ">
@@ -189,22 +194,18 @@
 		                <h1>Danh sách các khóa học</h1>
 		            </div>
 		            <div class="col-md-3">
-		            	<div class="btn-group btn-group-md">
-			                	<button class="btn btn-primary" >Sắp xếp</button>
-			                	<button class="btn btn-primary dropdown toggle" data-toggle="dropdown" style="float: right;">
-			                		<span class="caret"></span>
-			                	</button>
-			                	<ul class="dropdown-menu">
+		            	
+			                	<button class="btn btn-primary btn-md" id="sapxep" >Sắp xếp</button>
+			   
+			                	<ul class="dropdown-menu" id="dropdown-menu">
 			                		<li><a href="#">Mới nhất</a></li>
 			                		<li><a href="#">Miễn phí</a></li>
 			                		<li><a href="#">Khuyến mãi</a></li>
 			                	</ul>
-			                	
-			            </div>
 
 		            </div>            
 		            <div class="col-lg-4 col-sm-6 images">
-		                <a href="Chitietkhoahoc.html" class="thumbnail">
+		                <a href="chitietkhoahoc.jsp" class="thumbnail">
 		                    
 		                    <img src="images/1.png">
 		                    <h3><b>Lập trình C# </b></h3>
@@ -283,7 +284,7 @@
 		                </a>
 		            </div>
 		            <div class="col-lg-4 col-sm-6 images">
-		                <a href="chitietkhoahoc1.html" class="thumbnail">
+		                <a href="chitietkhoahoc1.jsp" class="thumbnail">
 		                    
 		                    <img src="images/2.png">
 		                    <h3><b>Lập trình JAVA </b></h3>
@@ -322,7 +323,7 @@
 
     	</div>
     </div>
-    
+   </div>
     <!-- end body -->
     <!-- phan trang -->
     
@@ -343,8 +344,31 @@
    		</li>
    	</ol>
    </div>
-   	
+</div>
    </footer>
-  </body>
-</html>
+   <script type="text/javascript">
+   		$(document).ready(function() {
+                $("#huongdan1").click(function() {
+                    var url;
+                    url = "huongdansd.html";
+                    $("#noidungchinh").load(url);
+                });
+                $("#gopy").click(function() {
+                    var url;
+                    url = "tinnhan.jsp";
+                    $("#noidungchinh").load(url);
+                });
+                $("#khoahoc").click(function() {
+                    var url;
+                    url = "index.jsp";
+                    $("#wrapper").load(url);
+                });
+                $("#sapxep").click(function(){
+                	$("#dropdown-menu").slideToggle("slow");
+                })
+            });
 
+   </script>
+   
+</body>
+</html>

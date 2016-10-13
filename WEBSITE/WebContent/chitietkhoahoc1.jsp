@@ -1,7 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Code.vn</title>
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -9,7 +13,6 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="ico/favicon.png">
 
-    <title>Code.vn</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,15 +31,15 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-      <div class="row"> 
+</head>
+<body>
+	<div class="row"> 
         <!-- made nav -->
         <nav class="navbar navbar-default">
           <div class="container">
               <div class="container-fluid">
                 <div class="navbar-header">
-                   <a class="navbar-brand" href="index.html">CODE.VN</a>
+                   <a class="navbar-brand" href="index.jsp">CODE.VN</a>
                 </div>
                 <form class="navbar-form navbar-left">
                     <div class="form-group">
@@ -50,11 +53,11 @@
                   <li><a href="#">Học miễn phí</a></li>
                   <li><a href="#">Khóa học</a></li> 
                   <li><a href="#">Đăng kí khóa học</a></li>
-                  <li><a href="#">Hướng dẫn</a></li>
-                  <li><a href="tinnhan.html">Góp ý</a></li>
+                  <li><a href="huongdan.html">Hướng dẫn</a></li>
+                  <li><a href="tinnhan.jsp">Góp ý</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                  <li><button type="button" class="btn btn-info btn-md pull-right" onclick="window.location.href='dangki.html'">
+                  <li><button type="button" class="btn btn-info btn-md pull-right" onclick="window.location.href='dangki.jsp'">
                   <span class="glyphicon glyphicon-user"></span>
                   Đăng ký 
                   </button>
@@ -142,5 +145,5 @@
         </div>
     </div>
   </div>
-  </body>
-  </html>
+</body>
+</html>

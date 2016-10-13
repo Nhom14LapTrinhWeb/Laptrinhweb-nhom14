@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" ng-app>
-  <head>
-    <meta charset="utf-8">
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Đăng kí</title>
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chào mừng bạn đến với CODE.VN</title>
-
      
      <script type="text/javascript" src="jquery/jquery.min.js"></script>
       <script type="text/javascript" src="jquery/script.js"></script>
@@ -17,15 +19,15 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     </script>
-  </head>
-  <body >  
-  <!-- Menu top -->
+</head>
+<body>
+	<!-- Menu top -->
   <div class="row">
     <nav class="navbar navbar-default">
       <div class="container">
           <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand" href="index.html">CODE.VN</a>
+              <a class="navbar-brand" href="index.jsp">CODE.VN</a>
             </div>
             <form class="navbar-form navbar-left">
                 <div class="form-group">
@@ -40,10 +42,10 @@
               <li><a href="#">Khóa học</a></li> 
               <li><a href="#">Đăng kí khóa học</a></li>
               <li><a href="#">Hướng dẫn</a></li>
-              <li><a href="tinnhan.html">Góp ý</a></li>
+              <li><a href="tinnhan.jsp">Góp ý</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><button style="margin: 10px 1px;" type="button" class="btn btn-info btn-md pull-right"onclick="window.location.href='dangki.html'" >
+              <li><button style="margin: 10px 1px;" type="button" class="btn btn-info btn-md pull-right"onclick="window.location.href='dangki.jsp'" >
               <span class="glyphicon glyphicon-user"></span>
               Đăng ký 
               </button>
@@ -102,27 +104,31 @@
         <form class="register">
           <div class="form-group">
             <input type="text" id="id" class="form-control " ng-model="username" placeholder="Tên đăng nhập">
-            <span id="username_error"></span>
+            <div id="div1"></div>
           </div>
           <div class="form-group">
             <input type="password" id="password" class="form-control" placeholder="Mật khẩu">
-            <span id="password_error"></span>
+            
+           <div id="div2"></div>
           </div>
           <div class="form-group">
             <input type="password" id="password2" class="form-control" placeholder="Nhập lại mật khẩu">
-            <span id="password2_error"></span>
+            <div id="div3"></div>
           </div>
           <div class="form-group">
             <input type="email" id="email" class="form-control" placeholder="Email">
-            <span id="email_error"></span>
+            
+            <div id="div4"></div>
           </div>
           <div class="form-group">
             <input type="text" id="hoten" class="form-control" placeholder="Họ và tên">
-             <span id="hoten_error"></span>
+             
+             <div id="div5"></div>
           </div>
           <div class="form-group">
             <input type="text" id="sdt" class="form-control" placeholder="SĐT">
-             <span id="sdt_error"></span>
+            
+             <div id="div6"></div>
           </div>
         </form>
         <button type="submit" id="sub2" class="btn btn-success btn-lg center-block">
@@ -157,6 +163,5 @@
       </div>
     </div>
   </div>
-  </body>
-
+</body>
 </html>

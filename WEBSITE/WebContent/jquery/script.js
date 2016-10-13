@@ -62,55 +62,64 @@ $(document).ready(function(){
 		var email= $.trim($("#email").val());
 		var hoten= $.trim($("#hoten").val());
 		var sdt= $.trim($("#sdt").val());
-		var flag=true;
+		var flag1=true,flag2=true,flag3=true,flag4=true,flag5=true,flag6=true;
 		if (username == '' || username.length < 4){
-            $('#username_error').text('Tên đăng nhập phải lớn hơn 4 ký tự');
-            flag = false;
+            $("#div1").addClass("alert alert-danger").text("Tên đăng nhập phải lớn hơn 4 ký tự");
+            flag1=false;
         }
         else{
-            $('#username_error').text('');
+            $("#div1").removeClass("alert alert-danger");
+            $("#div1").addClass("alert alert-success").text("Thành công");
         }
  
         // Password
         if (password1.length < 5 || password1==''){
-            $('#password_error').text('Mật khẩu phải lớn hơn 4 ký tự để đảm bảo an toàn');
-            flag = false;
+             $("#div2").addClass("alert alert-danger").text("Mật khẩu phải lớn hơn 4 ký tự để đảm bảo an toàn");
+             flag2=false;
         }
         else{
-            $('#password_error').text('');
+            $("#div2").removeClass("alert alert-danger");
+            $("#div2").addClass("alert alert-success").text("Hợp lệ");
         }
  
         // Re password
-        if (password1 != password2){
-            $('#password2_error').text('Mật khẩu nhập lại không đúng');
-            flag = false;
+        if (password1 != password2 || password2==""){
+            $("#div3").addClass("alert alert-danger").text("Mật khẩu nhập lại không đúng");
+            flag3=false;
         }
         else{
-            $('#password2_error').text('');
+            $("#div3").removeClass("alert alert-danger");
+            $("#div3").addClass("alert alert-success").text("Đã khớp với mật khẩu cũ");
         }
  
         // Email
         if (!isEmail(email)){
-            $('#email_error').text('Email không được để trống và phải đúng định dạng');
-            flag = false;
+            $("#div4").addClass("alert alert-danger").text("Email không được để trống và phải đúng định dạng");
+            flag4 = false;
         }
         else{
-            $('#email_error').text('');
+            $("#div4").removeClass("alert alert-danger");
+            $("#div4").addClass("alert alert-success").text("Email hợp lệ!");
         }
         if (hoten == ''){
-            $('#hoten_error').text('Không được để trống họ tên');
-            flag = false;
+            $("#div5").addClass("alert alert-danger").text("Không được để trống họ tên");
+            
+            flag5 = false;
         }
         else{
-            $('#hoten_error').text('');
+            $("#div5").removeClass("alert alert-danger");
+            $("#div5").addClass("alert alert-success").text("Thành công");
         }
         if (sdt.length <10 || sdt.length>11){
-            $('#sdt_error').text('Số điện thoại không đúng định dạng');
-            flag = false;
+            $("#div6").addClass("alert alert-danger").text("Số điện thoại không đúng định dạng");
+            
+            flag6 = false;
         }
         else{
-            $('#sdt_error').text('');
+            $("#div6").removeClass("alert alert-danger");
+            $("#div6").addClass("alert alert-success").text("Thành công");
         }
-        return flag;
+        //if(flag1 =false || flag2==false || flag3==false || flag4 =false || flag5==false || flag6==false)
+            //return;
 	})
 })
