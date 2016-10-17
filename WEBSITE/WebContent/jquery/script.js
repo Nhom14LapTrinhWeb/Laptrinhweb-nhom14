@@ -69,8 +69,8 @@ $(document).ready(function(){
             flag1=false;
         }
         else{
-            $("#div1").removeClass("alert alert-danger");
-            $("#div1").addClass("alert alert-success").text("Thành công");
+            $("#div1").removeClass("alert alert-danger").text("");
+            $("#div1").addClass("glyphicon glyphicon-ok").css("color","green");
         }
  
         // Password
@@ -79,8 +79,8 @@ $(document).ready(function(){
              flag2=false;
         }
         else{
-            $("#div2").removeClass("alert alert-danger");
-            $("#div2").addClass("alert alert-success").text("Hợp lệ");
+        	$("#div2").removeClass("alert alert-danger").text("");;
+            $("#div2").addClass("glyphicon glyphicon-ok").css("color","green");
         }
  
         // Re password
@@ -89,8 +89,8 @@ $(document).ready(function(){
             flag3=false;
         }
         else{
-            $("#div3").removeClass("alert alert-danger");
-            $("#div3").addClass("alert alert-success").text("Đã khớp với mật khẩu cũ");
+        	$("#div3").removeClass("alert alert-danger").text("");;
+            $("#div3").addClass("glyphicon glyphicon-ok").css("color","green");
         }
  
         // Email
@@ -99,8 +99,8 @@ $(document).ready(function(){
             flag4 = false;
         }
         else{
-            $("#div4").removeClass("alert alert-danger");
-            $("#div4").addClass("alert alert-success").text("Email hợp lệ!");
+        	$("#div4").removeClass("alert alert-danger").text("");;
+            $("#div4").addClass("glyphicon glyphicon-ok").css("color","green");
         }
         if (hoten == ''){
             $("#div5").addClass("alert alert-danger").text("Không được để trống họ tên");
@@ -108,17 +108,16 @@ $(document).ready(function(){
             flag5 = false;
         }
         else{
-            $("#div5").removeClass("alert alert-danger");
-            $("#div5").addClass("alert alert-success").text("Thành công");
+        	$("#div5").removeClass("alert alert-danger").text("");;
+            $("#div5").addClass("glyphicon glyphicon-ok").css("color","green");
         }
         if (sdt.length <10 || sdt.length>11){
             $("#div6").addClass("alert alert-danger").text("Số điện thoại không đúng định dạng");
-            
             flag6 = false;
         }
         else{
-            $("#div6").removeClass("alert alert-danger");
-            $("#div6").addClass("alert alert-success").text("Thành công");
+        	$("#div6").removeClass("alert alert-danger").text("");;
+            $("#div6").addClass("glyphicon glyphicon-ok").css("color","green");
         }
         //if(flag1 =false || flag2==false || flag3==false || flag4 =false || flag5==false || flag6==false)
             //return;

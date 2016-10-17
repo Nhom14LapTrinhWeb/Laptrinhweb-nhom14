@@ -3,9 +3,9 @@
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
 <sql:setDataSource
 	driver="com.mysql.jdbc.Driver"
-	url="jdbc:mysql://localhost/cuoiki"
+	url="jdbc:mysql://mysql176401-hoclaptrinh.jelastic.servint.net/cuoiki"
 	user="root"
-	password="phihung123789"/>
+	password="BNHqpy73110"/>
 <sql:query var="items" sql="SELECT * FROM hocvien"/>
 <sql:query var="items1" sql="SELECT * FROM giangvien"/>
 <sql:query var="items2" sql="SELECT * FROM khoahoc"/>

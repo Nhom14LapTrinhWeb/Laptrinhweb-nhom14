@@ -10,14 +10,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
      
      <script type="text/javascript" src="jquery/jquery.min.js"></script>
-      <script type="text/javascript" src="jquery/script.js"></script>
+	 <script type="text/javascript" src="jquery/script.js"></script>
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="jquery/angular.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<!-- Menu top -->
