@@ -18,89 +18,14 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    </script>
 </head>
 <body>
 	<!-- Menu top -->
-  <div class="row">
-    <nav class="navbar navbar-default">
-      <div class="container">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="index.jsp">CODE.VN</a>
-            </div>
-            <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                  <a href="#" class="btn btn-info btn-md">
-                    <span class="glyphicon glyphicon-search"></span>
-                  </a>
-             </form>
-            <ul class="nav navbar-nav">
-              <li><a href="#">Học miễn phí</a></li>
-              <li><a href="#">Khóa học</a></li> 
-              <li><a href="#">Đăng kí khóa học</a></li>
-              <li><a href="#">Hướng dẫn</a></li>
-              <li><a href="tinnhan.jsp">Góp ý</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><button style="margin: 10px 1px;" type="button" class="btn btn-info btn-md pull-right"onclick="window.location.href='dangki.jsp'" >
-              <span class="glyphicon glyphicon-user"></span>
-              Đăng ký 
-              </button>
-              </li>
-              <li><button style="margin: 10px;" type="button" class="btn btn-info btn-md pull-right" data-toggle="modal" data-target="#loginModal">
-               <span class="glyphicon glyphicon-log-in"></span>
-               Đăng nhập
-               </button>
-               </li>
-            </ul>
-          </div>
-          <div class="modal" id="loginModal" role="dialog">
-            <div class="modal-dialog">
-            
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title" align="center">Đăng nhập</h4>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <input type="radio" name="quyen" checked="true">Học viên
-                      <input type="radio" name="quyen">Giảng viên
-                      <input type="radio" name="quyen">Quản trị viên
-                    </div>
-                    <div class="form-group">
-                      <label for="inputUserName">Tên đăng nhập</label>
-                      <input type="text" class="form-control" placeholder="Username" id="inputUserName">
-                    </div>
-                    <div class="form-group">
-                      <label for="inputPassword">Mật khẩu</label>
-                      <input type="password" class="form-control" placeholder="Password" id="inputPassword">
-                    </div>
-                    <div class="form-group">
-                      <input type="checkbox">Ghi nhớ tài khoản
-                    </div>
-                  </form>
-                  <a href="#">Quên mật khẩu?</a>
-                </div>
-                <div class="modal-footer">
-                  <button class="btn btn-primary">Đăng nhập</button>
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Thoát</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav> 
-    </div> 
   <!-- Đăng ký tài khoản -->
   <div class="container">
     <div class="row">
       <div class="col-md-5">
-        <h2 class="head-form">Đăng ký tài khoản</h2>
+        <h2 class="head-form" style="text-align: center;">Đăng ký tài khoản</h2>
         <form class="register">
           <div class="form-group">
             <input type="text" id="id" class="form-control " ng-model="username" placeholder="Tên đăng nhập">
@@ -131,35 +56,42 @@
              <div id="div6"></div>
           </div>
         </form>
-        <button type="submit" id="sub2" class="btn btn-success btn-lg center-block">
+        <button type="button" id="sub2" class="btn btn-success btn-lg center-block">
           Đăng ký 
         </button>
 
       </div>
       <div class="col-md-5 col-md-offset-2">
-        <h2 class="head-form">Bạn đã có tài khoản</h2>
-        <form>
-          <div class="form-group">
-              <input type="radio" name="kieu" checked="true">Học viên
-              <input type="radio" name="kieu">Giảng viên
-              <input type="radio" name="kieu">Quản trị viên
-          </div>
-          <div class="form-group">
-            <label for="id">Tên đăng nhập</label>
-            <input type="text" id="id" class="form-control" placeholder="Tên đăng nhập">
-          </div>
-          <div class="form-group">
-            <label for="password">Mật khẩu</label>
-            <input type="password" id="password" class="form-control" placeholder="Mật khẩu">
-          </div>
-          <div class="form-group">
-            <input type="checkbox"> Ghi nhớ tài khoản
-          </div>
+        <div class="panel panel-default"><h2 class="panel-header" style="text-align: center;">Bạn đã có tài khoản</h2>
+          <div class="panel-body">
+            
+               <form>
+                <div class="form-group">
+                    <input type="radio" name="kieu" checked="true">Học viên
+                    <input type="radio" name="kieu">Giảng viên
+                    <input type="radio" name="kieu">Quản trị viên
+                </div>
+                <div class="form-group">
+                  <label for="inputUserName">Tên đăng nhập</label>
+                  <input type="text" class="form-control" placeholder="Tên đăng nhập" id="inputUserName" name="inputUserName" >
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword">Mật khẩu</label>
+                  <input type="password" class="form-control" placeholder="Mật khẩu" id="inputPassword" name="inputPassword">
+                </div>
+                <div class="form-group">
+                  <input type="checkbox"> Ghi nhớ tài khoản
+                </div>
+                <a href="#">Quên mật khẩu?</a>
+                 <button type="submit" class="btn btn-warning btn-lg pull-right" method="post" action="Loginform">
+                     Đăng nhập
+                 </button>
         </form>
-        <a href="#">Quên mật khẩu?</a>
-        <button type="button" class="btn btn-warning btn-lg pull-right">
-          Đăng nhập
-        </button>
+          </div>
+           
+        </div>
+        
+        
       </div>
     </div>
   </div>

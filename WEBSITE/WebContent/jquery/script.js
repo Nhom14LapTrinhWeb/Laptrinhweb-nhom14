@@ -53,6 +53,7 @@ function isEmail(emailStr)
  
         return true;
 }
+
 //kiem tra tinh hop le du lieu
 $(document).ready(function(){
 	$("#sub2").click(function(){
@@ -122,4 +123,5 @@ $(document).ready(function(){
         //if(flag1 =false || flag2==false || flag3==false || flag4 =false || flag5==false || flag6==false)
             //return;
 	})
+
 })

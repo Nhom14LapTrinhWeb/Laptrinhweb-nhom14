@@ -33,44 +33,7 @@
     <![endif]-->
 </head>
 <body>
-	<div class="row"> 
-        <!-- made nav -->
-        <nav class="navbar navbar-default">
-          <div class="container">
-              <div class="container-fluid">
-                <div class="navbar-header">
-                   <a class="navbar-brand" href="index.jsp">CODE.VN</a>
-                </div>
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                      <a href="#" class="btn btn-info btn-md">
-                        <span class="glyphicon glyphicon-search"></span>
-                      </a>
-                 </form>
-                <ul class="nav navbar-nav">
-                  <li><a href="#">Học miễn phí</a></li>
-                  <li><a href="#">Khóa học</a></li> 
-                  <li><a href="#">Đăng kí khóa học</a></li>
-                  <li><a href="huongdan.html">Hướng dẫn</a></li>
-                  <li><a href="tinnhan.jsp">Góp ý</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                  <li><button type="button" class="btn btn-info btn-md pull-right" onclick="window.location.href='dangki.jsp'">
-                  <span class="glyphicon glyphicon-user"></span>
-                  Đăng ký 
-                  </button>
-                  </li>
-                  <li><button type="button" class="btn btn-info btn-md pull-right" data-toggle="modal" data-target="#loginModal">
-                   <span class="glyphicon glyphicon-log-in"></span>
-                   Đăng nhập
-                   </button>
-                   </li>
-                </ul>
-              </div>
-  </div>
-  </nav>
+	
   <div class="container">
   <div class="row">
              <div class="col-md-12 col-sm-12">   

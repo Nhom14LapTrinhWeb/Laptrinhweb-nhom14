@@ -12,7 +12,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="ico/favicon.png">
 
-    <title>Code.vn</title>
+    <title>CODE.VN</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -31,84 +31,8 @@
 <body>
 	<!-- header -->
   	<!-- made row -->
-    <div class="row"> 
-    	<!-- made nav -->
-	    <nav class="navbar navbar-default">
-	      <div class="container">
-	          <div class="container-fluid">
-	            <div class="navbar-header">
-	              <a class="navbar-brand" href="index.jsp">CODE.VN</a>
-	            </div>
-	            <form class="navbar-form navbar-left">
-	                <div class="form-group">
-	                    <input type="text" class="form-control" placeholder="Search">
-	                </div>
-	                  <a href="#" class="btn btn-info btn-md">
-	                    <span class="glyphicon glyphicon-search"></span>
-	                  </a>
-	             </form>
-	            <ul class="nav navbar-nav">
-	              <li><a href="#">Học miễn phí</a></li>
-	              <li><a href="#">Khóa học</a></li> 
-	              <li><a href="#">Giao khóa học</a></li>
-	              <li><a href="#">Hướng dẫn</a></li>
-	            </ul>
-	            <ul class="nav navbar-nav navbar-right">
-	              <li><button type="button" class="btn btn-info btn-md pull-right" onclick="window.location.href='dangki.jsp'">
-	              <span class="glyphicon glyphicon-user"></span>
-	              Đăng ký 
-	              </button>
-	              </li>
-	              <li><button type="button" class="btn btn-info btn-md pull-right" data-toggle="modal" data-target="#loginModal">
-	               <span class="glyphicon glyphicon-log-in"></span>
-	               Đăng nhập
-	               </button>
-	               </li>
-	            </ul>
-	          </div>
-	          <!--  login form -->
-	          <div class="modal" id="loginModal" role="dialog">
-	            <div class="modal-dialog">
-	            
-	              <div class="modal-content">
-	                <div class="modal-header">
-	                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-	                  <h4 class="modal-title" align="center">Đăng nhập</h4>
-	                </div>
-	                <div class="modal-body">
-	                  <form>
-	                    <div class="form-group">
-	                      <input type="radio" name="quyen" checked="true">Học viên
-	                      <input type="radio" name="quyen">Giảng viên
-	                      <input type="radio" name="quyen">Quản trị viên
-	                    </div>
-	                    <div class="form-group">
-	                      <label for="inputUserName">Tên đăng nhập</label>
-	                      <input type="text" class="form-control" placeholder="Username" id="inputUserName">
-	                    </div>
-	                    <div class="form-group">
-	                      <label for="inputPassword">Mật khẩu</label>
-	                      <input type="password" class="form-control" placeholder="Password" id="inputPassword">
-	                    </div>
-	                    <div class="form-group">
-	                      <input type="checkbox">Ghi nhớ tài khoản
-	                    </div>
-	                  </form>
-	                  <a href="#">Quên mật khẩu?</a>
-	                </div>
-	                <div class="modal-footer">
-	                  <button class="btn btn-primary">Đăng nhập</button>
-	                  <button type="button" class="btn btn-primary" data-dismiss="modal">Thoát</button>
-	                </div>
-	              </div>
-	            </div>
-	          </div>
-	          <!-- end login form -->
-	        </div>
-	    </nav> 
-    </div> 
     <!-- End header -->
-	<div class="container">
+	<div class="container" id="noidungchinh">
 		<div class="row">
 			<h1 align="center">Lập trình C#</h1>
 			<h2>Tên giảng viên: Phi Hổ</h2>
@@ -116,7 +40,7 @@
 			<iframe width="560" height="315" src="http://www.youtube.com/embed/W83cte8Soqw" allowfullscreen frameborder="0"></iframe>
 			</div>
 			<div class="col-md-4">
-			<button id="but" class="btn btn-lg btn-warning"><h2 style="margin:0px;">Ghi danh khóa học</h2></button>
+			<a href="#" id="dangkihoc1"><button id="but" class="btn btn-lg btn-warning"><h2 style="margin:0px;">Ghi danh khóa học</h2></button></a>
 			</div>
 		</div>
 		<div class="row">
@@ -130,5 +54,15 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+   		$(document).ready(function() {
+                $("#dangkihoc1").click(function() {
+                    var url;
+                    url = "dangkihoc.jsp";
+                    $("#noidungchinh").load(url);
+                });
+            });
+
+   </script>
 </body>
 </html>

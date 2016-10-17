@@ -30,7 +30,28 @@
 </head>
 <body>
 	
-
+	<div id="fb-root"></div>
+  <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <style>#cfacebook{position:fixed;bottom:0px;right:20px;z-index:999999999999999;width:250px;height:auto;box-shadow:6px 6px 6px 10px rgba(0,0,0,0.2);border-top-left-radius:5px;border-top-right-radius:5px;overflow:hidden;}#cfacebook .fchat{float:left;width:100%;height:270px;overflow:hidden;display:none;background-color:#fff;}#cfacebook .fchat .fb-page{margin-top:-130px;float:left;}#cfacebook a.chat_fb{float:left;padding:0 25px;width:250px;color:#fff;text-decoration:none;height:40px;line-height:40px;text-shadow:0 1px 0 rgba(0,0,0,0.1);background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAqCAMAAABFoMFOAAAAWlBMV…8/UxBxQDQuFwlpqgBZBq6+P+unVY1GnDgwqbD2zGz5e1lBdwvGGPE6OgAAAABJRU5ErkJggg==);background-repeat:repeat-x;background-size:auto;background-position:0 0;background-color:#3a5795;border:0;border-bottom:1px solid #133783;z-index:9999999;margin-right:12px;font-size:18px;}#cfacebook a.chat_fb:hover{color:yellow;text-decoration:none;}</style>
+  <script>
+  jQuery(document).ready(function () {
+  jQuery(".chat_fb").click(function() {
+jQuery('.fchat').toggle('slow');
+  });
+  });
+  </script>
+  <div id="cfacebook">
+  <a href="javascript:;" class="chat_fb" onclick="return:false;"><i class="fa fa-facebook-square"></i> Gửi tin nhắn</a>
+  <div class="fchat">
+  <div class="fb-page" data-tabs="messages" data-href="https://www.facebook.com/huynhphihung1995" data-width="250" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
+  </div>
+  </div>
 	<!-- Tao form hoi dang ki -->
   <div class="col-md-12">
   
@@ -64,7 +85,7 @@
 	        <div class="carousel-caption">
 	          <h1 style="color: red"><b>Học Lập trình</b></h1>
 	          <p style="color: blue">Đăng kí thành viên để trở thành thành viên của website ngay bạn nhé!!</p>
-	          <p><a class="btn btn-lg btn-primary" href="dangki.jsp" role="button">Đăng kí</a></p>
+	          <p><a class="btn btn-lg btn-primary" id="dangki1" role="button">Đăng ký</a></p>
 	        </div>
 	      </div>
 	    </div>
@@ -117,7 +138,7 @@
 	              <li><a href="#" id="gopy">Góp ý</a></li>
 	            </ul>
 	            <ul class="nav navbar-nav navbar-right">
-	              <li><button type="button" class="btn btn-info btn-md pull-right" onclick="window.location.href='dangki.jsp'">
+	              <li><button type="button" class="btn btn-info btn-md pull-left" id="dangki" style="">
 	              <span class="glyphicon glyphicon-user"></span>
 	              Đăng ký 
 	              </button>
@@ -128,7 +149,7 @@
 	               </button>
 	               </li>
 	            </ul>
-
+	            <div style="clear: both"></div>
 	          </div>
 	          <!--  login form -->
 	          <div class="modal" id="loginModal" role="dialog">
@@ -140,7 +161,7 @@
 	                  <h4 class="modal-title" align="center">Đăng nhập</h4>
 	                </div>
 	                <div class="modal-body">
-	                  <form action="DoAnNhom14/Dulieu" method="post">
+	                  <form action="Loginform" method="post">
 	                    <div class="form-group">
 	                      <input type="radio" name="quyen" checked="true">Học viên
 	                      <input type="radio" name="quyen">Giảng viên
@@ -157,12 +178,14 @@
 	                    <div class="form-group">
 	                      <input type="checkbox">Ghi nhớ tài khoản
 	                    </div>
+	                     <a href="#">Quên mật khẩu?</a>
+	                     <div style="text-align: right;">
+	                     	 <button class="btn btn-primary" type="submit" id="submit">Đăng nhập</button>
+	                 		 <button type="button" class="btn btn-primary" data-dismiss="modal">Thoát</button>
+	                     </div>
+	                    
 	                  </form>
-	                  <a href="#">Quên mật khẩu?</a>
-	                </div>
-	                <div class="modal-footer">
-	                  <button class="btn btn-primary" type="submit" id="submit">Đăng nhập</button>
-	                  <button type="button" class="btn btn-primary" data-dismiss="modal">Thoát</button>
+	                 
 	                </div>
 	              </div>
 	            </div>
@@ -205,7 +228,7 @@
 
 		            </div>            
 		            <div class="col-lg-4 col-sm-6 images">
-		                <a href="chitietkhoahoc.jsp" class="thumbnail">
+		                <a href="#" class="thumbnail" id="chitietkhoahoc1">
 		                    
 		                    <img src="images/1.png">
 		                    <h3><b>Lập trình C# </b></h3>
@@ -284,7 +307,7 @@
 		                </a>
 		            </div>
 		            <div class="col-lg-4 col-sm-6 images">
-		                <a href="chitietkhoahoc1.jsp" class="thumbnail">
+		                <a href="#" class="thumbnail" id="chitietkhoahoc2">
 		                    
 		                    <img src="images/2.png">
 		                    <h3><b>Lập trình JAVA </b></h3>
@@ -366,6 +389,31 @@
                 $("#sapxep").click(function(){
                 	$("#dropdown-menu").slideToggle("slow");
                 })
+                $("#dangki1").click(function() {
+                    var url;
+                    url = "dangki.jsp";
+                    $("#noidungchinh").load(url);
+                });
+                $("#dangki").click(function() {
+                    var url;
+                    url = "dangki.jsp";
+                    $("#noidungchinh").load(url);
+                });
+                $("#chitietkhoahoc1").click(function() {
+                    var url;
+                    url = "chitietkhoahoc.jsp";
+                    $("#noidungchinh").load(url);
+                });
+                $("#chitietkhoahoc2").click(function() {
+                    var url;
+                    url = "chitietkhoahoc1.jsp";
+                    $("#noidungchinh").load(url);
+                });
+                $("#dangkikhoahoc").click(function() {
+                    var url;
+                    url = "dangkihoc.jsp";
+                    $("#noidungchinh").load(url);
+                });
             });
 
    </script>
