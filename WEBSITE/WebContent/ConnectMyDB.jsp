@@ -1,11 +1,13 @@
+<%@ page language ="java" import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <sql:setDataSource
 	driver="com.mysql.jdbc.Driver"
-	url="jdbc:mysql://mysql176401-hoclaptrinh.jelastic.servint.net/cuoiki"
+	url="jdbc:mysql://localhost/cuoiki"
 	user="root"
-	password="BNHqpy73110"/>
+	password="phihung123789"/>
 <sql:query var="items" sql="SELECT * FROM hocvien"/>
 <sql:query var="items1" sql="SELECT * FROM giangvien"/>
 <sql:query var="items2" sql="SELECT * FROM khoahoc"/>

@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,19 +26,37 @@ public class Loginform extends HttpServlet {
 		
 		
 	}
+	@SuppressWarnings("null")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		String user = request.getParameter("inputUserName");
 		String pass =request.getParameter("inputPassword");
-		
-		
-		if(ConnectDB.Login(user, pass))
+		String quyen=request.getParameter("quyen");
+		if(quyen.equals("hocvien"))
 		{
-			response.sendRedirect("tinhan.jsp");
+			if(ConnectDB.LoginHV(user, pass))
+			{
+				/*ServletRequest session = null;
+				session.setAttribute("TentaikhoanHV",user);*/
+				response.sendRedirect("tinnhan.jsp");
+			}
+			else
+			{
+				response.sendRedirect("huongdansd.jsp");
+			}
 		}
-		else
+		if(quyen.equals("giangvien"))
 		{
-			response.sendRedirect("huongdansd.html");
+			if(ConnectDB.LoginGV(user, pass))
+			{
+				/*ServletRequest session = null;
+				session.setAttribute("TentaikhoanHV",user);*/
+				response.sendRedirect("tinnhan.jsp");
+			}
+			else
+			{
+				response.sendRedirect("huongdansd.jsp");
+			}
 		}
 	}
 

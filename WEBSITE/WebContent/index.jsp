@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ page language ="java" import="java.sql.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,7 +11,7 @@
 <title>Code.vn</title>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">	
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
@@ -30,28 +34,8 @@
 </head>
 <body>
 	
-	<div id="fb-root"></div>
-  <script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5";
-  fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-  <style>#cfacebook{position:fixed;bottom:0px;right:20px;z-index:999999999999999;width:250px;height:auto;box-shadow:6px 6px 6px 10px rgba(0,0,0,0.2);border-top-left-radius:5px;border-top-right-radius:5px;overflow:hidden;}#cfacebook .fchat{float:left;width:100%;height:270px;overflow:hidden;display:none;background-color:#fff;}#cfacebook .fchat .fb-page{margin-top:-130px;float:left;}#cfacebook a.chat_fb{float:left;padding:0 25px;width:250px;color:#fff;text-decoration:none;height:40px;line-height:40px;text-shadow:0 1px 0 rgba(0,0,0,0.1);background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAqCAMAAABFoMFOAAAAWlBMV…8/UxBxQDQuFwlpqgBZBq6+P+unVY1GnDgwqbD2zGz5e1lBdwvGGPE6OgAAAABJRU5ErkJggg==);background-repeat:repeat-x;background-size:auto;background-position:0 0;background-color:#3a5795;border:0;border-bottom:1px solid #133783;z-index:9999999;margin-right:12px;font-size:18px;}#cfacebook a.chat_fb:hover{color:yellow;text-decoration:none;}</style>
-  <script>
-  jQuery(document).ready(function () {
-  jQuery(".chat_fb").click(function() {
-jQuery('.fchat').toggle('slow');
-  });
-  });
-  </script>
-  <div id="cfacebook">
-  <a href="javascript:;" class="chat_fb" onclick="return:false;"><i class="fa fa-facebook-square"></i> Gửi tin nhắn</a>
-  <div class="fchat">
-  <div class="fb-page" data-tabs="messages" data-href="https://www.facebook.com/huynhphihung1995" data-width="250" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
-  </div>
-  </div>
+	   
+   	</script>
 	<!-- Tao form hoi dang ki -->
   <div class="col-md-12">
   
@@ -121,37 +105,48 @@ jQuery('.fchat').toggle('slow');
 	          <div class="container-fluid">
 	            <div class="navbar-header">
 	              <a class="navbar-brand" href="index.jsp">CODE.VN</a>
+	               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+			      </button>
 	            </div>
-	            <form class="navbar-form navbar-left">
-	                <div class="form-group">
-	                    <input type="text" class="form-control" placeholder="Search">
-	                </div>
-	                  <a href="#" class="btn btn-info btn-md">
-	                    <span class="glyphicon glyphicon-search"></span>
-	                  </a>
-	             </form>
-	            <ul class="nav navbar-nav">
-	              <li><a href="#" id="mienphi">Học miễn phí</a></li>
-	              <li><a href="#" id="khoahoc">Khóa học</a></li> 
-	              <li><a href="#" id="dangkikhoahoc">Đăng kí khóa học</a></li>
-	              <li><a href="#" id="huongdan1">Hướng dẫn</a></li>
-	              <li><a href="#" id="gopy">Góp ý</a></li>
-	            </ul>
-	            <ul class="nav navbar-nav navbar-right">
-	              <li><button type="button" class="btn btn-info btn-md pull-left" id="dangki" style="">
-	              <span class="glyphicon glyphicon-user"></span>
-	              Đăng ký 
-	              </button>
-	              </li>
-	              <li><button type="button" class="btn btn-info btn-md pull-right" data-toggle="modal" data-target="#loginModal" >
-	               <span class="glyphicon glyphicon-log-in"></span>
-	               Đăng nhập
-	               </button>
-	               </li>
-	            </ul>
-	            <div style="clear: both"></div>
+	            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		            <form class="navbar-form navbar-left">
+			                <div class="form-group">
+			                    <input type="text" class="form-control" placeholder="Search">
+			                </div>
+			                  <a href="#" class="btn btn-info btn-md">
+			                    <span class="glyphicon glyphicon-search"></span>
+			                  </a>
+			             </form>
+			            <ul class="nav navbar-nav">
+			              <li><a href="#" id="mienphi">Học miễn phí</a></li>
+			              <li><a href="#" id="khoahoc">Khóa học</a></li> 
+			              <li><a href="#" id="dangkikhoahoc">Đăng kí khóa học</a></li>
+			              <li><a href="#" id="huongdan1">Hướng dẫn</a></li>
+			              <li><a href="#" id="gopy">Góp ý</a></li>
+			            </ul>
+			            <ul class="nav navbar-nav navbar-right">
+			              <li><button type="button" class="btn btn-info btn-md pull-left" id="dangki" style="">
+			              <span class="glyphicon glyphicon-user"></span>
+			              Đăng ký 
+			              </button>
+			              </li>
+			              <li><button type="button" class="btn btn-info btn-md pull-right" data-toggle="modal" data-target="#loginModal" >
+			               <span class="glyphicon glyphicon-log-in"></span>
+			               Đăng nhập
+			               </button>
+			               </li>
+			            </ul>
+			            <div style="clear: both"></div>
+		            </div>  
 	          </div>
-	          <!--  login form -->
+	        </div>
+	    </nav>  	
+	</div>
+	<!--  login form -->
 	          <div class="modal" id="loginModal" role="dialog">
 	            <div class="modal-dialog">
 	            
@@ -163,17 +158,17 @@ jQuery('.fchat').toggle('slow');
 	                <div class="modal-body">
 	                  <form action="Loginform" method="post">
 	                    <div class="form-group">
-	                      <input type="radio" name="quyen" checked="true">Học viên
-	                      <input type="radio" name="quyen">Giảng viên
-	                      <input type="radio" name="quyen">Quản trị viên
+	                      <input type="radio" name="quyen" value="hocvien" checked="true">Học viên
+	                      <input type="radio" name="quyen" value="giangvien">Giảng viên
+	                      <input type="radio" name="quyen" value="admin">Quản trị viên
 	                    </div>
 	                    <div class="form-group">
 	                      <label for="inputUserName">Tên đăng nhập</label>
-	                      <input type="text" class="form-control" placeholder="Username" id="inputUserName" name="inputUserName">
+	                      <input type="text" class="form-control input-lg" placeholder="Username" id="inputUserName" name="inputUserName">
 	                    </div>
 	                    <div class="form-group">
 	                      <label for="inputPassword">Mật khẩu</label>
-	                      <input type="password" class="form-control" placeholder="Password" id="inputPassword" name="inputPassword">
+	                      <input type="password" class="form-control input-lg" placeholder="Password" id="inputPassword" name="inputPassword">
 	                    </div>
 	                    <div class="form-group">
 	                      <input type="checkbox">Ghi nhớ tài khoản
@@ -191,9 +186,7 @@ jQuery('.fchat').toggle('slow');
 	            </div>
 	          </div>
 	          <!-- end login form -->
-	        </div>
-	    </nav>  	
-	</div>
+	<!-- end header -->
 	<!-- end header -->
 	<div id="noidungchinh">
     <!-- body -->
@@ -353,22 +346,61 @@ jQuery('.fchat').toggle('slow');
    <!-- Footer -->
    <div style="clear: both;"></div>
    <footer >
-   <div class="well-md">
-   	<h3 align="right">Copyright © <a href="http://itclass.vn">ITclass.vn</a></h3>
-   	<ol class="breadcrumb">
-   		<li class="active"><a href="#">Home</a></li>
-   		<li><a href="#">Contact</a></li>   		
-   		<li><a href="#">About</a></li>
-   		<li><a href="#">Products</a></li>
-   		<li id="time">
-   			<script type="text/javascript">
-   				document.getElementById('time').innerHTML=Date();
-   			</script>
-   		</li>
-   	</ol>
-   </div>
-</div>
+	   <div class="well-md">
+	   	<h3 align="right">Copyright © <a href="http://itclass.vn">ITclass.vn</a></h3>
+	   	<ol class="breadcrumb">
+	   		<li class="active"><a href="#">Home</a></li>
+	   		<li><a href="#">Contact</a></li>   		
+	   		<li><a href="#">About</a></li>
+	   		<li><a href="#">Products</a></li>
+	   		<li id="time">
+	   			<script type="text/javascript">
+	   				document.getElementById('time').innerHTML=Date();
+	   			</script>
+	   		</li>
+	   	</ol>
+	   </div>
+	</div>
    </footer>
+   <!-- Tạo hộp thoại tin nhắn  -->
+   		<div class="navbar navbar-fixed-bottom" >
+	   	<div class="col-md-3 col-md-offset-9 col-sm-4 col-sm-offset-8">
+	   		<button id="btnmes" class="btn btn-primary btn-block" style="margin:0px; border-radius: 0px;">Gửi tin nhắn</button>
+	   		<div class="panel-group" style=" border-radius: 0px ">
+	   			<div class="panel panel-default panel-block" style=" border-radius: 0px">
+	   				<div id="Message" class="panel-collapse collapse">
+			   			<p class="panel-header" style="text-align: center;"><b>Nếu bạn có bất cứ thắc mắc nào cần giải đáp thì cứ việc gửi tin nhắn cho chúng tôi</b></p>
+			   			<div class="panel-body" style=" border-radius: 0px">
+				   			<form>
+				   				
+				   				<div class="form-group">
+				   					<label for="name">Tên của bạn</label> <br />
+				   					<input id="name" type="text" placeholder="Nhập vào tên bạn">
+				   				</div>
+				   				<div class="form-group">
+				   					<label for="email">Email của bạn</label><br />
+				   					<input id="email" type="email" placeholder="Nhập vào email bạn">
+				   				</div>
+				   				<div class="form-group">
+				   					<label for="sdt">SĐT của bạn</label><br />
+				   					<input id="sdt" type="text" placeholder="Nhập vào SĐT bạn">
+				   				</div>
+				   				<div class="form-group">
+				   					<label for="noidung">Nội dung</label><br />
+				   					<textarea name="noidung" id="noidung" cols="30" rows="3"></textarea><br />
+				   				</div>
+				   				<div class="form-group">
+				   					<input type="submit" class="btn btn-primary" id="btnSent" value="Gửi tin nhắn">
+				   				</div>				   				
+				   			</form>
+				   		</div>
+			   		</div>
+	   			</div>
+	   		</div>			   		
+		</div>
+   </div>
+	   	
+   <!--jquery  -->
    <script type="text/javascript">
    		$(document).ready(function() {
                 $("#huongdan1").click(function() {
@@ -414,6 +446,12 @@ jQuery('.fchat').toggle('slow');
                     url = "dangkihoc.jsp";
                     $("#noidungchinh").load(url);
                 });
+                $('#btnmes').click(function(){
+        	   		$('#Message').collapse('toggle');
+        	   	});
+        	   	$('#btnSent').click(function(){
+        	 		alert('Đã gửi thành công');
+        	   	});
             });
 
    </script>
