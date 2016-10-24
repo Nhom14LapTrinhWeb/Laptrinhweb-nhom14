@@ -6,8 +6,8 @@ body {
   border: none;
   width: 100%;
   height: auto;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   font-size: 100%;
   overflow-x: hidden;
   background-color: white;
@@ -28,21 +28,7 @@ button{
 .images a{
   height: 370px;
 }
-footer {
-	margin-top: 30px;
-	margin-bottom:0px;
-}
 .register{
         padding-top: 20px;
         padding-bottom: 20px;
       }
-.head-form {
-	color:red;
-}
-.panel-header{
-	color:red;
-}
-.ma {
-  margin-top: 10px;
-  padding: 10px;
-}

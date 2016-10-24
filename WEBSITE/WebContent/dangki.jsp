@@ -10,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
      
      <script type="text/javascript" src="jquery/jquery.min.js"></script>
-    
 	 <script type="text/javascript" src="jquery/script.js"></script>
+
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="jquery/angular.min.js"></script>
@@ -28,29 +28,30 @@
       <div class="col-md-5">
         <h2 class="head-form" style="text-align: center;">Đăng ký tài khoản</h2>
         <form class="register">
-          <div id="uname" class="form-group">
+          <div class="form-group">
             <input type="text" id="id" class="form-control " ng-model="username" placeholder="Tên đăng nhập">
             <div id="div1"></div>
           </div>
-          <div id="upass" class="form-group">
+          <div class="form-group">
             <input type="password" id="password" class="form-control" placeholder="Mật khẩu">
             
            <div id="div2"></div>
           </div>
-          <div id="upass2" class="form-group">
+          <div class="form-group">
             <input type="password" id="password2" class="form-control" placeholder="Nhập lại mật khẩu">
             <div id="div3"></div>
           </div>
-          <div id="uemail" class="form-group">
-            <input type="email" id="email" class="form-control" placeholder="Email">           
+          <div class="form-group">
+            <input type="email" id="email" class="form-control" placeholder="Email">
+            
             <div id="div4"></div>
           </div>
-          <div id="uhoten" class="form-group">
+          <div class="form-group">
             <input type="text" id="hoten" class="form-control" placeholder="Họ và tên">
              
              <div id="div5"></div>
           </div>
-          <div id="usdt" class="form-group">
+          <div class="form-group">
             <input type="text" id="sdt" class="form-control" placeholder="SĐT">
             
              <div id="div6"></div>
@@ -59,6 +60,7 @@
         <button type="button" id="sub2" class="btn btn-success btn-lg center-block">
           Đăng ký 
         </button>
+
       </div>
       <div class="col-md-5 col-md-offset-2">
         <div class="panel panel-default"><h2 class="panel-header" style="text-align: center;">Bạn đã có tài khoản</h2>

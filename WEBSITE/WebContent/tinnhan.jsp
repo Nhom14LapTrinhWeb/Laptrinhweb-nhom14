@@ -38,30 +38,35 @@
     <!-- made row -->
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">    
+      <div class="col-md-5">
+        <h2 class="head-form">Tin nhắn</h2>
         <form class="register">
-        	<h2 class="head-form" style="text-align:center;">Tin nhắn</h2>
-          	<div class="form-group">
+          <div class="form-group">
             <input type="text" id="id" class="form-control" placeholder="Họ và tên">
-          	</div>
-         	 <div class="form-group">
+          </div>
+          <div class="form-group">
             <input type="password" id="sdt" class="form-control" placeholder="Số điện thoại">
-         	 </div>
-         	 <div class="form-group">
+          </div>
+          <div class="form-group">
             <input type="email" id="email" class="form-control" placeholder="Email">
-         	 </div>
-         	 <div class="form-group">
-            <label for="Phanhoiykien">Phản hồi ý kiến</label>
-             <textarea class="form-control" id="Phanhoiykien" rows="3"></textarea>
-        	 </div>
-        	 <div class="form-group">
-        	 	<label for="dinhkem">Gửi đính kèm:</label>
-        	 	<input id="dinhkem" type="file" name="img">
-        	 </div>      	 
-        	 <div class="form-group">
-        	   <input class="btn btn-success btn-lg center-block" type="submit" value="Xác nhận">
-        	 </div>
+          </div>
+          <div class="form-group">
+            <label for="Phan hoi y kien">Phản hồi ý kiến</label>
+             <textarea class="form-control" id="Phan hoi y kien" rows="3"></textarea>
+         </div>
         </form>
+         <ul class="nav navbar-nav navbar-right">
+             <li><button type="button" class="btn btn-info btn-md pull-right">
+                  <span class="glyphicon "></span>
+                     Gửi
+                  </button>
+                  </li>
+                  <li><button type="button" class="btn btn-info btn-md pull-right" data-toggle="modal" data-target="#loginModal">
+                   <span class="glyphicon glyphicon-log-in"></span>
+                   File đính kèm
+                   </button>
+            </li>
+        </ul>     
       </div>     
     </div>
   </div>

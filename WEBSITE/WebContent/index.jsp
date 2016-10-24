@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ page language ="java" import="java.sql.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,7 +11,7 @@
 <title>Code.vn</title>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">	
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
@@ -28,8 +32,10 @@
 	<link href="css/style.css" rel="stylesheet">	    
 		
 </head>
-<body>	
-	</div>
+<body>
+	
+	   
+   	</script>
 	<!-- Tao form hoi dang ki -->
   <div class="col-md-12">
   
@@ -99,14 +105,14 @@
 	          <div class="container-fluid">
 	            <div class="navbar-header">
 	              <a class="navbar-brand" href="index.jsp">CODE.VN</a>
-	               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-codevn-navbar-collapse-1" aria-expanded="false">
+	               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 				        <span class="sr-only">Toggle navigation</span>
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
 			      </button>
 	            </div>
-	            <div class="collapse navbar-collapse" id="bs-codevn-navbar-collapse-1">
+	            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		            <form class="navbar-form navbar-left">
 			                <div class="form-group">
 			                    <input type="text" class="form-control" placeholder="Search">
@@ -123,12 +129,12 @@
 			              <li><a href="#" id="gopy">Góp ý</a></li>
 			            </ul>
 			            <ul class="nav navbar-nav navbar-right">
-			              <li><button type="button" class="btn btn-info btn-md" id="dangki" style="">
+			              <li><button type="button" class="btn btn-info btn-md pull-left" id="dangki" style="">
 			              <span class="glyphicon glyphicon-user"></span>
 			              Đăng ký 
 			              </button>
 			              </li>
-			              <li><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#loginModal" >
+			              <li><button type="button" class="btn btn-info btn-md pull-right" data-toggle="modal" data-target="#loginModal" >
 			               <span class="glyphicon glyphicon-log-in"></span>
 			               Đăng nhập
 			               </button>
@@ -140,10 +146,11 @@
 	        </div>
 	    </nav>  	
 	</div>
-		<!--  login form -->
-	    <div class="modal" id="loginModal" role="dialog">
-	    	<div class="modal-dialog">
-	    		<div class="modal-content">
+	<!--  login form -->
+	          <div class="modal" id="loginModal" role="dialog">
+	            <div class="modal-dialog">
+	            
+	              <div class="modal-content">
 	                <div class="modal-header">
 	                  <button type="button" class="close" data-dismiss="modal">&times;</button>
 	                  <h4 class="modal-title" align="center">Đăng nhập</h4>
@@ -177,9 +184,9 @@
 	                </div>
 	              </div>
 	            </div>
-	              
-	        </div>
+	          </div>
 	          <!-- end login form -->
+	<!-- end header -->
 	<!-- end header -->
 	<div id="noidungchinh">
     <!-- body -->
@@ -204,10 +211,8 @@
 		            </div>
 		            <div class="col-md-3">
 		            	
-			                	<button class="btn btn-primary btn-md" id="sapxep" >
-			                	Sắp xếp 
-			                	<span class="caret" style="margin-left:5px;"></span>
-			                	</button>
+			                	<button class="btn btn-primary btn-md" id="sapxep" >Sắp xếp</button>
+			   
 			                	<ul class="dropdown-menu" id="dropdown-menu">
 			                		<li><a href="#">Mới nhất</a></li>
 			                		<li><a href="#">Miễn phí</a></li>
@@ -340,68 +345,63 @@
     
    <!-- Footer -->
    <div style="clear: both;"></div>
-  
-</body>
-<footer>
-	<div class="row">
-		<div class="navbar navbar-default">
-			<div class="container">
-			   	<ol class="breadcrumb">
-			   		<li><a href="index.jsp">Home</a></li>
-			   		<li><a href="tinnhan.jsp">Contact</a></li>   		
-			   		<li><a href="huongdansd.html">About</a></li>
-			   		<li id="time">
-			   			<script type="text/javascript">
-			   				document.getElementById('time').innerHTML=Date();
-			   			</script>
-			   		</li>
-			   		<li align="right">Copyright © <a href="http://itclass.vn">ITclass.vn</a></li>
-			   	</ol>
-			</div> 	
-		</div>
+   <footer >
+	   <div class="well-md">
+	   	<h3 align="right">Copyright © <a href="http://itclass.vn">ITclass.vn</a></h3>
+	   	<ol class="breadcrumb">
+	   		<li class="active"><a href="#">Home</a></li>
+	   		<li><a href="#">Contact</a></li>   		
+	   		<li><a href="#">About</a></li>
+	   		<li><a href="#">Products</a></li>
+	   		<li id="time">
+	   			<script type="text/javascript">
+	   				document.getElementById('time').innerHTML=Date();
+	   			</script>
+	   		</li>
+	   	</ol>
+	   </div>
 	</div>
-	<div class="row">
-		<div class="navbar navbar-fixed-bottom">
-			<div class="col-md-3 col-md-offset-9 col-sm-4 col-sm-offset-8 col-xs-5 col-xs-offset-7">
-				<button id="btnmes" class="btn-success btn-block" style="margin:0px;">Gửi tin nhắn</button>
-		   		<div class="panel-group">
-		   			<div class="panel panel-default" style=" border: none;">
-		   				<div id="Message" class="panel-collapse collapse">
-					   		<p class="panel-header" style="text-align: center;">Nếu bạn có bất cứ thắc mắc nào cần giải đáp thì cứ việc gửi tin nhắn cho chúng tôi</p>
-				 	  		<div class="panel-body">
-						   		<form>   				
-					   				<div class="form-group">
-					   					<label for="name">Tên của bạn</label>
-					   					<input id="name" class="form-control input-sm" type="text">
-					   				</div>
-					   				<div class="form-group">
-					   					<label for="email">Email của bạn</label>
-					   					<input id="email" class="form-control input-sm" type="email">
-					   				</div>
-					   				<div class="form-group">
-										<label for="sdt">SĐT của bạn</label>
-					   					<input id="sdt" class="form-control input-sm" type="text">
-					   				</div>
-					   				<div class="form-group">
-					   					<label for="noidung">Nội dung</label>
-					   					<textarea name="noidung" id="noidung" class="form-control input-sm" cols="30" rows="3"></textarea>
-					   				</div>
-					   				<div class="form-group">
-					   					<input type="submit" class="btn btn-primary center-block" id="btnSent" value="Gửi tin nhắn">
-					   				</div>				   				
-					   			</form>
-					   		</div>
+   </footer>
+   <!-- Tạo hộp thoại tin nhắn  -->
+   		<div class="navbar navbar-fixed-bottom" >
+	   	<div class="col-md-3 col-md-offset-9 col-sm-4 col-sm-offset-8">
+	   		<button id="btnmes" class="btn btn-primary btn-block" style="margin:0px; border-radius: 0px;">Gửi tin nhắn</button>
+	   		<div class="panel-group" style=" border-radius: 0px ">
+	   			<div class="panel panel-default panel-block" style=" border-radius: 0px">
+	   				<div id="Message" class="panel-collapse collapse">
+			   			<p class="panel-header" style="text-align: center;"><b>Nếu bạn có bất cứ thắc mắc nào cần giải đáp thì cứ việc gửi tin nhắn cho chúng tôi</b></p>
+			   			<div class="panel-body" style=" border-radius: 0px">
+				   			<form>
+				   				
+				   				<div class="form-group">
+				   					<label for="name">Tên của bạn</label> <br />
+				   					<input id="name" type="text" placeholder="Nhập vào tên bạn">
+				   				</div>
+				   				<div class="form-group">
+				   					<label for="email">Email của bạn</label><br />
+				   					<input id="email" type="email" placeholder="Nhập vào email bạn">
+				   				</div>
+				   				<div class="form-group">
+				   					<label for="sdt">SĐT của bạn</label><br />
+				   					<input id="sdt" type="text" placeholder="Nhập vào SĐT bạn">
+				   				</div>
+				   				<div class="form-group">
+				   					<label for="noidung">Nội dung</label><br />
+				   					<textarea name="noidung" id="noidung" cols="30" rows="3"></textarea><br />
+				   				</div>
+				   				<div class="form-group">
+				   					<input type="submit" class="btn btn-primary" id="btnSent" value="Gửi tin nhắn">
+				   				</div>				   				
+				   			</form>
 				   		</div>
-		   			</div>
-		   		</div>			   		
-			</div>   	
-	  </div>
-	</div>
- </footer >
+			   		</div>
+	   			</div>
+	   		</div>			   		
+		</div>
+   </div>
+	   	
+   <!--jquery  -->
    <script type="text/javascript">
-   		$("#btnmes").click(function(){
-   			$("#Message").collapse('toggle');
-   		});
    		$(document).ready(function() {
                 $("#huongdan1").click(function() {
                     var url;
@@ -446,8 +446,15 @@
                     url = "dangkihoc.jsp";
                     $("#noidungchinh").load(url);
                 });
+                $('#btnmes').click(function(){
+        	   		$('#Message').collapse('toggle');
+        	   	});
+        	   	$('#btnSent').click(function(){
+        	 		alert('Đã gửi thành công');
+        	   	});
             });
 
    </script>
    
+</body>
 </html>
