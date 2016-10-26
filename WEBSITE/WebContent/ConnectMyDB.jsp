@@ -1,18 +1,20 @@
-<%@ page language ="java" import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <sql:setDataSource
 	driver="com.mysql.jdbc.Driver"
+<<<<<<< HEAD
 	url="jdbc:mysql://localhost/hoclaptrinhonline"
 	user="root"
 	password="phihung123789"/>
 <sql:query var="items" sql="SELECT * FROM taikhoan"/>
 =======
 	url="jdbc:mysql://localhost/cuoiki"
+=======
+	url="jdbc:mysql://mysql176401-hoclaptrinh.jelastic.servint.net/cuoiki"
+>>>>>>> 81c9b6af1f9d7cdba1df73962958f3a87e404607
 	user="root"
-	password="phihung123789"/>
+	password="BNHqpy73110"/>
 <sql:query var="items" sql="SELECT * FROM hocvien"/>
 <sql:query var="items1" sql="SELECT * FROM giangvien"/>
 >>>>>>> 467f78f6c2c9eb143a32858ad58f2e78530105d4

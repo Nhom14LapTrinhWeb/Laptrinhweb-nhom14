@@ -30,12 +30,20 @@ button{
 }
 footer {
 	margin-top: 30px;
+<<<<<<< HEAD
 	margin-bottom:-30px;
+=======
+	margin-bottom:0px;
+>>>>>>> 81c9b6af1f9d7cdba1df73962958f3a87e404607
 }
 .register{
         padding-top: 20px;
         padding-bottom: 20px;
+<<<<<<< HEAD
 }
+=======
+      }
+>>>>>>> 81c9b6af1f9d7cdba1df73962958f3a87e404607
 .head-form {
 	color:red;
 }
