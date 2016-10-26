@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -63,8 +65,8 @@
 	<!-- End navbar -->
 	<!-- menu list chức năng -->
 	<div class="container">
-    	<div class="content col-md-12 ">
-    		<div class="content-left col-md-3 col-sm-3 col-xs-3">
+    	<div class="row">
+    		<div class="col-md-3">
     			<ul class="nav nav-pills nav-stacked">
 				  <li class="active"><a href="#"><b>Trang của bạn</b></a></li>
 				  <li><a id="thongtin" href="#"><b>Thông tin cá nhân</b></a></li>
@@ -75,11 +77,10 @@
 				  <li><a id="out" href="#"><b>Thoát</b></a></li>
 				</ul>
     		</div>
-			<div id="noidung" class="col-md-9 col-sm-9 col-xs-9">
-				
-			</div>
-    	</div>
-    </div>
+	    	<div id="noidung" class="col-md-9">
+	    	</div>
+    	</div>			
+	</div>
 	<!-- end menu list -->
 	<!-- footer -->
 	<footer>

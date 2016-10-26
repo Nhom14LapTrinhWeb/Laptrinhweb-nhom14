@@ -30,12 +30,12 @@ button{
 }
 footer {
 	margin-top: 30px;
-	margin-bottom:0px;
+	margin-bottom:-30px;
 }
 .register{
         padding-top: 20px;
         padding-bottom: 20px;
-      }
+}
 .head-form {
 	color:red;
 }

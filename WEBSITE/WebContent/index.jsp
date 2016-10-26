@@ -419,7 +419,7 @@
                     $("#wrapper").load(url);
                 });
                 $("#sapxep").click(function(){
-                	$("#dropdown-menu").slideToggle("slow");
+                	$("#dropdown-menu").slideToggle("100");
                 })
                 $("#dangki1").click(function() {
                     var url;
