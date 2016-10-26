@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Đăng kí</title>
+<title>Thông báo</title>
 <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,14 +21,24 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <div class="panel panel-success">
-      <div class="panel-heading">Danh sách Thông báo mới</div>
-      <div class="panel-body">
-        <ul>
-          <a><li>Khóa học C# chiều thứ 6 ngày 20/12/2016 nghỉ học </li></a>
-          <a><li>Khóa học PHP khóa 4 khai giảng vào ngày 12/11/2016 </li></a>
-        </ul>
+  <div>
+      <div class="panel panel-success">
+        <div class="panel-heading">Danh sách Thông báo mới</div>
+        <div class="panel-body">
+          <ul>
+            <a><li>Khóa học C# chiều thứ 6 ngày 20/12/2016 nghỉ học </li></a>
+            <a><li>Khóa học PHP khóa 4 khai giảng vào ngày 12/11/2016 </li></a>
+          </ul>
+        </div>
       </div>
+      <div class="row" id="chucnang">
+        <ul class="nav navbar-nav">
+            <li><button class="btn btn-primary">Thêm Thông báo</button></li>
+            <li><button class="btn btn-primary">Sửa Thông báo</button></li>
+            <li><button class="btn btn-primary">Xóa Thông báo</button></li>
+        </ul>          
+      </div>
+  </div>
     </div>
 </body>
 </html>

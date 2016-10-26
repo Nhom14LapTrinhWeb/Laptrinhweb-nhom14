@@ -38,12 +38,13 @@ public class Loginform extends HttpServlet {
 			{
 				/*ServletRequest session = null;
 				session.setAttribute("TentaikhoanHV",user);*/
-				response.sendRedirect("tinnhan.jsp");
+				response.sendRedirect("hocvien.jsp");
 			}
 			else
 			{
-				response.sendRedirect("huongdansd.jsp");
+				response.sendRedirect("index.jsp");
 			}
+			
 		}
 		if(quyen.equals("giangvien"))
 		{
@@ -51,11 +52,11 @@ public class Loginform extends HttpServlet {
 			{
 				/*ServletRequest session = null;
 				session.setAttribute("TentaikhoanHV",user);*/
-				response.sendRedirect("tinnhan.jsp");
+				response.sendRedirect("quantrivien.jsp");
 			}
 			else
 			{
-				response.sendRedirect("huongdansd.jsp");
+				response.sendRedirect("index.jsp");
 			}
 		}
 	}

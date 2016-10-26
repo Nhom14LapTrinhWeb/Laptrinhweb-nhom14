@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -21,42 +23,26 @@
 	<link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-	<div class="row">
-		<h2 style="text-align:center;">THÔNG TIN TÀI KHOẢN</h2>
-		<div class="col-md-6">
-			<table class="table table-bordered">
-				<tr>
-					<td>Tên tài khoản</td>
-					<td>hoquochung</td>
-				</tr>
-				<tr>
-					<td>Họ và tên</td>
-					<td>Hồ Quốc Hưng</td>
-				</tr>
-				<tr>
-					<td>Ngày sinh</td>
-					<td>02/06/1996</td>
-				</tr>
-				<tr>
-					<td>Địa chỉ</td>
-					<td>Đồng nai</td>
-				</tr>
-				<tr>
-					<td>Email</td>
-					<td>asdasd@gmail.com</td>
-				</tr>
-				<tr>
-					<td>Điện thoại</td>
-					<td>01345456789</td>
-				</tr>
-				<tr>
-					<td>Vai trò</td>
-					<td>Học viên</td>
-				</tr>
-			</table>
-			<button class="btn btn-warning pull-right">Chỉnh sửa thông tin</button>
-			<button class="btn btn-warning pull-right">Đổi mật khẩu</button>
-		</div>
+<div class="row">
+	<div class="panel panel-primary">
+		<div class="panel-heading" style="text-align: center;">Xem điểm các môn học đã đăng ký</div>
+			<table class="table" border="1">
+				<thead>
+					<tr>
+						<th>STT</th>
+						<th>Mã khóa học</th>
+						<th>Tên khóa học</th>
+						<th>Điểm trung bình</th>
+						<th>Chi tiết</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+					
+					</tr>
+				</tbody>
+			</table>								
 	</div>
+</div>
 </body>
 </html>

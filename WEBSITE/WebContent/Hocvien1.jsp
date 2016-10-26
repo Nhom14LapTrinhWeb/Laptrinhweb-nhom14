@@ -66,7 +66,7 @@
 	<!-- menu list chức năng -->
 	<div class="container">
     	<div class="row">
-    		<div class="col-md-3">
+    		<div class="col-md-3 content-left">
     			<ul class="nav nav-pills nav-stacked">
 				  <li class="active"><a href="#"><b>Trang của bạn</b></a></li>
 				  <li><a id="thongtin" href="#"><b>Thông tin cá nhân</b></a></li>
@@ -77,7 +77,8 @@
 				  <li><a id="out" href="#"><b>Thoát</b></a></li>
 				</ul>
     		</div>
-	    	<div id="noidung" class="col-md-9">
+	    	<div class=" content-right col-md-9">
+	    		<div id="noidung"></div>
 	    	</div>
     	</div>			
 	</div>
@@ -104,7 +105,22 @@
 $(document).ready(function(){
 	$('#thongtin').click(function(){
 		var url;
-		url = "thongtincanhan.html";
+		url = "thongtincanhan.jsp";
+		$("#noidung").load(url);
+	});
+	$('#xemdiem').click(function(){
+		var url;
+		url = "Xemdiem.jsp";
+		$("#noidung").load(url);
+	});
+	$('#khoahoc').click(function(){
+		var url;
+		url = "khoahoccuatoi.jsp";
+		$("#noidung").load(url);
+	});
+	$('#baitap').click(function(){
+		var url;
+		url = "baitap.jsp";
 		$("#noidung").load(url);
 	});
 });

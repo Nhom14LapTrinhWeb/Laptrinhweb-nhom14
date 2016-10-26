@@ -360,6 +360,13 @@
 			</div> 	
 		</div>
 	</div>
+<<<<<<< HEAD
+   </footer>
+   <!-- Tạo hộp thoại tin nhắn  -->
+<<<<<<< HEAD
+   <!--jquery  -->
+=======
+>>>>>>> 81c9b6af1f9d7cdba1df73962958f3a87e404607
 	<div class="row">
 		<div class="navbar navbar-fixed-bottom">
 			<div class="col-md-3 col-md-offset-9 col-sm-4 col-sm-offset-8 col-xs-5 col-xs-offset-7">
@@ -405,7 +412,7 @@
    		$(document).ready(function() {
                 $("#huongdan1").click(function() {
                     var url;
-                    url = "huongdansd.html";
+                    url = "huongdansd.jsp";
                     $("#noidungchinh").load(url);
                 });
                 $("#gopy").click(function() {
@@ -446,8 +453,14 @@
                     url = "dangkihoc.jsp";
                     $("#noidungchinh").load(url);
                 });
+                $('#btnmes').click(function(){
+	   				$('#Message').collapse('toggle');
+	   			});
+	   			$('#btnSent').click(function(){
+	 				alert('Đã gửi thành công');
+	   			});
             });
-
+            
    </script>
    
 </html>

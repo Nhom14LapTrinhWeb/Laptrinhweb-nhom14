@@ -30,5 +30,12 @@
         </ul>
       </div>
     </div>
+    <div class="row" id="chucnang">
+        <ul class="nav navbar-nav">
+            <li><button class="btn btn-primary">Thêm Thông báo</button></li>
+            <li><button class="btn btn-primary">Sửa Thông báo</button></li>
+            <li><button class="btn btn-primary">Xóa Thông báo</button></li>
+        </ul>          
+    </div>
 </body>
 </html>

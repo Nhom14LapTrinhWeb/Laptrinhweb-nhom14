@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Đăng kí</title>
+<title>Quản trị viên</title>
 <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,9 +70,9 @@
         <div class="content-left col-md-3">
           <ul class="nav nav-pills nav-stacked">
           <li class="active"><a name="xem"><b>Quản lý</b></a></li>
-          <li><a href="#"><b>Danh sách học viên</b></a></li>
-          <li><a href="#"><b>Danh sách giảng viên</b></a></li>
-          <li><a href="#"><b>Danh sách khóa học đang mở</b></a></li>
+          <li><a href="#" id="dsHocvien"><b>Danh sách học viên</b></a></li>
+          <li><a href="#" id="dsgiangvien"><b>Danh sách giảng viên</b></a></li>
+          <li><a href="#" id="dsKhoahoc"><b>Danh sách khóa học đang mở</b></a></li>
           <li><a href="#"><b>Tin nhắn</b></a></li>
           <li><a href="#"><b>Thống kê</b></a></li>
           <li><a href="#"><b>Tài khoản của bạn</b></a></li>
@@ -81,19 +81,28 @@
         
         </div>
         <div class="content-right col-md-9" >
-          <div class="row " id="noidungchinh" >
-              <div class="panel panel-success">
-                <div class="panel-heading">Danh sách Thông báo mới</div>
-                  <div class="panel-body">
-                    <ul>
-                      <a><li>Khóa học C# chiều thứ 6 ngày 20/12/2016 nghỉ học </li></a>
-                      <a><li>Khóa học PHP khóa 4 khai giảng vào ngày 12/11/2016 </li></a>
-                    </ul>
+          <div id="noidungchinh" >
+              <div class="row ">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">Danh sách Thông báo mới</div>
+                      <div class="panel-body">
+                        <ul>
+                          <a><li>Khóa học C# chiều thứ 6 ngày 20/12/2016 nghỉ học </li></a>
+                          <a><li>Khóa học PHP khóa 4 khai giảng vào ngày 12/11/2016 </li></a>
+                        </ul>
+                      </div>
                   </div>
               </div>
+              <div class="row" id="chucnang">
+                <ul class="nav navbar-nav">
+                  <li><button class="btn btn-primary">Thêm Thông báo</button></li>
+                  <li><button class="btn btn-primary">Sửa Thông báo</button></li>
+                  <li><button class="btn btn-primary">Xóa Thông báo</button></li>
+                </ul>
+              </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </div>
    </div>
@@ -145,6 +154,21 @@
           $("#kehoach").click(function() {
                     var url;
                     url = "kehoach.jsp";
+                    $("#noidungchinh").load(url);
+            });
+          $("#dsHocvien").click(function() {
+                    var url;
+                    url = "danhsachhocvien.jsp";
+                    $("#noidungchinh").load(url);
+            });
+          $("#dsgiangvien").click(function() {
+                    var url;
+                    url = "danhsachgiangvien.jsp";
+                    $("#noidungchinh").load(url);
+            });
+          $("#dsKhoahoc").click(function() {
+                    var url;
+                    url = "danhsachkhoahocdangmo.jsp";
                     $("#noidungchinh").load(url);
             });
       })  
