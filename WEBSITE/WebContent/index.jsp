@@ -453,18 +453,14 @@
                     url = "dangkihoc.jsp";
                     $("#noidungchinh").load(url);
                 });
-<<<<<<< HEAD
                 $('#btnmes').click(function(){
 	   				$('#Message').collapse('toggle');
 	   			});
 	   			$('#btnSent').click(function(){
 	 				alert('Đã gửi thành công');
 	   			});
-   		})
-=======
             });
-
->>>>>>> 81c9b6af1f9d7cdba1df73962958f3a87e404607
+            
    </script>
    
 </html>
