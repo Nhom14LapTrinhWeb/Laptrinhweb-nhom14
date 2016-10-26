@@ -363,36 +363,39 @@
 	</div>
    </footer>
    <!-- Tạo hộp thoại tin nhắn  -->
-   		<div class="navbar navbar-fixed-bottom" >
-	   	<div class="col-md-3 col-md-offset-9 col-sm-4 col-sm-offset-8">
-	   		<button id="btnmes" class="btn btn-primary btn-block" style="margin:0px; border-radius: 0px;">Gửi tin nhắn</button>
-	   		<div class="panel-group" style=" border-radius: 0px ">
-	   			<div class="panel panel-default panel-block" style=" border-radius: 0px">
-	   				<div id="Message" class="panel-collapse collapse">
-			   			<p class="panel-header" style="text-align: center;"><b>Nếu bạn có bất cứ thắc mắc nào cần giải đáp thì cứ việc gửi tin nhắn cho chúng tôi</b></p>
-			   			<div class="panel-body" style=" border-radius: 0px">
-				   			<form>
-				   				
-				   				<div class="form-group">
-				   					<label for="name">Tên của bạn</label> <br />
-				   					<input id="name" type="text" placeholder="Nhập vào tên bạn">
-				   				</div>
-				   				<div class="form-group">
-				   					<label for="email">Email của bạn</label><br />
-				   					<input id="email" type="email" placeholder="Nhập vào email bạn">
-				   				</div>
-				   				<div class="form-group">
-				   					<label for="sdt">SĐT của bạn</label><br />
-				   					<input id="sdt" type="text" placeholder="Nhập vào SĐT bạn">
-				   				</div>
-				   				<div class="form-group">
-				   					<label for="noidung">Nội dung</label><br />
-				   					<textarea name="noidung" id="noidung" cols="30" rows="3"></textarea><br />
-				   				</div>
-				   				<div class="form-group">
-				   					<input type="submit" class="btn btn-primary" id="btnSent" value="Gửi tin nhắn">
-				   				</div>				   				
-				   			</form>
+<<<<<<< HEAD
+   <!--jquery  -->
+	<div class="row">
+		<div class="navbar navbar-fixed-bottom">
+			<div class="col-md-3 col-md-offset-9 col-sm-4 col-sm-offset-8 col-xs-5 col-xs-offset-7">
+				<button id="btnmes" class="btn-success btn-block" style="margin:0px;">Gửi tin nhắn</button>
+		   		<div class="panel-group">
+		   			<div class="panel panel-default" style=" border: none;">
+		   				<div id="Message" class="panel-collapse collapse">
+					   		<p class="panel-header" style="text-align: center;">Nếu bạn có bất cứ thắc mắc nào cần giải đáp thì cứ việc gửi tin nhắn cho chúng tôi</p>
+				 	  		<div class="panel-body">
+						   		<form>   				
+					   				<div class="form-group">
+					   					<label for="name">Tên của bạn</label>
+					   					<input id="name" class="form-control input-sm" type="text">
+					   				</div>
+					   				<div class="form-group">
+					   					<label for="email">Email của bạn</label>
+					   					<input id="email" class="form-control input-sm" type="email">
+					   				</div>
+					   				<div class="form-group">
+										<label for="sdt">SĐT của bạn</label>
+					   					<input id="sdt" class="form-control input-sm" type="text">
+					   				</div>
+					   				<div class="form-group">
+					   					<label for="noidung">Nội dung</label>
+					   					<textarea name="noidung" id="noidung" class="form-control input-sm" cols="30" rows="3"></textarea>
+					   				</div>
+					   				<div class="form-group">
+					   					<input type="submit" class="btn btn-primary center-block" id="btnSent" value="Gửi tin nhắn">
+					   				</div>				   				
+					   			</form>
+					   		</div>
 				   		</div>
 			   		</div>
 	   			</div>
@@ -405,7 +408,7 @@
    		$(document).ready(function() {
                 $("#huongdan1").click(function() {
                     var url;
-                    url = "huongdansd.html";
+                    url = "huongdansd.jsp";
                     $("#noidungchinh").load(url);
                 });
                 $("#gopy").click(function() {
@@ -447,13 +450,12 @@
                     $("#noidungchinh").load(url);
                 });
                 $('#btnmes').click(function(){
-        	   		$('#Message').collapse('toggle');
-        	   	});
-        	   	$('#btnSent').click(function(){
-        	 		alert('Đã gửi thành công');
-        	   	});
-            });
-
+	   				$('#Message').collapse('toggle');
+	   			});
+	   			$('#btnSent').click(function(){
+	 				alert('Đã gửi thành công');
+	   			});
+   		})
    </script>
    
 </body>

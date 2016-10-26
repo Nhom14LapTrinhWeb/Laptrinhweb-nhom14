@@ -53,7 +53,6 @@ function isEmail(emailStr)
  
         return true;
 }
-
 //kiem tra tinh hop le du lieu
 $(document).ready(function(){
 	$("#sub2").click(function(){
@@ -64,63 +63,93 @@ $(document).ready(function(){
 		var hoten= $.trim($("#hoten").val());
 		var sdt= $.trim($("#sdt").val());
 		var flag1=true,flag2=true,flag3=true,flag4=true,flag5=true,flag6=true;
-		if (username == '' || username.length < 4){
+		if (username == '' || username.length < 4){			
+			$("#uname").removeClass("has-feedback has-success");
+			$("#uname").addClass("has-error");
+			$("#div1").removeClass("glyphicon glyphicon-ok form-control-feedback").css("color","red");
             $("#div1").addClass("alert alert-danger").text("Tên đăng nhập phải lớn hơn 4 ký tự");
             flag1=false;
         }
         else{
+			$("#uname").removeClass("has-error");
             $("#div1").removeClass("alert alert-danger").text("");
-            $("#div1").addClass("glyphicon glyphicon-ok").css("color","green");
+            $("#uname").addClass("has-feedback has-success");
+            $("#div1").addClass("glyphicon glyphicon-ok form-control-feedback").css("color","green");
         }
  
         // Password
         if (password1.length < 5 || password1==''){
-             $("#div2").addClass("alert alert-danger").text("Mật khẩu phải lớn hơn 4 ký tự để đảm bảo an toàn");
-             flag2=false;
+        	$("#upass").removeClass("has-feedback has-success");
+			$("#upass").addClass("has-error");
+			$("#div2").removeClass("glyphicon glyphicon-ok form-control-feedback").css("color","red");
+            $("#div2").addClass("alert alert-danger").text("Mật khẩu phải lớn hơn 4 ký tự để đảm bảo an toàn");
+            flag2=false;
         }
         else{
-        	$("#div2").removeClass("alert alert-danger").text("");;
-            $("#div2").addClass("glyphicon glyphicon-ok").css("color","green");
+        	$("#upass").removeClass("has-error");
+            $("#div2").removeClass("alert alert-danger").text("");
+            $("#upass").addClass("has-feedback has-success");
+            $("#div2").addClass("glyphicon glyphicon-ok form-control-feedback").css("color","green");
         }
  
         // Re password
         if (password1 != password2 || password2==""){
+        	$("#upass2").removeClass("has-feedback has-success");
+			$("#upass2").addClass("has-error");
+			$("#div3").removeClass("glyphicon glyphicon-ok form-control-feedback").css("color","red");
             $("#div3").addClass("alert alert-danger").text("Mật khẩu nhập lại không đúng");
             flag3=false;
         }
         else{
-        	$("#div3").removeClass("alert alert-danger").text("");;
-            $("#div3").addClass("glyphicon glyphicon-ok").css("color","green");
+        	$("#upass2").removeClass("has-error");
+            $("#div3").removeClass("alert alert-danger").text("");
+            $("#upass2").addClass("has-feedback has-success");
+            $("#div3").addClass("glyphicon glyphicon-ok form-control-feedback").css("color","green");
         }
  
         // Email
         if (!isEmail(email)){
+        	$("#uemail").removeClass("has-feedback has-success");
+			$("#uemail").addClass("has-error");
+			$("#div4").removeClass("glyphicon glyphicon-ok form-control-feedback").css("color","red");
             $("#div4").addClass("alert alert-danger").text("Email không được để trống và phải đúng định dạng");
             flag4 = false;
         }
-        else{
-        	$("#div4").removeClass("alert alert-danger").text("");;
-            $("#div4").addClass("glyphicon glyphicon-ok").css("color","green");
+        else{			
+        	$("#uemail").removeClass("has-error");
+            $("#div4").removeClass("alert alert-danger").text("");
+            $("#uemail").addClass("has-feedback has-success");
+            $("#div4").addClass("glyphicon glyphicon-ok form-control-feedback").css("color","green");
         }
         if (hoten == ''){
+        	$("#uhoten").removeClass("has-feedback has-success");
+			$("#uhoten").addClass("has-error");
+			$("#div5").removeClass("glyphicon glyphicon-ok form-control-feedback").css("color","red");
             $("#div5").addClass("alert alert-danger").text("Không được để trống họ tên");
             
             flag5 = false;
         }
         else{
-        	$("#div5").removeClass("alert alert-danger").text("");;
-            $("#div5").addClass("glyphicon glyphicon-ok").css("color","green");
+        	$("#uhoten").removeClass("has-error");
+            $("#div5").removeClass("alert alert-danger").text("");
+            $("#uhoten").addClass("has-feedback has-success");
+            $("#div5").addClass("glyphicon glyphicon-ok form-control-feedback").css("color","green");
         }
         if (sdt.length <10 || sdt.length>11){
+        	$("#usdt").removeClass("has-feedback has-success");
+			$("#usdt").addClass("has-error");
+			$("#div6").removeClass("glyphicon glyphicon-ok form-control-feedback").css("color","red");
             $("#div6").addClass("alert alert-danger").text("Số điện thoại không đúng định dạng");
             flag6 = false;
         }
         else{
-        	$("#div6").removeClass("alert alert-danger").text("");;
-            $("#div6").addClass("glyphicon glyphicon-ok").css("color","green");
+        	$("#usdt").removeClass("has-error");
+            $("#div6").removeClass("alert alert-danger").text("");
+            $("#usdt").addClass("has-feedback has-success");
+            $("#div6").addClass("glyphicon glyphicon-ok form-control-feedback").css("color","green");
         }
         //if(flag1 =false || flag2==false || flag3==false || flag4 =false || flag5==false || flag6==false)
             //return;
-	})
+	});
 
-})
+});

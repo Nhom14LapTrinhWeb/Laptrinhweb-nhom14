@@ -5,11 +5,17 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <sql:setDataSource
 	driver="com.mysql.jdbc.Driver"
+	url="jdbc:mysql://localhost/hoclaptrinhonline"
+	user="root"
+	password="phihung123789"/>
+<sql:query var="items" sql="SELECT * FROM taikhoan"/>
+=======
 	url="jdbc:mysql://localhost/cuoiki"
 	user="root"
 	password="phihung123789"/>
 <sql:query var="items" sql="SELECT * FROM hocvien"/>
 <sql:query var="items1" sql="SELECT * FROM giangvien"/>
+>>>>>>> 467f78f6c2c9eb143a32858ad58f2e78530105d4
 <sql:query var="items2" sql="SELECT * FROM khoahoc"/>
 <sql:query var="items3" sql="SELECT * FROM thamgia"/>
 <sql:query var="items4" sql="SELECT * FROM ngonngu"/>
@@ -43,23 +49,6 @@
 		</c:forEach>
 	</table>
 	
-	
-	<c:out value="Database Giảng viên"></c:out>
-	<table border="1">
-		<tr>
-			<c:forEach items="${items1.columnNames}" var="name">	
-			<th>${name }</th>						                
-			</c:forEach>
-		</tr>
-		<c:forEach items="${items1.rowsByIndex}" var="row">			
-			<tr>
-				<c:forEach items="${row}" var="col">			
-				<td>${col}</td>			                     
-				</c:forEach>							
-			</tr>
-			
-		</c:forEach>
-	</table>
 	<c:out value="Database Khóa học"></c:out>
 	<table border="1">
 		<tr>
