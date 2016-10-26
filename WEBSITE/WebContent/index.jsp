@@ -197,7 +197,7 @@
 				</ul>
 				
     		</div>
-    		<div class="content-right col-md-9 col-sm-6 col-xs-6">
+    		<div class="content-right col-md-9 col-sm-6 col-xs-6" id="Danhsachkhoahoc">
     			<div class="row">
 		            <div class="col-md-9">
 		                <h1>Danh sách các khóa học</h1>
