@@ -33,7 +33,7 @@
 </head>
 <body>
 	<div class="container">
-     				<div class="col-md-5">
+     				<div class="col-md-5 col-md-offset-2">
      					<div class="row">
        					<h2 class="head-form" align="center">Đăng ký mở khóa học mới</h2>
        					<form class="register">
@@ -73,23 +73,6 @@
         				</button>
       					</div>
       				</div>
-      				<div class="col-md-4">
-      					<div class="row">
-      					<div class="content-left col-md-12 col-sm-6 col-xs-6">
-    					<ul class="nav nav-pills nav-stacked">
-      					<li><h3 align="center">Video demo khóa học</h3></li>
-      					<li><iframe width="560" height="315" src="https://www.youtube.com/embed/3HdsaGhQdf0" frameborder="0" allowfullscreen></iframe></li>
-      					<li><input type="file" id="filevideo" class="button" align="center"></li>
-      					<li><h3 align="center"> Hình ảnh đề mô khóa học</h3></li>
-      					<li><input type="file" id="filehinhanh" class="button" align="center"></li>
-      					<li><h3 align="center">File kế hoạch giảng dạy</h3></li>
-      					<li><input type="file" id="filekehoach" class="button" align="center" ></li>
-      					<li><h3 align="center">Giáo trình giảng dạy</h3></li>
-      					<li><input type="file" id="filegiaotrinh" class="button" align="center"></li>
-      					</div>
-      					</div>
-      				</div>
-      			
     		</div>
     	</div>
 </body>
