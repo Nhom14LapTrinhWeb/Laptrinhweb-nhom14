@@ -7,9 +7,8 @@
 	url="jdbc:mysql://localhost/hoclaptrinhonline"
 	user="root"
 	password="phihung123789"/>
-<sql:query var="items" sql="SELECT * FROM taikhoan WHERE Tentaikhoan='abc'"/>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<sql:query var="items" sql="SELECT Tentaikhoan,Hoten,Ngaysinh,Diachi,Email,SDT,Tenvaitro from taikhoan,Vaitro WHERE Tentaikhoan='abc' AND Vaitro.Mavaitro = taikhoan.Mavaitro"/>
+<html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,37 +34,39 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading" style="text-align:center;">Thông tin tài khoản</div>
 				<table class="table table-bordered">
+				<c:forEach items="${items.rows}" var="row">
 					<tr>
 						<th>Tên tài khoản</th>
-						<td></td>
+						<td>${row.Tentaikhoan}</td>
 					</tr>
 					<tr>
 						<th>Họ và tên</th>
-						<td></td>
+						<td>${row.Hoten}</td>
 					</tr>
 					<tr>
 						<th>Ngày sinh</th>
-						<td></td>
+						<td>${row.Ngaysinh}</td>
 					</tr>
 					<tr>
 						<th>Địa chỉ</th>
-						<td></td>
+						<td>${row.Diachi}</td>
 					</tr>
 					<tr>
 						<th>Email</th>
-						<td></td>
+						<td>${row.Email}</td>
 					</tr>
 					<tr>
 						<th>Điện thoại</th>
-						<td></td>
+						<td>${row.SDT}</td>
 					</tr>
 					<tr>
 						<th>Vai trò</th>
-						<td></td>
+						<td>${row.Tenvaitro}</td>
 					</tr>
+				</c:forEach>
 				</table>
-				<button class="btn btn-warning pull-right">Chỉnh sửa thông tin</button>
-				<button class="btn btn-warning pull-right">Đổi mật khẩu</button>
+				<button class="btn btn-warning pull-right" onclick="window.location.href='thaydoithongtin.jsp'">Chỉnh sửa thông tin</button>
+				<button class="btn btn-warning pull-right" onclick="window.location.href='doimatkhau.jsp'">Đổi mật khẩu</button>
 		</div>
 	</div>
 </body>

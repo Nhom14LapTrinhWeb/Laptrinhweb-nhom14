@@ -29,7 +29,6 @@
 		
 </head>
 <body>	
-	</div>
 	<!-- Tao form hoi dang ki -->
   <div class="col-md-12">
   

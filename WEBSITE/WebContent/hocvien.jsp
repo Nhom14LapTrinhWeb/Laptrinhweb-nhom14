@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta charset="UTF-8">
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- js -->
@@ -15,15 +15,16 @@
 	<script src="jquery/script.js"></script> 
 	<script src="jquery/main.js"></script>
 	<script type="text/javascript" src="jquery/angular.min.js"></script>
-	<script type="text/javascript" src="ajax/ajax.js"></script>
 	<title>CODE.VN</title>
+
     <link rel="shortcut icon" href="ico/favicon.png">
     <!-- css -->
     <link rel="stylesheet" href="css/main.css">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">	    
 </head>
 <body>
+	<!-- Navbar menu -->
 	<div class="row"> 
 	    <nav class="navbar navbar-default">
 	      <div class="container">
@@ -42,7 +43,6 @@
 	            <ul class="nav navbar-nav">
 	              <li><a href="#" id="mienphi">Thông báo mới</a></li>
 	              <li><a href="#" id="dangkikhoahoc">Đăng kí khóa học</a></li>
-	              <li><a href="#" id="guitinnhan">Gửi tin nhắn</a></li>
 	            </ul>
 	            <ul class="nav navbar-nav navbar-right">
 		           <li>
@@ -65,20 +65,23 @@
 	<!-- End navbar -->
 	<!-- menu list chức năng -->
 	<div class="container">
-    	<div class="content col-md-12 ">
-    		<div class="content-left col-md-3 col-sm-6 col-xs-6">
+    	<div class="row">
+    		<div class="col-md-3 content-left">
     			<ul class="nav nav-pills nav-stacked">
 				  <li class="active"><a href="#"><b>Trang của bạn</b></a></li>
-				  <li><a href="#"><b>Thông tin cá nhân</b></a></li>
-				  <li><a href="#"><b>Đăng ký khóa học</b></a></li>
-				  <li><a href="#"><b>Khóa học của tôi</b></a></li>
-				  <li><a href="#"><b>Xem điểm</b></a></li>
-				  <li><a href="#"><b>Xem bài tập</b></a></li>
-				  <li><a href="#"><b>Thoát</b></a></li>
+				  <li><a id="thongtin" href="#"><b>Thông tin cá nhân</b></a></li>
+				  <li><a id="dangky" href="#"><b>Đăng ký khóa học</b></a></li>
+				  <li><a id="khoahoc" href="#"><b>Khóa học của tôi</b></a></li>
+				  <li><a id="xemdiem" href="#"><b>Xem điểm</b></a></li>
+				  <li><a id="baitap" href="#"><b>Xem bài tập</b></a></li>
+				  <li><a id="out" href="#"><b>Thoát</b></a></li>
 				</ul>
     		</div>
-    	</div>
-    </div>
+	    	<div class=" content-right col-md-9">
+	    		<div id="noidung"></div>
+	    	</div>
+    	</div>			
+	</div>
 	<!-- end menu list -->
 	<!-- footer -->
 	<footer>
@@ -98,4 +101,28 @@
 	   </div>
    </footer>
 </body>
+<script>
+$(document).ready(function(){
+	$('#thongtin').click(function(){
+		var url;
+		url = "thongtincanhan.jsp";
+		$("#noidung").load(url);
+	});
+	$('#xemdiem').click(function(){
+		var url;
+		url = "Xemdiem.jsp";
+		$("#noidung").load(url);
+	});
+	$('#khoahoc').click(function(){
+		var url;
+		url = "khoahoccuatoi.jsp";
+		$("#noidung").load(url);
+	});
+	$('#baitap').click(function(){
+		var url;
+		url = "baitap.jsp";
+		$("#noidung").load(url);
+	});
+});
+</script>
 </html>
