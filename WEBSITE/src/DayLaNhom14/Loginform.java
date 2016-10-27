@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Loginform
@@ -41,12 +42,16 @@ public class Loginform extends HttpServlet {
 		String user = request.getParameter("inputUserName");
 		String pass =request.getParameter("inputPassword");
 		String quyen=request.getParameter("quyen");
+		HttpSession session = null;
+		User objUser = null;
 		if(quyen.equals("hocvien"))
 		{
 			if(ConnectDB.LoginHV(user, pass))
 			{
-				/*ServletRequest session = null;
-				session.setAttribute("TentaikhoanHV",user);*/
+				objUser = new User();
+				objUser.setUsername(user);
+				session = request.getSession();
+				session.setAttribute("userLogin", objUser);
 				response.sendRedirect("hocvien.jsp");
 			}
 			else
@@ -59,8 +64,10 @@ public class Loginform extends HttpServlet {
 		{
 			if(ConnectDB.LoginGV(user, pass))
 			{
-				/*ServletRequest session = null;
-				session.setAttribute("TentaikhoanHV",user);*/
+				objUser = new User();
+				objUser.setUsername(user);
+				session = request.getSession();
+				session.setAttribute("userLogin", objUser);
 				response.sendRedirect("quantrivien.jsp");
 			}
 			else

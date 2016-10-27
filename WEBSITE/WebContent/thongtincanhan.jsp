@@ -1,13 +1,17 @@
+<%@page import="DayLaNhom14.User"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
+<%	User objUser = (User)session.getAttribute("userLogin"); 
+	String query = "SELECT tentaikhoan,hoten,ngaysinh,diachi,email,sdt,tenvaitro from taikhoan,vaitro where tentaikhoan='"+objUser.getUsername()+"' and taikhoan.mavaitro=vaitro.mavaitro";
+%> 
 <sql:setDataSource
 	driver="com.mysql.jdbc.Driver"
 	url="jdbc:mysql://localhost/hoclaptrinhonline"
 	user="root"
 	password="phihung123789"/>
-<sql:query var="items" sql="SELECT Tentaikhoan,Hoten,Ngaysinh,Diachi,Email,SDT,Tenvaitro from taikhoan,Vaitro WHERE Tentaikhoan='abc' AND Vaitro.Mavaitro = taikhoan.Mavaitro"/>
+<sql:query var="items" sql="<%= query %>"/>
 <html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
 	<meta charset="UTF-8">
