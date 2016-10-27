@@ -1,5 +1,10 @@
+<%@page import="DayLaNhom14.User"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%
+	User objUser = (User)session.getAttribute("userLogin");
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -48,7 +53,7 @@
 		           <li>
 		           		<p class="pull-right" style="padding: 10px;">
 		              		<span class="glyphicon glyphicon-user"></span>
-		              		Tên học viên
+		              		<%= objUser.getUsername() %>
 	              		</p>
 	              </li>
 	              <li><button type="button" class="btn btn-info btn-md pull-right">
@@ -74,7 +79,11 @@
 				  <li><a id="khoahoc" href="#"><b>Khóa học của tôi</b></a></li>
 				  <li><a id="xemdiem" href="#"><b>Xem điểm</b></a></li>
 				  <li><a id="baitap" href="#"><b>Xem bài tập</b></a></li>
+<<<<<<< HEAD
 				  <li><a id="out" href="#"><b>Thoát</b></a></li>
+=======
+				  <li><a id="out" href="index.jsp"><b>Thoát</b></a></li>
+>>>>>>> 7582d3310b2c92be86a39a98fc076180097f5ce0
 				</ul>
     		</div>
 	    	<div class=" content-right col-md-9">

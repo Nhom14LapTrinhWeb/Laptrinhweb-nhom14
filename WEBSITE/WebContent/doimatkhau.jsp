@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
 <%	User objUser = (User)session.getAttribute("userLogin"); 
-	String query = "SELECT Mabaitap,tenbaitap,tenkhoahoc,Hannop,noidung FROM baitap,khoahoc,thamgia WHERE tentaikhoan='"+objUser.getUsername()+"' and thamgia.makhoahoc=khoahoc.makhoahoc and khoahoc.makhoahoc = baitap.makhoahoc";
+	String query = "SELECT tentaikhoan WHERE tentaikhoan='"+objUser.getUsername()+"' and taikhoan.mavaitro = vaitro.mavaitro";
 %> 
 <sql:setDataSource
 	driver="com.mysql.jdbc.Driver"
@@ -35,38 +35,35 @@
 	<link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="row">
-	<div class="panel panel-primary">
-		<div class="panel-heading" style="text-align: center;">Xem các bài tập được giao</div>
-			<table class="table" border="1">
-				<thead>
-					<tr>
-						<th>STT</th>
-						<th>Mã bài tập</th>
-						<th>Tên bài tập</th>
-						<th>Tên khóa học</th>
-						<th>Thời hạn nộp</th>
-						<th>Link bài tập</th>
-						<th>Làm bài tập</th>
-					</tr>
-				</thead>
-				<tbody>
-					<%! int i=0; %>
-					<c:forEach items="${items.rows}" var="row">	
-						<tr>
-							<td><%= i+1 %></td>
-							<td>${row.mabaitap}</td>
-							<td>${row.tenbaitap}</td>	
-							<td>${row.tenkhoahoc}</td>	
-							<td>${row.hannop}</td>	
-							<td><a href="${row.noidung}">Chi tiết</a></td>	
-							<td><a href="#">Làm bài</a></td>	
-						</tr>
-						<% i++; %>
-					</c:forEach>
-					<% i=0; %>
-				</tbody>
-			</table>								
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="panel panel-primary">
+				<div class="panel-heading" style="text-align: center;">Thay đổi mật khẩu</div>
+				<form action="" class="register">
+					<div class="form-group" style="text-align:center;">
+						<label for="tentaikhoan">Tên tài khoản</label>
+						<c:forEach items="${items.rows}" var="row">
+							<input id="tentaikhoan" class="form-control type="text" disabled="" value="${row.Tentaikhoan}">
+						</c:forEach>
+					</div>
+					<div class="form-group" style="text-align:center;" >
+						<label for="matkhaucu">Mật khẩu cũ</label>
+						<input type="password" id="matkhaucu" class="form-control">
+					</div>
+					<div class="form-group" style="text-align:center;">
+						<label for="matkhaumoi1">Mật khẩu mới</label>
+						<input type="password" id="matkhaumoi1" class="form-control">
+					</div>
+					<div class="form-group" style="text-align:center;">
+						<label for="matkhaumoi2">Nhập lại mật khẩu mới</label>
+						<input id="matkhaumoi2" class="form-control" type="password">
+					</div>
+				</form>			
+			</div>
+			<button class="btn btn-primary pull-right">Hủy bỏ</button>
+			<button id="doimatkhau" class="btn btn-primary pull-right" type="submit">Xác nhận</button>
+		</div>
 	</div>
 </div>
 </body>

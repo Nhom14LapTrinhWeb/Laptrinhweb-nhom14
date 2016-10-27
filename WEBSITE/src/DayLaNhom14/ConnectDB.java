@@ -1,11 +1,11 @@
 package DayLaNhom14;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 public class ConnectDB {
 	public static boolean LoginHV( String username,String pass)
 	{
@@ -19,7 +19,6 @@ public class ConnectDB {
 		Statement stm =null;
 		ResultSet rs = null;
 		boolean kt=false;
-		
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost/hoclaptrinhonline","root","phihung123789");
 			stm=conn.createStatement();
@@ -51,7 +50,7 @@ public class ConnectDB {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost/hoclaptrinhonline","root","phihung123789");
 			stm=conn.createStatement();
 			rs=stm.executeQuery("SELECT * FROM taikhoan WHERE Tentaikhoan ='"+username+"' AND Matkhau='"+pass+
-					"'AND  Mavaitro='VT02'");
+					"'AND Mavaitro='VT02'");
 			kt = rs.next();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

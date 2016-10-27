@@ -40,16 +40,23 @@
 				<th>Email</th>
 				<th>Số điện thoại</th>	
 				<th>Mật khẩu</th>		
-				<th>Mã Chức vụ</th>		                
+				<th>Mã Chức vụ</th>
+				<th>Sửa đổi</th>
+				<th>Xóa</th>		                
 			</tr>
-			<c:forEach items="${items.rowsByIndex}" var="row">			
+			<%! int i=0; %>
+			<c:forEach items="${items.rowsByIndex}" var="row">	
+
 				<tr>
 					<c:forEach items="${row}" var="col">			
 					<td>${col}</td>			                     
-					</c:forEach>							
+					</c:forEach>
+					<td><button id="<%= i %>">Sửa</button></td>
+					<td><button >Xóa</button></td>							
 				</tr>
-				
+				<% i++; %>
 			</c:forEach>
+			<% i=0; %>
 		</table>
 </div>
 </body>
