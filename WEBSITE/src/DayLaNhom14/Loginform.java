@@ -52,6 +52,19 @@ public class Loginform extends HttpServlet {
 			{
 				/*ServletRequest session = null;
 				session.setAttribute("TentaikhoanHV",user);*/
+				response.sendRedirect("dangkimokhoahoc.jsp");
+			}
+			else
+			{
+				response.sendRedirect("index.jsp");
+			}
+		}
+		if(quyen.equals("admin"))
+		{
+			if(ConnectDB.LoginAd(user, pass))
+			{
+				/*ServletRequest session = null;
+				session.setAttribute("TentaikhoanHV",user);*/
 				response.sendRedirect("quantrivien.jsp");
 			}
 			else

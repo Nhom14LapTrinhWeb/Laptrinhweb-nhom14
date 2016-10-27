@@ -30,7 +30,7 @@
 </head>
 <body>
   	<div class="panel panel-primary" style="text-align: center;">
-	    <div class="panel-heading" >Danh sách các Giảng viên của website</div>
+	    <div class="panel-heading" >Danh sách các Khóa học của website</div>
 		<table border="1" class="table">
 			<tr>
 				<th>Mã khóa học</th>	

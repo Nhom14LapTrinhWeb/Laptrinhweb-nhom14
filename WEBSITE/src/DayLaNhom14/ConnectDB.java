@@ -59,4 +59,29 @@ public class ConnectDB {
 		}
 		return kt;
 	}
+	public static boolean LoginAd( String username,String pass)
+	{
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Connection conn=null;
+		Statement stm =null;
+		ResultSet rs = null;
+		boolean kt=false;
+		
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/hoclaptrinhonline","root","phihung123789");
+			stm=conn.createStatement();
+			rs=stm.executeQuery("SELECT * FROM taikhoan WHERE Tentaikhoan ='"+username+"' AND Matkhau='"+pass+
+					"'AND  Mavaitro='VT03'");
+			kt = rs.next();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return kt;
+	}
 }

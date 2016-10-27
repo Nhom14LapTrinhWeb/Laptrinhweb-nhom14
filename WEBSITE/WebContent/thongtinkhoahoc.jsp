@@ -2,12 +2,12 @@
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
-<sql:setDataSource
+<sql:setDataSource var="snapshot"
 	driver="com.mysql.jdbc.Driver"
 	url="jdbc:mysql://localhost/hoclaptrinhonline"
 	user="root"
 	password="phihung123789"/>
-<sql:query var="items" sql="SELECT Hinhanh,Tenkhoahoc,Tengiangvien,Lichhoc,Thoigianmo FROM khoahoc"/>
+<sql:query dataSource="${snapshot}" var="items" sql="SELECT Hinhanh,Tenkhoahoc,Tengiangvien,Lichhoc,Thoigianmo FROM khoahoc"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,8 +29,10 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+	
+	
   				<div class="row">
-		            <div class="col-md-9">
+		            <div class="col-md-9 col-sm-6 col-xs-6">
 		                <h1>Danh sách các khóa học</h1>
 		            </div>
 		            <div class="col-md-3">
@@ -48,20 +50,56 @@
 		            </div>
 				</div>
 			<div class="row">
-				<c:forEach items="${items.rowsByIndex}" var="row">	
+				<c:forEach items="${items.rows}" var="row">	
 
-				<div class="col-lg-4 col-sm-6 images">
-					<a href="#" class="thumbnail" id="chitietkhoahoc1">
-						<c:forEach items="${row}" var="col">
-							<img src="${col}">
-									                     
-						</c:forEach>
-						
-
+				<div class="col-lg-4 col-sm-6 images" style="text-align: center;">
+					<a href="#" class="thumbnail">
+						<img src="${row.Hinhanh}">
+						<h3><b><c:out value="${row.Tenkhoahoc}" /></b></h3><br />
+						<b>Tên Giảng viên:<c:out value="${row.Tengiangvien}" /></b><br />
+						<b>Khai giảng:<c:out value="${row.Thoigianmo}" /></b><br />
+						<b>Lịch học:<c:out value="${row.Lichhoc}" /></b><br />
 					</a>
 				</div>										
 				</c:forEach>
 		            
 			</div>
+			<div class="row">
+			<nav>
+				  <ul class="pagination">
+				    <li>
+				      <a href="#" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				      </a>
+				    </li>
+				    <li><a href="#">1</a></li>
+				    <li><a href="#">2</a></li>
+				    <li><a href="#">3</a></li>
+				    <li><a href="#">4</a></li>
+				    <li><a href="#">5</a></li>
+				    <li><a href="#">6</a></li>
+				    <li><a href="#">7</a></li>
+				    <li><a href="#">8</a></li>
+				    <li><a href="#">9</a></li>
+				    <li><a href="#">10</a></li>
+				    <li>
+				      <a href="#" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>
+				  </ul>
+				</nav>
+			</div>
+
+
+<script type="text/javascript">
+   		$(document).ready(function() {
+                
+                $("#sapxep").click(function(){
+                	$("#dropdown-menu").slideToggle("100");
+                })
+            });
+            
+   </script>
 </body>
 </html>

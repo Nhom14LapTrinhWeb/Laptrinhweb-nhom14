@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
+<sql:setDataSource var="snapshot"
+	driver="com.mysql.jdbc.Driver"
+	url="jdbc:mysql://localhost/hoclaptrinhonline"
+	user="root"
+	password="phihung123789"/>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -184,12 +192,12 @@
 	<div id="noidungchinh">
     <!-- body -->
     <div class="container" style="background-color: white; padding-top: 5px;">
-    	<div class="content col-md-12 ">
-    		<div class="content-left col-md-3 col-sm-6 col-xs-6">
+    <div class="row">
+    		<div class="col-md-3 col-sm-6 col-xs-6">
     			<ul class="nav nav-pills nav-stacked">
 				  <li class="active"><a name="xem"><b>Danh sách khóa học</b></a></li>
-				  <li><a href="#"><b>Lập trình di động</b></a></li>
-				  <li><a href="#"><b>Lập trình Game</b></a></li>
+				  <li><a href="#" id="laptrinhcoban"><b>Lập trình Cơ bản</b></a></li>
+				  <li><a href="#"><b>Lập trình Lập trình Di động</b></a></li>
 				  <li><a href="#"><b>Lập trình phần mềm</b></a></li>
 				  <li><a href="#"><b>Lập trình Website</b></a></li>
 				  <li><a href="#"><b>CEO</b></a></li>
@@ -197,142 +205,10 @@
 				</ul>
 				
     		</div>
-    		<div class="content-right col-md-9 col-sm-6 col-xs-6" id="Danhsachkhoahoc">
-    			<div class="row">
-		            <div class="col-md-9">
-		                <h1>Danh sách các khóa học</h1>
-		            </div>
-		            <div class="col-md-3">
-		            	
-			                	<button class="btn btn-primary btn-md" id="sapxep" >
-			                	Sắp xếp 
-			                	<span class="caret" style="margin-left:5px;"></span>
-			                	</button>
-			                	<ul class="dropdown-menu" id="dropdown-menu">
-			                		<li><a href="#">Mới nhất</a></li>
-			                		<li><a href="#">Miễn phí</a></li>
-			                		<li><a href="#">Khuyến mãi</a></li>
-			                	</ul>
+    		<div class="col-md-9 col-sm-6 col-xs-6" id="Danhsachkhoahoc">
 
-		            </div>            
-		            <div class="col-lg-4 col-sm-6 images">
-		                <a href="#" class="thumbnail" id="chitietkhoahoc1">
-		                    
-		                    <img src="images/1.png">
-		                    <h3><b>Lập trình C# </b></h3>
-		                    	Giảng viên:Phi Hổ<br />
-		                    	Khai Giảng:21/12/2016<br />
-		                    	Thời gian học:3 tháng<br />
-		                    	Lịch học:sáng 17h thứ T7,CN
-		                </a>
-		            </div>
-		            <div class="col-lg-4 col-sm-6 images">
-		                <a href="images/9.png" class="thumbnail">
-		                    
-		                    <img src="images/9.png">
-		                    <h3><b>Lập trình C++ </b></h3>
-		                    	Giảng viên:Phi Hùng<br />
-		                    	Khai Giảng:20/01/2017<br />
-		                    	Thời gian học:3 tháng<br />
-		                    	Lịch học:sáng 7h thứ 2,4,6
-		                    
-		                   
-		                </a>
-		            </div>
-		            <div class="col-lg-4 col-sm-6 images">
-		                <a href="images/3.png" class="thumbnail">
-		                    
-		                    <img src="images/3.png">
-		                    <h3><b>Lập trình PHP </b></h3>
-		                    	Giảng viên:Hoàng long<br />
-		                    	Khai Giảng:25/01/2017<br />
-		                    	Thời gian học:6 tháng<br />
-		                    	Lịch học:sáng 7h thứ 2,4,6
-		                </a>
-		            </div>
-		            <div class="col-lg-4 col-sm-6 images">
-		                <a href="images/4.png" class="thumbnail">
-		                    
-		                    <img src="images/4.png">
-		                    <h3><b>Lập trình ASP.NET </b></h3>
-		                    	Giảng viên:Kim Hoa<br />
-		                    	Khai Giảng:22/01/2017<br />
-		                    	Thời gian học:6 tháng<br />
-		                    	Lịch học:sáng 18h thứ 2,4,6
-		                </a>
-		            </div>
-		            <div class="col-lg-4 col-sm-6 images">
-		                <a href="images/6.jpg" class="thumbnail">
-		                    
-		                    <img src="images/6.jpg">
-		                    <h3><b>Lập trình Android và IOS </b></h3>
-		                    	Giảng viên:Nguyễn Tuân<br />
-		                    	Khai Giảng:29/01/2017<br />
-		                    	Thời gian học:6 tháng<br />
-		                    	Lịch học:sáng 7h thứ 3,5,7
-		                </a>
-		            </div>
-		            <div class="col-lg-4 col-sm-6 images">
-		                <a href="images/7.jpg" class="thumbnail">
-		                    
-		                    <img src="images/7.jpg">
-		                    <h3><b>Lập trình Mạng máy tính </b></h3>
-		                    	Giảng viên:Phi Hùng<br />
-		                    	Khai Giảng:20/02/2017<br />
-		                    	Thời gian học:3 tháng<br />
-		                    	Lịch học:sáng 19h thứ 3,5,7
-		                </a>
-		            </div>
-		            <div class="col-lg-4 col-sm-6  images">
-		                <a href="images/8.jpg" class="thumbnail">
-		                    
-		                    <img src="images/8.jpg">
-		                    <h3><b>CEO </b></h3>
-		                    	Giảng viên:Thiên Bảo<br />
-		                    	Khai Giảng:28/01/2017<br />
-		                    	Thời gian học:3 tháng<br />
-		                    	Lịch học:sáng 7h thứ 2,4,6
-		                </a>
-		            </div>
-		            <div class="col-lg-4 col-sm-6 images">
-		                <a href="#" class="thumbnail" id="chitietkhoahoc2">
-		                    
-		                    <img src="images/2.png">
-		                    <h3><b>Lập trình JAVA </b></h3>
-		                    	Giảng viên:Nguyễn Hưng<br />
-		                    	Khai Giảng:18/02/2017<br />
-		                    	Thời gian học:3 tháng<br />
-		                    	Lịch học:sáng 14h thứ 2,4,6
-		                </a>
-		            </div>
-				</div>
-				<nav>
-				  <ul class="pagination">
-				    <li>
-				      <a href="#" aria-label="Previous">
-				        <span aria-hidden="true">&laquo;</span>
-				      </a>
-				    </li>
-				    <li><a href="#">1</a></li>
-				    <li><a href="#">2</a></li>
-				    <li><a href="#">3</a></li>
-				    <li><a href="#">4</a></li>
-				    <li><a href="#">5</a></li>
-				    <li><a href="#">6</a></li>
-				    <li><a href="#">7</a></li>
-				    <li><a href="#">8</a></li>
-				    <li><a href="#">9</a></li>
-				    <li><a href="#">10</a></li>
-				    <li>
-				      <a href="#" aria-label="Next">
-				        <span aria-hidden="true">&raquo;</span>
-				      </a>
-				    </li>
-				  </ul>
-				</nav>
     		</div>
-
-    	</div>
+    </div>
     </div>
    </div>
     <!-- end body -->
@@ -360,13 +236,10 @@
 			</div> 	
 		</div>
 	</div>
-<<<<<<< HEAD
+
    </footer>
    <!-- Tạo hộp thoại tin nhắn  -->
-<<<<<<< HEAD
    <!--jquery  -->
-=======
->>>>>>> 81c9b6af1f9d7cdba1df73962958f3a87e404607
 	<div class="row">
 		<div class="navbar navbar-fixed-bottom">
 			<div class="col-md-3 col-md-offset-9 col-sm-4 col-sm-offset-8 col-xs-5 col-xs-offset-7">
@@ -405,11 +278,16 @@
 	  </div>
 	</div>
  </footer >
+ <sql:query dataSource="${snapshot}" var="laptrinhcoban" sql="SELECT Hinhanh,Tenkhoahoc,Tengiangvien,Lichhoc,Thoigianmo FROM khoahoc where Loaikhoahoc='LKH01'"/>
    <script type="text/javascript">
    		$("#btnmes").click(function(){
    			$("#Message").collapse('toggle');
    		});
+
    		$(document).ready(function() {
+   				var url;
+                    url = "thongtinkhoahoc.jsp";
+                    $("#Danhsachkhoahoc").load(url);
                 $("#huongdan1").click(function() {
                     var url;
                     url = "huongdansd.jsp";

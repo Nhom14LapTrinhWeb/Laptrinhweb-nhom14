@@ -29,63 +29,64 @@
         <h2 class="head-form" style="text-align: center;">Đăng ký tài khoản</h2>
         <form class="register">
           <div id="uname" class="form-group">
-            <input type="text" id="id" class="form-control " ng-model="username" placeholder="Tên đăng nhập">
+            <input type="text" id="username" name="username" class="form-control " ng-model="username" placeholder="Tên đăng nhập">
             <div id="div1"></div>
           </div>
           <div id="upass" class="form-group">
-            <input type="password" id="password" class="form-control" placeholder="Mật khẩu">
+            <input type="password" id="password" name="password" class="form-control" placeholder="Mật khẩu">
             
            <div id="div2"></div>
           </div>
           <div id="upass2" class="form-group">
-            <input type="password" id="password2" class="form-control" placeholder="Nhập lại mật khẩu">
+            <input type="password" id="password2" name="password2" class="form-control" placeholder="Nhập lại mật khẩu">
             <div id="div3"></div>
           </div>
           <div id="uemail" class="form-group">
-            <input type="email" id="email" class="form-control" placeholder="Email">           
+            <input type="email" id="email" name="email" class="form-control" placeholder="Email">           
             <div id="div4"></div>
           </div>
           <div id="uhoten" class="form-group">
-            <input type="text" id="hoten" class="form-control" placeholder="Họ và tên">
+            <input type="text" id="hoten" name="hoten" class="form-control" placeholder="Họ và tên">
              
              <div id="div5"></div>
           </div>
           <div id="usdt" class="form-group">
-            <input type="text" id="sdt" class="form-control" placeholder="SĐT">
+            <input type="text" id="sdt" name="sdt" class="form-control" placeholder="SĐT">
             
              <div id="div6"></div>
           </div>
-        </form>
-        <button type="button" id="sub2" class="btn btn-success btn-lg center-block">
+          <button type="submit" id="sub2" class="btn btn-success btn-lg center-block">
           Đăng ký 
         </button>
+        </form>
+        
       </div>
       <div class="col-md-5 col-md-offset-2">
         <div class="panel panel-default"><h2 class="panel-header" style="text-align: center;">Bạn đã có tài khoản</h2>
           <div class="panel-body">
             
-               <form>
-                <div class="form-group">
-                    <input type="radio" name="kieu" checked="true">Học viên
-                    <input type="radio" name="kieu">Giảng viên
-                    <input type="radio" name="kieu">Quản trị viên
-                </div>
-                <div class="form-group">
-                  <label for="inputUserName">Tên đăng nhập</label>
-                  <input type="text" class="form-control" placeholder="Tên đăng nhập" id="inputUserName" name="inputUserName" >
-                </div>
-                <div class="form-group">
-                  <label for="inputPassword">Mật khẩu</label>
-                  <input type="password" class="form-control" placeholder="Mật khẩu" id="inputPassword" name="inputPassword">
-                </div>
-                <div class="form-group">
-                  <input type="checkbox"> Ghi nhớ tài khoản
-                </div>
-                <a href="#">Quên mật khẩu?</a>
-                 <button type="submit" class="btn btn-warning btn-lg pull-right" method="post" action="Loginform">
-                     Đăng nhập
-                 </button>
-        </form>
+               <form action="Loginform" method="post">
+	                <div class="form-group">
+	                      <input type="radio" name="quyen" value="hocvien" checked="true">Học viên
+	                      <input type="radio" name="quyen" value="giangvien">Giảng viên
+	                      <input type="radio" name="quyen" value="admin">Quản trị viên
+	                </div>
+	                <div class="form-group">
+	                    <label for="inputUserName">Tên đăng nhập</label>
+	                      <input type="text" class="form-control input-lg" placeholder="Username" id="inputUserName" name="inputUserName">
+	                    </div>
+	                <div class="form-group">
+	                      <label for="inputPassword">Mật khẩu</label>
+	                      <input type="password" class="form-control input-lg" placeholder="Password" id="inputPassword" name="inputPassword">
+	                </div>
+	                <div class="form-group">
+	                    <input type="checkbox">Ghi nhớ tài khoản
+	                </div>
+	                <a href="#">Quên mật khẩu?</a>
+	                 <button type="submit" class="btn btn-warning btn-lg pull-right">
+	                     Đăng nhập
+	                 </button>
+        		</form>
           </div>
            
         </div>
