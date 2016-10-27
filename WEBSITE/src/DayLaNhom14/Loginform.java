@@ -83,6 +83,7 @@ public class Loginform extends HttpServlet {
 				objUser.setUsername(user);
 				session = request.getSession();
 				session.setAttribute("userLogin", objUser);
+
 				response.sendRedirect("quantrivien.jsp");
 			}
 			else

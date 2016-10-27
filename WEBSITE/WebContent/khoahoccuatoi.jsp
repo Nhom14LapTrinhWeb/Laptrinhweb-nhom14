@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>  
 <%	User objUser = (User)session.getAttribute("userLogin"); 
-	String query = "SELECT Khoahoc.Makhoahoc,Tenkhoahoc FROM Khoahoc,Thamgia WHERE Tentaikhoan='"+objUser.getUsername()+"'";
+	String query = "SELECT Khoahoc.Makhoahoc,khoahoc.Tenkhoahoc FROM Khoahoc,Thamgia WHERE Thamgia.Tentaikhoan='"+objUser.getUsername()+"' and thamgia.makhoahoc=khoahoc.makhoahoc";
 %>  
 <sql:setDataSource
 	driver="com.mysql.jdbc.Driver"

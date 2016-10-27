@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
 <%	User objUser = (User)session.getAttribute("userLogin"); 
-	String query = "SELECT tentaikhoan WHERE tentaikhoan='"+objUser.getUsername()+"' and taikhoan.mavaitro = vaitro.mavaitro";
+	String query = "SELECT tentaikhoan from taikhoan WHERE tentaikhoan='"+objUser.getUsername()+"'";
 %> 
 <sql:setDataSource
 	driver="com.mysql.jdbc.Driver"
@@ -39,7 +39,7 @@
 	<div class="row">
 		<div class="col-md-4 col-md-offset-4">
 			<div class="panel panel-primary">
-				<div class="panel-heading" style="text-align: center;">Thay đổi mật khẩu</div>
+				<div class="panel-heading" style="text-align: center;">Thay đổi thông tin</div>
 				<form action="" class="register">
 					<div class="form-group" style="text-align:center;">
 						<label for="tentaikhoan">Tên tài khoản</label>
