@@ -53,7 +53,7 @@
 				<c:forEach items="${items.rows}" var="row">	
 
 				<div class="col-lg-4 col-sm-6 images" style="text-align: center;">
-					<a href="#" class="thumbnail">
+					<a href="#" class="thumbnail" style="text-align:left;">
 						<img src="${row.Hinhanh}">
 						<h3><b><c:out value="${row.Tenkhoahoc}" /></b></h3><br />
 						<b>Tên Giảng viên:<c:out value="${row.Tengiangvien}" /></b><br />
