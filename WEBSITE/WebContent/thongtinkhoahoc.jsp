@@ -29,9 +29,22 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	
-	
-  				<div class="row">
+	<div class="container" style="background-color: white; padding-top: 5px;">
+    <div class="row">
+    		<div class="col-md-3 col-sm-6 col-xs-6">
+    			<ul class="nav nav-pills nav-stacked">
+				  <li class="active"><a name="xem"><b>Danh sách khóa học</b></a></li>
+				  <li><a href="#" id="laptrinhcoban"><b>Lập trình Cơ bản</b></a></li>
+				  <li><a href="#"><b>Lập trình Lập trình Di động</b></a></li>
+				  <li><a href="#"><b>Lập trình phần mềm</b></a></li>
+				  <li><a href="#"><b>Lập trình Website</b></a></li>
+				  <li><a href="#"><b>CEO</b></a></li>
+				  <li><a href="#"><b>Lập trình mạng</b></a></li>
+				</ul>
+				
+    		</div>
+    		<div class="col-md-9 col-sm-6 col-xs-6" id="Danhsachkhoahoc">
+				<div class="row">
 		            <div class="col-md-9 col-sm-6 col-xs-6">
 		                <h1>Danh sách các khóa học</h1>
 		            </div>
@@ -90,6 +103,11 @@
 				  </ul>
 				</nav>
 			</div>
+    		</div>
+    </div>
+    </div>
+	
+  				
 
 
 <script type="text/javascript">

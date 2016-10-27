@@ -42,7 +42,9 @@
 				<th>Tên giảng viên</th>		
 				<th>Mã ngôn ngữ</th>
 				<th>Mô tả</th>
-						                
+				<th>Link hình ảnh</th>	
+				<th>Mã loại khóa học</th>	
+				<th>Mã trạng thái</th>                
 			</tr>
 			<c:forEach items="${items.rowsByIndex}" var="row">			
 				<tr>

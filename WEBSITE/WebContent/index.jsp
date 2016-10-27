@@ -190,32 +190,14 @@
 	<!-- end header -->
 	<div id="noidungchinh">
     <!-- body -->
-    <div class="container" style="background-color: white; padding-top: 5px;">
-    <div class="row">
-    		<div class="col-md-3 col-sm-6 col-xs-6">
-    			<ul class="nav nav-pills nav-stacked">
-				  <li class="active"><a name="xem"><b>Danh sách khóa học</b></a></li>
-				  <li><a href="#" id="laptrinhcoban"><b>Lập trình Cơ bản</b></a></li>
-				  <li><a href="#"><b>Lập trình Lập trình Di động</b></a></li>
-				  <li><a href="#"><b>Lập trình phần mềm</b></a></li>
-				  <li><a href="#"><b>Lập trình Website</b></a></li>
-				  <li><a href="#"><b>CEO</b></a></li>
-				  <li><a href="#"><b>Lập trình mạng</b></a></li>
-				</ul>
-				
-    		</div>
-    		<div class="col-md-9 col-sm-6 col-xs-6" id="Danhsachkhoahoc">
-
-    		</div>
-    </div>
-    </div>
+    
    </div>
     <!-- end body -->
     <!-- phan trang -->
     
    <!-- Footer -->
    <div style="clear: both;"></div>
-  
+  </div>
 </body>
 <footer>
 	<div class="row">
@@ -235,7 +217,6 @@
 			</div> 	
 		</div>
 	</div>
-
    </footer>
    <!-- Tạo hộp thoại tin nhắn  -->
    <!--jquery  -->
@@ -286,7 +267,7 @@
    		$(document).ready(function() {
    				var url;
                     url = "thongtinkhoahoc.jsp";
-                    $("#Danhsachkhoahoc").load(url);
+                    $("#noidungchinh").load(url);
                 $("#huongdan1").click(function() {
                     var url;
                     url = "huongdansd.jsp";
@@ -299,8 +280,8 @@
                 });
                 $("#khoahoc").click(function() {
                     var url;
-                    url = "index.jsp";
-                    $("#wrapper").load(url);
+                    url = "thongtinkhoahoc.jsp";
+                    $("#noidungchinh").load(url);
                 });
                 $("#sapxep").click(function(){
                 	$("#dropdown-menu").slideToggle("100");
