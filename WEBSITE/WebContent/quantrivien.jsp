@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@page import="DayLaNhom14.User"%>
+<%
+	User objUser = (User)session.getAttribute("userLogin");
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -47,7 +51,7 @@
                <li>
                   <p class="pull-right" style="padding: 10px;">
                       <span class="glyphicon glyphicon-user"></span>
-                      Tên Quản trị viên
+                      <%= objUser.getUsername() %>
                     </p>
                 </li>
                 <li><button type="button" class="btn btn-info btn-md pull-right">

@@ -35,7 +35,7 @@
 	      <div class="container">
 	          <div class="container-fluid">
 	            <div class="navbar-header">
-	              <a class="navbar-brand" href="index.jsp">CODE.VN</a>
+	              <a class="navbar-brand" href="hocvien.jsp">CODE.VN</a>
 	            </div>
 	            <form class="navbar-form navbar-left">
 	                <div class="form-group">
@@ -79,11 +79,7 @@
 				  <li><a id="khoahoc" href="#"><b>Khóa học của tôi</b></a></li>
 				  <li><a id="xemdiem" href="#"><b>Xem điểm</b></a></li>
 				  <li><a id="baitap" href="#"><b>Xem bài tập</b></a></li>
-<<<<<<< HEAD
-				  <li><a id="out" href="#"><b>Thoát</b></a></li>
-=======
 				  <li><a id="out" href="index.jsp"><b>Thoát</b></a></li>
->>>>>>> 7582d3310b2c92be86a39a98fc076180097f5ce0
 				</ul>
     		</div>
 	    	<div class=" content-right col-md-9">

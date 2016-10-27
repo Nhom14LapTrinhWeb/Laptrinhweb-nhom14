@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
 <%	User objUser = (User)session.getAttribute("userLogin"); 
-	String query = "SELECT tentaikhoan WHERE tentaikhoan='"+objUser.getUsername()+"' and taikhoan.mavaitro = vaitro.mavaitro";
+	String query = "SELECT tentaikhoan from taikhoan WHERE tentaikhoan='"+objUser.getUsername()+"'";
 %> 
 <sql:setDataSource
 	driver="com.mysql.jdbc.Driver"

@@ -41,7 +41,8 @@
 				<th>Thời gian kết thúc</th>	
 				<th>Tên giảng viên</th>		
 				<th>Mã ngôn ngữ</th>
-				<th>Mô tả</th>		                
+				<th>Mô tả</th>
+						                
 			</tr>
 			<c:forEach items="${items.rowsByIndex}" var="row">			
 				<tr>
