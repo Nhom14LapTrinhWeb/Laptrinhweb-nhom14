@@ -32,24 +32,21 @@
 			<link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-	<div class="container">
-     				<div class="col-md-5 col-md-offset-2">
-     					<div class="row">
-       					<h2 class="head-form" align="center">Đăng ký mở khóa học mới</h2>
+
+       				 <div class="panel-heading" style="backgrough-color:bule;" align="center" >
+       				 <h3><b>Đăng kí mở lớp</b></h3></div>
+       					<div class="row">
        					<form class="register">
          				<div class="form-group">
            				<input type="text" id="id" class="form-control " ng-model="usercouse" placeholder="Tên khóa học">
-            			<span id="usercourse_error"></span>
+
           				</div>
           				<div class="form-group">
            				<input type="text" id="key" class="form-control " ng-model="Keycouse" placeholder="Mã khóa học">
           				</div>
           				<div class="form-group">
-          				<p> Ngôn ngữ giảng dạy <select name="status" class="select-box"><option value="C#">C#</option><option value="PHP" selected="selected">PHP</option><option value="jv">JAVA</option></select></p>
-          				</div>
-          				<div class="form-group">
-            			<input type="text" id="tenGV" class="form-control" placeholder="Tên Giảng Viên">
-            			<span id="tengiangvien_error"></span>
+            			<input type="text" id="tenGV" class="form-control" placeholder="Tên Giảng Viên" disabled>
+
           				</div>
           				<div class="form-group">
             			<input type="text" id="email" class="form-control" placeholder="Lịch giảng dạy">
@@ -68,12 +65,10 @@
             			<label for="Mota">Mô tả</label>
              				<textarea class="form-control" id="Phan hoi y kien" placeholder="Mô tả khóa học của bạn" rows="3"></textarea>
          				</div>
-        				<button type="submit" id="sub2" class="btn btn-success btn-lg center-block">
-          				Đăng ký 
-        				</button>
-      					</div>
-      				</div>
-    		</div>
-    	</div>
+        				<button class="btn btn-warning pull-right" type="button" onclick="alert('Vui lòng chờ Admin phản hồi')">Đăng kí</button>
+        				<button class="btn btn-warning pull-right" onclick="location.href='/trangGV_KH.jsp'">Hủy</button>
+						</div>
+      
+    	
 </body>
 </html>
