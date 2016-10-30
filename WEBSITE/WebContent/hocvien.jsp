@@ -1,7 +1,7 @@
 <%@page import="DayLaNhom14.User"%>
+<%	User objUser = (User)session.getAttribute("userLogin"); %> 
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%> 
-<%	User objUser = (User)session.getAttribute("userLogin"); %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -153,7 +153,10 @@ $(document).ready(function(){
 		$("#noidung").load(url);
 	});
 	$('#dropbtn').click(function(){
-		$("#dr1").slideToggle("10");
+		$("#dr1").slideToggle("0");
+	});
+	$('#dr1 li a').click(function(){
+		$("#dr1").slideToggle("0");
 	});
 });
 </script>
