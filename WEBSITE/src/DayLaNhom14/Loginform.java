@@ -64,7 +64,6 @@ public class Loginform extends HttpServlet {
 		{
 			if(ConnectDB.LoginGV(user, pass))
 			{
-
 				/*ServletRequest session = null;
 				session.setAttribute("TentaikhoanHV",user);*/
 				response.sendRedirect("dangkimokhoahoc.jsp");
@@ -80,7 +79,6 @@ public class Loginform extends HttpServlet {
 			{
 				/*ServletRequest session = null;
 				session.setAttribute("TentaikhoanHV",user);*/
-
 				objUser = new User();
 				objUser.setUsername(user);
 				session = request.getSession();

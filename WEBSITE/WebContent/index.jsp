@@ -11,7 +11,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Code.vn</title>
 <head>
     <meta charset="utf-8">
@@ -178,10 +178,12 @@
 	                     	 <button class="btn btn-primary" type="submit" id="submit">Đăng nhập</button>
 	                 		 <button type="button" class="btn btn-primary" data-dismiss="modal">Thoát</button>
 	                     </div>
-	                    
-	                  </form>
-	                 
-	                </div>
+	                  </form>   
+				        <div class="social-signin">
+				            <a href="#" class="facebook">Sign in with Facebook     </a>
+				            <a href="#" class="google">Sign in with Google+</a>
+				        </div>
+		                </div>
 	              </div>
 	            </div>
 	              
@@ -265,7 +267,7 @@
    		});
 
    		$(document).ready(function() {
-   				var url;
+   					var url;
                     url = "thongtinkhoahoc.jsp";
                     $("#noidungchinh").load(url);
                 $("#huongdan1").click(function() {
