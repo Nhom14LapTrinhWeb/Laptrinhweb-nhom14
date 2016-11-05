@@ -30,7 +30,7 @@
 <body>
 	<div class="row">
 	<div class="panel panel-primary">
-		<div class="panel-heading" style="text-align: center;" >DANH SÁCH BÀI NỘP</div>
+		<div class="panel-heading" style="text-align: center;" >DANH SÁCH BÀI TẬP</div>
 			<table class="table table-bordered" cellpadding="1" rules="all" border="1"  style="width:100%;border-collapse:collapse;" align="center">
 				<thead>
 				<tbody>
