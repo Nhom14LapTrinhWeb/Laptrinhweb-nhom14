@@ -34,7 +34,7 @@
 	<link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-	<div class="row">
+	<div class="row" id="noidung">
 		<div class="panel panel-primary">
 			<div class="panel-heading" style="text-align:center;">Thông tin tài khoản</div>
 				<table class="table table-bordered">
@@ -69,9 +69,21 @@
 					</tr>
 				</c:forEach>
 				</table>
-				<button class="btn btn-warning pull-right" onclick="window.location.href='thaydoithongtin.jsp'">Chỉnh sửa thông tin</button>
-				<button class="btn btn-warning pull-right" onclick="window.location.href='doimatkhau.jsp'">Đổi mật khẩu</button>
+				<button id="btnUpdate" class="btn btn-warning pull-right" >Chỉnh sửa thông tin</button>
+				<button id="btnChange" class="btn btn-warning pull-right" >Đổi mật khẩu</button>
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+	$('#btnUpdate').click(function(){
+		var url;
+		url = "thaydoithongtin.jsp";
+		$('#noidung').load(url);
+	});
+	$('#btnChange').click(function(){
+		var url;
+		url = "doimatkhau.jsp";
+		$('#noidung').load(url);
+	});
+</script>
 </html>

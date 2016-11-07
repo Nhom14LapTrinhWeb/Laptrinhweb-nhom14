@@ -1,10 +1,7 @@
 <%@page import="DayLaNhom14.User"%>
+<%	User objUser = (User)session.getAttribute("userLogin"); %> 
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<%
-	User objUser = (User)session.getAttribute("userLogin");
-%>
-
+    pageEncoding="utf-8"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -31,38 +28,57 @@
 <body>
 	<!-- Navbar menu -->
 	<div class="row"> 
+    	<!-- made nav -->
 	    <nav class="navbar navbar-default">
 	      <div class="container">
 	          <div class="container-fluid">
 	            <div class="navbar-header">
 	              <a class="navbar-brand" href="hocvien.jsp">CODE.VN</a>
+	               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-codevn-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+			      </button>
 	            </div>
-	            <form class="navbar-form navbar-left">
-	                <div class="form-group">
-	                    <input type="text" class="form-control" placeholder="Search">
-	                </div>
-	                  <a href="#" class="btn btn-info btn-md">
-	                    <span class="glyphicon glyphicon-search"></span>
-	                  </a>
-	             </form>
-	            <ul class="nav navbar-nav">
-	              <li><a href="#" id="mienphi">Thông báo mới</a></li>
-	              <li><a href="#" id="dangkikhoahoc">Đăng kí khóa học</a></li>
-	            </ul>
-	            <ul class="nav navbar-nav navbar-right">
-		           <li>
-		           		<p class="pull-right" style="padding: 10px;">
-		              		<span class="glyphicon glyphicon-user"></span>
-		              		<%= objUser.getUsername() %>
-	              		</p>
-	              </li>
-	              <li><button type="button" class="btn btn-info btn-md pull-right">
-	              <span class="glyphicon glyphicon-log-out"></span>
-	              Thoát
-	              </button>
-	              </li>
-		        </ul>
-	            <div style="clear: both"></div>
+	            <div class="collapse navbar-collapse" id="bs-codevn-navbar-collapse-1">
+		            <form class="navbar-form navbar-left">
+			                <div class="form-group">
+			                    <input type="text" class="form-control" placeholder="Search">
+			                </div>
+			                  <a href="#" class="btn btn-info btn-md">
+			                    <span class="glyphicon glyphicon-search"></span>
+			                  </a>
+			             </form>
+			            <ul class="nav navbar-nav">
+			              <li><a href="#" id="mienphi">Học miễn phí</a></li>
+			              <li><a href="#" id="khoahoc">Khóa học</a></li> 
+			              <li><a href="#" id="dangkikhoahoc">Đăng kí khóa học</a></li>
+			              <li><a href="#" id="huongdan1">Hướng dẫn</a></li>
+			              <li><a href="#" id="gopy">Góp ý</a></li>
+			            </ul>
+			            <ul class="nav navbar-nav navbar-right">
+			              <li>
+				              <div class="dropdown">
+					           		<button id="dropbtn" class="btn btn-info btn-md dropdown-toggle" type="button" data-toggle="dropdown">
+					              		<span class="glyphicon glyphicon-user"></span>
+					              		<%= objUser.getUsername() %>
+					              		<span class="caret"></span>
+				              		</button>
+				              		<ul class="dropdown-menu" id="dr1">
+				              			<li><a id="mypage" href="#"><b>Thông báo mới</b></a></li>
+									    <li><a id="thongtin" href="#"><b>Thông tin cá nhân</b></a></li>
+									    <li><a id="dangky" href="#"><b>Đăng ký khóa học</b></a></li>
+									    <li><a id="khoahoccuatoi" href="#"><b>Khóa học của tôi</b></a></li>
+									    <li><a id="xemdiem" href="#"><b>Xem điểm</b></a></li>
+									    <li><a id="baitap" href="#"><b>Xem bài tập</b></a></li>
+									    <li><a id="out" href="index.jsp"><b>Thoát</b></a></li>
+				              		</ul>
+			               		</div>
+			               </li>
+			            </ul>
+			            <div style="clear: both"></div>
+		            </div>  
 	          </div>
 	        </div>
 	    </nav>  	
@@ -70,22 +86,7 @@
 	<!-- End navbar -->
 	<!-- menu list chức năng -->
 	<div class="container">
-    	<div class="row">
-    		<div class="col-md-3 content-left">
-    			<ul class="nav nav-pills nav-stacked">
-				  <li class="active"><a href="#"><b>Trang của bạn</b></a></li>
-				  <li><a id="thongtin" href="#"><b>Thông tin cá nhân</b></a></li>
-				  <li><a id="dangky" href="#"><b>Đăng ký khóa học</b></a></li>
-				  <li><a id="khoahoc" href="#"><b>Khóa học của tôi</b></a></li>
-				  <li><a id="xemdiem" href="#"><b>Xem điểm</b></a></li>
-				  <li><a id="baitap" href="#"><b>Xem bài tập</b></a></li>
-				  <li><a id="out" href="index.jsp"><b>Thoát</b></a></li>
-				</ul>
-    		</div>
-	    	<div class=" content-right col-md-9">
-	    		<div id="noidung"></div>
-	    	</div>
-    	</div>			
+    	<div id="noidung"></div>
 	</div>
 	<!-- end menu list -->
 	<!-- footer -->
@@ -108,6 +109,24 @@
 </body>
 <script>
 $(document).ready(function(){
+	var url;
+	url = "thongtinkhoahoc.jsp";
+	$("#noidung").load(url);
+	$('#dangky').click(function(){
+		var url;
+		url = "thongtinkhoahoc.jsp";
+		$("#noidung").load(url);
+	});
+	$('#thongbao').click(function(){
+		var url;
+		url = "thongbao.jsp";
+		$("#noidung").load(url);
+	});
+	$('#mypage').click(function(){
+		var url;
+		url = "thongbao.jsp";
+		$("#noidung").load(url);
+	});
 	$('#thongtin').click(function(){
 		var url;
 		url = "thongtincanhan.jsp";
@@ -120,6 +139,11 @@ $(document).ready(function(){
 	});
 	$('#khoahoc').click(function(){
 		var url;
+		url = "thongtinkhoahoc.jsp";
+		$("#noidung").load(url);
+	});
+	$('#khoahoccuatoi').click(function(){
+		var url;
 		url = "khoahoccuatoi.jsp";
 		$("#noidung").load(url);
 	});
@@ -127,6 +151,12 @@ $(document).ready(function(){
 		var url;
 		url = "baitap.jsp";
 		$("#noidung").load(url);
+	});
+	$('#dropbtn').click(function(){
+		$("#dr1").slideToggle("0");
+	});
+	$('#dr1 li a').click(function(){
+		$("#dr1").slideToggle("0");
 	});
 });
 </script>

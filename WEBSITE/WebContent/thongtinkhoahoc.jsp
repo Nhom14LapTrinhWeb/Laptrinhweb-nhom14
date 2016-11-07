@@ -7,7 +7,7 @@
 	url="jdbc:mysql://localhost/hoclaptrinhonline"
 	user="root"
 	password="phihung123789"/>
-<sql:query dataSource="${snapshot}" var="items" sql="SELECT Makhoahoc,Hinhanh,Tenkhoahoc,Tengiangvien,Lichhoc,Thoigianmo FROM khoahoc"/>
+<sql:query dataSource="${snapshot}" var="items" sql="SELECT Hinhanh,Tenkhoahoc,Tengiangvien,Lichhoc,Thoigianmo FROM khoahoc"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -64,15 +64,14 @@
 				</div>
 			<div class="row">
 				<c:forEach items="${items.rows}" var="row">	
-				
+
 				<div class="col-lg-4 col-sm-6 images" style="text-align: center;">
-					<a href="#" class="thumbnail" id="${row.Makhoahoc}">
+					<a href="#" class="thumbnail" style="text-align:left;">
 						<img src="${row.Hinhanh}">
 						<h3><b><c:out value="${row.Tenkhoahoc}" /></b></h3><br />
 						<b>Tên Giảng viên:<c:out value="${row.Tengiangvien}" /></b><br />
 						<b>Khai giảng:<c:out value="${row.Thoigianmo}" /></b><br />
 						<b>Lịch học:<c:out value="${row.Lichhoc}" /></b><br />
-						
 					</a>
 				</div>										
 				</c:forEach>
@@ -117,7 +116,6 @@
                 $("#sapxep").click(function(){
                 	$("#dropdown-menu").slideToggle("100");
                 })
-               
             });
             
    </script>

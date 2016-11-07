@@ -1,4 +1,3 @@
-
 // kiem tra dinh dang email
 function isEmail(emailStr)
 {
@@ -56,7 +55,7 @@ function isEmail(emailStr)
 //kiem tra tinh hop le du lieu
 $(document).ready(function(){
 	$("#sub2").click(function(){
-		var username = $.trim($("#id").val());
+		var username = $.trim($("#username").val());
 		var password1= $.trim($("#password").val());
 		var password2= $.trim($("#password2").val());
 		var email= $.trim($("#email").val());

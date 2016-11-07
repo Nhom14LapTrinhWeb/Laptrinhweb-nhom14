@@ -55,7 +55,7 @@
             
              <div id="div6"></div>
           </div>
-          <button type="submit" id="sub2" class="btn btn-success btn-lg center-block">
+          <button type="button" id="sub2" class="btn btn-success btn-lg center-block">
           Đăng ký 
         </button>
         </form>
