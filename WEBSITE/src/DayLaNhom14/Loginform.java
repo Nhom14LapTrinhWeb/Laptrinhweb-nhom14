@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/Loginform")
 public class Loginform extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private PrintWriter out;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -56,6 +57,7 @@ public class Loginform extends HttpServlet {
 			}
 			else
 			{
+				
 				response.sendRedirect("index.jsp");
 			}
 			
@@ -64,9 +66,11 @@ public class Loginform extends HttpServlet {
 		{
 			if(ConnectDB.LoginGV(user, pass))
 			{
-				/*ServletRequest session = null;
-				session.setAttribute("TentaikhoanHV",user);*/
-				response.sendRedirect("dangkimokhoahoc.jsp");
+				objUser = new User();
+				objUser.setUsername(user);
+				session = request.getSession();
+				session.setAttribute("userLogin", objUser);
+				response.sendRedirect("trangGV_KH.jsp");
 			}
 			else
 			{
