@@ -34,7 +34,7 @@
 	      <div class="container">
 	          <div class="container-fluid">
 	            <div class="navbar-header">
-	              <a class="navbar-brand" href="index.jsp">CODE.VN</a>
+	              <a class="navbar-brand" href="giangvien.jsp">CODE.VN</a>
 	            </div>
 	            <form class="navbar-form navbar-left">
 	                <div class="form-group">
@@ -57,7 +57,7 @@
 					       <span class="" ></span>
 				           </button>
 	              </li>
-	              <li><button type="button" class="btn btn-info btn-md pull-right" data-toggle="modal" data-target="#loginModal" >
+	              <li><button type="button" class="btn btn-info btn-md pull-right" data-toggle="modal" data-target="#loginModal" onclick="window.location.href='Logout'">
 	               <span ></span>
 	               Thoát	
 	               </button>
@@ -80,7 +80,7 @@
 				  <li><a href="#" id="bt"><b>Bài tập</b></a></li>
 				  <li><a href="#" id="bn"><b>Bài nộp</b></a></li>
 				  <li><a href="#" id="diem1"><b>Điểm</b></a></li>
-				   <li><a href="index.jsp" ><b>Thoát</b></a></li>
+				   <li><a href="Logout" ><b>Thoát</b></a></li>
 				</ul>
 			</div>
     		<div class=" col-md-9 " id="noidungload" align="center">
@@ -123,43 +123,6 @@
 			   		
 			   	</ol>
 			</div> 	
-			<div class="row">
-		<div class="navbar navbar-fixed-bottom">
-			<div class="col-md-3 col-md-offset-9 col-sm-4 col-sm-offset-8 col-xs-5 col-xs-offset-7">
-				<button id="btnmes" class="btn-success btn-block" style="margin:0px;">Gửi tin nhắn</button>
-		   		<div class="panel-group">
-		   			<div class="panel panel-default" style=" border: none;">
-		   				<div id="Message" class="panel-collapse collapse">
-					   		<p class="panel-header" style="text-align: center;">Nếu bạn có bất cứ thắc mắc nào cần giải đáp thì cứ việc gửi tin nhắn cho chúng tôi</p>
-				 	  		<div class="panel-body">
-						   		<form>   				
-					   				<div class="form-group">
-					   					<label for="name">Tên của bạn</label>
-					   					<input id="name" class="form-control input-sm" type="text">
-					   				</div>
-					   				<div class="form-group">
-					   					<label for="email">Email của bạn</label>
-					   					<input id="email" class="form-control input-sm" type="email">
-					   				</div>
-					   				<div class="form-group">
-										<label for="sdt">SĐT của bạn</label>
-					   					<input id="sdt" class="form-control input-sm" type="text">
-					   				</div>
-					   				<div class="form-group">
-					   					<label for="noidung">Nội dung</label>
-					   					<textarea name="noidung" id="noidung" class="form-control input-sm" cols="30" rows="3"></textarea>
-					   				</div>
-					   				<div class="form-group">
-					   					<input type="submit" class="btn btn-primary center-block" id="btnSent" value="Gửi tin nhắn">
-					   				</div>				   				
-					   			</form>
-					   		</div>
-				   		</div>
-		   			</div>
-		   		</div>			   		
-			</div>   	
-	  </div>
-	</div>
 		</div>
 	</div>
 	

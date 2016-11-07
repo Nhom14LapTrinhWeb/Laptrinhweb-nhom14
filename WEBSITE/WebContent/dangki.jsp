@@ -83,7 +83,7 @@
 	                    <input type="checkbox">Ghi nhớ tài khoản
 	                </div>
 	                <a href="#">Quên mật khẩu?</a>
-	                 <button type="submit" class="btn btn-warning btn-lg pull-right">
+	                 <button type="button" class="btn btn-warning btn-lg pull-right">
 	                     Đăng nhập
 	                 </button>
         		</form>

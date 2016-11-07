@@ -31,7 +31,7 @@
 <body>
 	<div class="container" style="background-color: white; padding-top: 5px;">
     <div class="row">
-    		<div class="col-md-3 col-sm-6 col-xs-6">
+    		<div class="col-md-3 col-sm-3 col-xs-3">
     			<ul class="nav nav-pills nav-stacked">
 				  <li class="active"><a name="xem"><b>Danh sách khóa học</b></a></li>
 				  <li><a href="#" id="laptrinhcoban"><b>Lập trình Cơ bản</b></a></li>
@@ -43,7 +43,7 @@
 				</ul>
 				
     		</div>
-    		<div class="col-md-9 col-sm-6 col-xs-6" id="Danhsachkhoahoc">
+    		<div class="col-md-9 col-sm-9 col-xs-9" id="Danhsachkhoahoc">
 				<div class="row">
 		            <div class="col-md-9 col-sm-6 col-xs-6">
 		                <h1>Danh sách các khóa học</h1>
