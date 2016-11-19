@@ -7,7 +7,8 @@
 	url="jdbc:mysql://localhost/hoclaptrinhonline"
 	user="root"
 	password="phihung123789"/>
-
+<%@page import="Models.Loaikhoahoc"%>
+<%@page import="dao.LoaikhoahocDAO"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -47,7 +48,7 @@
 	    		</div>
 	    		<div id="popupfoot"> <a href="#" class="close agree">I agree</a>  </div>
 		 	 	</div>
-			<div style="width: 1478px; font-size: 32pt; color:white; height: 602px; display: none; opacity: 0.8;" id="mask"></div>
+			<div style="width: 1478px; font-size: 32pt; color:white; display: none; opacity: 0.8;" id="mask"></div>
 		</div>
   </div>
   	
@@ -123,7 +124,8 @@
 			                  </a>
 			             </form>
 			            <ul class="nav navbar-nav">
-			              <li><a href="#" id="mienphi">Học miễn phí</a></li>
+			            
+			              <li><a href="thongtinkhoahocmienphi.jsp" id="mienphi">Học miễn phí</a></li>
 			              <li><a href="#" id="khoahoc">Khóa học</a></li> 
 			              <li><a href="#" id="dangkikhoahoc">Đăng kí khóa học</a></li>
 			              <li><a href="#" id="huongdan1">Hướng dẫn</a></li>
@@ -310,6 +312,7 @@ fjs.parentNode.insertBefore(js, fjs);
                     url = "huongdansd.jsp";
                     $("#noidungchinh").load(url);
                 });
+                
                 $("#gopy").click(function() {
                     var url;
                     url = "tinnhan.jsp";

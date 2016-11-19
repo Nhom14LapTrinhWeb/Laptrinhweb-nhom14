@@ -1,5 +1,3 @@
-<%@page import="Models.danhmucsapxep"%>
-<%@page import="dao.danhmucsapxepDAO"%>
 <%@page import="Models.Loaikhoahoc"%>
 <%@page import="dao.LoaikhoahocDAO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
@@ -11,7 +9,8 @@
 	url="jdbc:mysql://localhost/hoclaptrinhonline"
 	user="root"
 	password="phihung123789"/>
-<sql:query dataSource="${snapshot}" var="items" sql="SELECT Makhoahoc,Hinhanh,Tenkhoahoc,Tengiangvien,Lichhoc,Thoigianmo FROM khoahoc"/>
+<sql:query dataSource="${snapshot}" var="items" sql="SELECT Makhoahoc,Hinhanh,Tenkhoahoc,Tengiangvien,Lichhoc,Thoigianmo FROM khoahoc
+												WHERE Hocphi=0"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -44,7 +43,7 @@
 				  <% 
 				  	for(Loaikhoahoc l : loai.getListLoaikhoahoc()){
 				  %>
-				  <li><a id="1" href="thongtinkhoahoctheodanhmuc.jsp?Loaikhoahoc=<%=l.getLoaiKH()%>"><b><%=l.getTenloai() %></b></a></li>
+				  <li><a href="thongtinkhoahoctheodanhmuc.jsp?Loaikhoahoc=<%=l.getLoaiKH()%>"><b><%=l.getTenloai() %></b></a></li>
 				  <%
 				  	}
 				  %>
@@ -53,30 +52,9 @@
     		<div class="col-md-9 col-sm-9 col-xs-9" id="Danhsachkhoahoc">
 				<div class="row">
 		            <div class="col-md-9 col-sm-6 col-xs-6">
-		                <h1>Danh sách các khóa học</h1>
+		                <h1>Danh sách các khóa học miễn phí</h1>
 		            </div>
-		            <div class="col-md-3" id="danhmucsapxep">
-		            	
-			                	<%
-		
-								danhmucsapxepDAO xs = new danhmucsapxepDAO();
-								%>
-								<button class="btn btn-primary btn-md" id="sapxep" >
-			                	Sắp xếp 
-			                	<span class="caret" style="margin-left:5px;"></span>
-			                	</button>
-			                	<ul class="dropdown-menu" id="dropdown-menu">
-			                		<%
-		            					for(danhmucsapxep s : xs.getDanhmucsapxep()){
-		            				%>
-			                		<li><a href="thongtinkhoahoc.jsp?Matinhtrang=<%= s.getMatinhtrang()%>"><%= s.getTentinhtrang() %></a></li>
-									<%
-		            					}
-									%>
-			                	</ul>
-	                	
-
-		            </div>
+		   
 				</div>
 			<div class="row">
 				<c:forEach items="${items.rows}" var="row">	
@@ -122,20 +100,5 @@
     		</div>
     </div>
     </div>
-	
-  				
-
-
-<script type="text/javascript">
-   		$(document).ready(function() {
-                var url;
-                url="danhmucsapxep.jsp";
-                $("#danhmucsapxep").load(url);
-                $("#sapxep").click(function(){
-                	$("#dropdown-menu").slideToggle("100");
-                })
-            });
-            
-   </script>
 </body>
 </html>
