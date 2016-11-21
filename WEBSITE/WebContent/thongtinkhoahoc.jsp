@@ -69,7 +69,7 @@
 			                		<%
 		            					for(danhmucsapxep s : xs.getDanhmucsapxep()){
 		            				%>
-			                		<li><a href="thongtinkhoahoc.jsp?Matinhtrang=<%= s.getMatinhtrang()%>"><%= s.getTentinhtrang() %></a></li>
+			                		<li><a href="thongtinkhoahoctheosapxep.jsp?Matinhtrang=<%= s.getMatinhtrang()%>"><%= s.getTentinhtrang() %></a></li>
 									<%
 		            					}
 									%>

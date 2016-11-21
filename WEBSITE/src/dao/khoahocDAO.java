@@ -40,6 +40,34 @@ public class khoahocDAO {
 		return null;
 		
 	}
+public ArrayList<khoahoc> getListKhoahocByMatingtrang(String Matinhtrang){
+		
+		try {
+			Connection connection = DBConnect.getConnection();
+			String sql = "SELECT * FROM khoahoc WHERE Tinhtrang='"+Matinhtrang+"'";
+			CallableStatement ps= connection.prepareCall(sql);
+			ResultSet rs= ps.executeQuery();
+			ArrayList<khoahoc> list=new ArrayList<>();
+			while(rs.next()){
+				khoahoc kh=new khoahoc();
+				kh.setHinhanh(rs.getString("Hinhanh"));
+				kh.setLoaikhoahoc(rs.getString("Loaikhoahoc"));
+				kh.setMakhoahoc(rs.getString("Makhoahoc"));
+				kh.setTenkhoahoc(rs.getString("Tenkhoahoc"));
+				kh.setTengiangvien(rs.getString("Tengiangvien"));
+				kh.setLichhoc(rs.getString("Lichhoc"));
+				kh.setHocphi(rs.getInt("Hocphi"));
+				list.add(kh);
+				
+			}
+			return list;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
 public ArrayList<khoahoc> getListKhoahocMienPhi(){
 		
 		try {

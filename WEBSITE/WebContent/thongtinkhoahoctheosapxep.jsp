@@ -1,7 +1,10 @@
+
+<%@page import="Models.khoahoc"%>
+<%@page import="dao.khoahocDAO"%>
 <%@page import="Models.danhmucsapxep"%>
 <%@page import="dao.danhmucsapxepDAO"%>
-<%@page import="Models.Loaikhoahoc"%>
-<%@page import="dao.LoaikhoahocDAO"%>
+<%@page import="org.apache.taglibs.standard.lang.jpath.adapter.Convert"%>
+
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -11,7 +14,7 @@
 	url="jdbc:mysql://localhost/hoclaptrinhonline"
 	user="root"
 	password="phihung123789"/>
-<sql:query dataSource="${snapshot}" var="items" sql="SELECT Makhoahoc,Hinhanh,Tenkhoahoc,Tengiangvien,Lichhoc,Thoigianmo FROM khoahoc"/>
+<sql:query dataSource="${snapshot}" var="items" sql="SELECT Hinhanh,Tenkhoahoc,Tengiangvien,Lichhoc,Thoigianmo FROM khoahoc"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -33,24 +36,44 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+	
+    		<div class="col-md-9 col-sm-9 col-xs-9" id="Danhsachkhoahoc">
+				<div class="row">
+				
+		            <div class="col-md-9 col-sm-6 col-xs-6">
+		                <h1>Sắp xếp khóa học</h1>
+		            </div>
+		            
+				</div>
+				<%
+					khoahocDAO sx = new khoahocDAO();
+					String Matt="";
+					if(request.getParameter("Matinhtrang")!=null)
+					{
+						Matt=Convert.toString(request.getParameter("Matinhtrang")) ;
+					}
+				%>
+				
+				<%
+					for(khoahoc k: sx.getListKhoahocByMatingtrang(Matt)){
+				%>
+					<div class="col-lg-4 col-sm-6 images" style="text-align: center;">
+						<a href="chitietkhoahoc.jsp?Makhoahoc=<%= k.getMakhoahoc()%>" class="thumbnail" style="text-align:left;">
+							<img src="<%= k.getHinhanh()%>">
+							<h3><b><%= k.getTenkhoahoc()%></b></h3><br />
+							<b>Tên Giảng viên:<%= k.getTengiangvien()%></b><br />
+							
+							<b>Lịch học:<%= k.getLichhoc()%></b><br />
+							<b>Học phí:<%= k.getHocphi()%> </b><br />
+						</a>
+					</div>										   
+			
 			<%
-		
-			danhmucsapxepDAO xs = new danhmucsapxepDAO();
+					}
 			%>
-								<button class="btn btn-primary btn-md" id="sapxep" >
-			                	Sắp xếp 
-			                	<span class="caret" style="margin-left:5px;"></span>
-			                	</button>
-			                	<ul class="dropdown-menu" id="dropdown-menu">
-			                		<%
-		            					for(danhmucsapxep s : xs.getDanhmucsapxep()){
-		            				%>
-			                		<li><a href="thongtinkhoahoctheosapxep.jsp?Matinhtrang=<%= s.getMatinhtrang()%>"><%= s.getTentinhtrang() %></a></li>
-									<%
-		            					}
-									%>
-			                	</ul>
-	                	
+			
+    		</div>
+	
   				
 
 
