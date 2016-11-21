@@ -70,7 +70,7 @@ public class Loginform extends HttpServlet {
 				objUser.setUsername(user);
 				session = request.getSession();
 				session.setAttribute("userLogin", objUser);
-				response.sendRedirect("trangGV_KH.jsp");
+				response.sendRedirect("giangvien.jsp");
 			}
 			else
 			{

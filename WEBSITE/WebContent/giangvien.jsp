@@ -57,11 +57,6 @@
 					       <span class="" ></span>
 				           </button>
 	              </li>
-	              <li><button type="button" class="btn btn-info btn-md pull-right" data-toggle="modal" data-target="#loginModal" >
-	               <span ></span>
-	               Thoát	
-	               </button>
-	               </li>
 	            </ul>
 	            <div style="clear: both"></div>
 	          </div>
