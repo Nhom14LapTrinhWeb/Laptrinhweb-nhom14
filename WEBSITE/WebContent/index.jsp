@@ -7,11 +7,12 @@
 	url="jdbc:mysql://localhost/hoclaptrinhonline"
 	user="root"
 	password="phihung123789"/>
-
+<%@page import="Models.Loaikhoahoc"%>
+<%@page import="dao.LoaikhoahocDAO"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Code.vn</title>
 <head>
     <meta charset="utf-8">
@@ -47,7 +48,7 @@
 	    		</div>
 	    		<div id="popupfoot"> <a href="#" class="close agree">I agree</a>  </div>
 		 	 	</div>
-			<div style="width: 1478px; font-size: 32pt; color:white; height: 602px; display: none; opacity: 0.8;" id="mask"></div>
+			<div style="width: 1478px; font-size: 32pt; color:white; display: none; opacity: 0.8;" id="mask"></div>
 		</div>
   </div>
   	
@@ -123,7 +124,8 @@
 			                  </a>
 			             </form>
 			            <ul class="nav navbar-nav">
-			              <li><a href="#" id="mienphi">Học miễn phí</a></li>
+			            
+			              <li><a href="thongtinkhoahocmienphi.jsp" id="mienphi">Học miễn phí</a></li>
 			              <li><a href="#" id="khoahoc">Khóa học</a></li> 
 			              <li><a href="#" id="dangkikhoahoc">Đăng kí khóa học</a></li>
 			              <li><a href="#" id="huongdan1">Hướng dẫn</a></li>
@@ -178,10 +180,12 @@
 	                     	 <button class="btn btn-primary" type="submit" id="submit">Đăng nhập</button>
 	                 		 <button type="button" class="btn btn-primary" data-dismiss="modal">Thoát</button>
 	                     </div>
-	                    
-	                  </form>
-	                 
-	                </div>
+	                  </form>   
+				        <div class="social-signin">
+				            <a href="#" class="facebook">Sign in with Facebook     </a>
+				            <a href="#" class="google">Sign in with Google+</a>
+				        </div>
+		                </div>
 	              </div>
 	            </div>
 	              
@@ -220,43 +224,78 @@
    </footer>
    <!-- Tạo hộp thoại tin nhắn  -->
    <!--jquery  -->
-	<div class="row">
-		<div class="navbar navbar-fixed-bottom">
-			<div class="col-md-3 col-md-offset-9 col-sm-4 col-sm-offset-8 col-xs-5 col-xs-offset-7">
-				<button id="btnmes" class="btn-success btn-block" style="margin:0px;">Gửi tin nhắn</button>
-		   		<div class="panel-group">
-		   			<div class="panel panel-default" style=" border: none;">
-		   				<div id="Message" class="panel-collapse collapse">
-					   		<p class="panel-header" style="text-align: center;">Nếu bạn có bất cứ thắc mắc nào cần giải đáp thì cứ việc gửi tin nhắn cho chúng tôi</p>
-				 	  		<div class="panel-body">
-						   		<form>   				
-					   				<div class="form-group">
-					   					<label for="name">Tên của bạn</label>
-					   					<input id="name" class="form-control input-sm" type="text">
-					   				</div>
-					   				<div class="form-group">
-					   					<label for="email">Email của bạn</label>
-					   					<input id="email" class="form-control input-sm" type="email">
-					   				</div>
-					   				<div class="form-group">
-										<label for="sdt">SĐT của bạn</label>
-					   					<input id="sdt" class="form-control input-sm" type="text">
-					   				</div>
-					   				<div class="form-group">
-					   					<label for="noidung">Nội dung</label>
-					   					<textarea name="noidung" id="noidung" class="form-control input-sm" cols="30" rows="3"></textarea>
-					   				</div>
-					   				<div class="form-group">
-					   					<input type="submit" class="btn btn-primary center-block" id="btnSent" value="Gửi tin nhắn">
-					   				</div>				   				
-					   			</form>
-					   		</div>
-				   		</div>
-		   			</div>
-		   		</div>			   		
-			</div>   	
-	  </div>
-	</div>
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<style>
+    #cfacebook{
+        position: fixed; 
+        bottom: 0px;
+        right: 8px;
+        z-index: 999999999999999;
+        width: 250px; height: auto;
+        box-shadow: 6px 6px 6px 10px rgba(0,0,0,0.2);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        overflow: hidden;
+    }
+    #cfacebook .fchat{float: left; width: 100%; height: 295px; overflow: hidden; display: none; background-color: #fff;}
+    #cfacebook .fchat .chat-single{float: left; line-height: 25px; line-height: 25px; color: #333; width: 100%;}
+    #cfacebook .fchat .chat-single a{float: right; text-decoration: none; margin-right: 10px; color: #888; font-size: 12px;}
+    #cfacebook .fchat .chat-single a:hover{color: #222;}
+ 
+    #cfacebook .fchat .fb-page{margin-top: -130px; float: left;}
+    #cfacebook a.chat_fb{
+        float: left;
+        padding: 0 25px;
+        width: 250px;
+        color: #fff;
+        text-decoration: none;
+        height: 40px;
+        line-height: 40px;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);        
+    
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAqCAMAAABFoMFOAAAAWlBMV…8/UxBxQDQuFwlpqgBZBq6+P+unVY1GnDgwqbD2zGz5e1lBdwvGGPE6OgAAAABJRU5ErkJggg==);
+        background-repeat: repeat-x;
+        background-size: auto;
+        background-position: 0 0;
+        background-color: #0065BF;
+        border: 0;
+        border-bottom: 1px solid #0065BF;
+        z-index: 9999999;
+        margin-right: 12px; font-size: 18px;}
+   #cfacebook a.chat_fb:hover{color: yellow; text-decoration: none;}
+</style>
+<script>
+    function fchat()
+    {
+            var tchat= document.getElementById("tchat").value;
+            if(tchat==0 || tchat=='0')
+            {                
+                document.getElementById("fchat").style.display = "block";
+                document.getElementById("tchat").value=1;
+            }else{
+                document.getElementById("fchat").style.display = "none";
+                document.getElementById("tchat").value=0;
+            }             
+    }
+    setTimeout(function() {document.getElementById("fchat").style.display = "block";}, 6000);
+</script>
+ 
+<div id="cfacebook">
+    <a href="javascript:;" class="chat_fb" onclick="javascript:fchat();"><i class="fa fa-comments"></i> Hỗ trợ trực tuyến</a>
+    <div id="fchat" class="fchat">
+        <div class="fb-page" data-tabs="messages" data-href="https://www.facebook.com/CODEVNhoclaptrinhonline" data-width="250" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
+        </div>
+        <div class="chat-single"><a target="_blank" href="https://www.facebook.com/CODEVNhoclaptrinhonline"><i class="fa fa-facebook-square"></i> Ghé thăm Fanpage của chúng tôi</a></div>
+    </div>
+    <input type="hidden" id="tchat" value="0"/>
+</div>
  </footer >
  <sql:query dataSource="${snapshot}" var="laptrinhcoban" sql="SELECT Hinhanh,Tenkhoahoc,Tengiangvien,Lichhoc,Thoigianmo FROM khoahoc where Loaikhoahoc='LKH01'"/>
    <script type="text/javascript">
@@ -265,7 +304,7 @@
    		});
 
    		$(document).ready(function() {
-   				var url;
+   					var url;
                     url = "thongtinkhoahoc.jsp";
                     $("#noidungchinh").load(url);
                 $("#huongdan1").click(function() {
@@ -273,6 +312,7 @@
                     url = "huongdansd.jsp";
                     $("#noidungchinh").load(url);
                 });
+                
                 $("#gopy").click(function() {
                     var url;
                     url = "tinnhan.jsp";

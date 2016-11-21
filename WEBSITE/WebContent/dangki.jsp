@@ -55,7 +55,7 @@
             
              <div id="div6"></div>
           </div>
-          <button type="submit" id="sub2" class="btn btn-success btn-lg center-block">
+          <button type="button" id="sub2" class="btn btn-success btn-lg center-block">
           Đăng ký 
         </button>
         </form>
@@ -83,7 +83,7 @@
 	                    <input type="checkbox">Ghi nhớ tài khoản
 	                </div>
 	                <a href="#">Quên mật khẩu?</a>
-	                 <button type="submit" class="btn btn-warning btn-lg pull-right">
+	                 <button type="button" class="btn btn-warning btn-lg pull-right">
 	                     Đăng nhập
 	                 </button>
         		</form>

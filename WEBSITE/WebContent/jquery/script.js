@@ -1,4 +1,3 @@
-
 // kiem tra dinh dang email
 function isEmail(emailStr)
 {
@@ -53,21 +52,40 @@ function isEmail(emailStr)
  
         return true;
 }
+function validatePhone(a) {
+    //var a = document.getElementById(txtPhone).value;
+    var filter = /^[0-9-+]+$/;
+    if (filter.test(a)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+function kiemtrakhoangtrang(a) {
+    //var a = document.getElementById(txtPhone).value;
+    if (/ /.test(a)) {
+    	return true;
+	}
+	else {
+    return false;
+	}
+}
 //kiem tra tinh hop le du lieu
 $(document).ready(function(){
 	$("#sub2").click(function(){
-		var username = $.trim($("#id").val());
+		var username = $.trim($("#username").val());
 		var password1= $.trim($("#password").val());
 		var password2= $.trim($("#password2").val());
 		var email= $.trim($("#email").val());
 		var hoten= $.trim($("#hoten").val());
 		var sdt= $.trim($("#sdt").val());
 		var flag1=true,flag2=true,flag3=true,flag4=true,flag5=true,flag6=true;
-		if (username == '' || username.length < 4){			
+		if (username == '' || username.length < 4 || kiemtrakhoangtrang(username) || validText(username)){			
 			$("#uname").removeClass("has-feedback has-success");
 			$("#uname").addClass("has-error");
 			$("#div1").removeClass("glyphicon glyphicon-ok form-control-feedback").css("color","red");
-            $("#div1").addClass("alert alert-danger").text("Tên đăng nhập phải lớn hơn 4 ký tự");
+            $("#div1").addClass("alert alert-danger").text("Tên đăng nhập phải lớn hơn 4 ký tự và không được có khoảng trắng");
             flag1=false;
         }
         else{
@@ -135,7 +153,7 @@ $(document).ready(function(){
             $("#uhoten").addClass("has-feedback has-success");
             $("#div5").addClass("glyphicon glyphicon-ok form-control-feedback").css("color","green");
         }
-        if (sdt.length <10 || sdt.length>11){
+        if (sdt.length <10 || sdt.length>11 || !validatePhone(sdt)){
         	$("#usdt").removeClass("has-feedback has-success");
 			$("#usdt").addClass("has-error");
 			$("#div6").removeClass("glyphicon glyphicon-ok form-control-feedback").css("color","red");
@@ -148,8 +166,8 @@ $(document).ready(function(){
             $("#usdt").addClass("has-feedback has-success");
             $("#div6").addClass("glyphicon glyphicon-ok form-control-feedback").css("color","green");
         }
-        //if(flag1 =false || flag2==false || flag3==false || flag4 =false || flag5==false || flag6==false)
-            //return;
+        /*if(flag1 =false || flag2==false || flag3==false || flag4 =false || flag5==false || flag6==false)
+            return false;*/
 	});
 
 });

@@ -54,7 +54,7 @@
                       <%= objUser.getUsername() %>
                     </p>
                 </li>
-                <li><button type="button" class="btn btn-info btn-md pull-right">
+                <li><button type="button" class="btn btn-info btn-md pull-right" onclick="window.location.href='Logout'">
                 <span class="glyphicon glyphicon-log-out"></span>
                 Thoát
                 </button>

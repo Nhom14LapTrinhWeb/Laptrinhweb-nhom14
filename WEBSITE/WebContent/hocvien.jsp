@@ -72,7 +72,7 @@
 									    <li><a id="khoahoccuatoi" href="#"><b>Khóa học của tôi</b></a></li>
 									    <li><a id="xemdiem" href="#"><b>Xem điểm</b></a></li>
 									    <li><a id="baitap" href="#"><b>Xem bài tập</b></a></li>
-									    <li><a id="out" href="index.jsp"><b>Thoát</b></a></li>
+									    <li><a id="out" href="Logout"><b>Thoát</b></a></li>
 				              		</ul>
 			               		</div>
 			               </li>
