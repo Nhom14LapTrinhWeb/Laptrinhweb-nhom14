@@ -36,14 +36,22 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	
-    		<div class="col-md-9 col-sm-9 col-xs-9" id="Danhsachkhoahoc">
+		<div id="wrapper">
+	<jsp:include page="header.jsp"></jsp:include>
+	<div id="noidungchinh">
+    <!-- body -->
+    <div class="container" style="background-color: white; padding-top: 5px;">
+    <div class="row">
+    	<jsp:include page="loaikhoahoc.jsp"></jsp:include>
+		<div class="col-md-9 col-sm-9 col-xs-9" id="Danhsachkhoahoc">
 				<div class="row">
 				
 		            <div class="col-md-9 col-sm-6 col-xs-6">
 		                <h1>Sắp xếp khóa học</h1>
 		            </div>
-		            
+		            <div class="col-md-3" id="danhmucsapxep">
+		           		<jsp:include page="danhmucsapxep.jsp"></jsp:include>
+		            </div>
 				</div>
 				<%
 					khoahocDAO sx = new khoahocDAO();
@@ -73,18 +81,11 @@
 			%>
 			
     		</div>
-	
-  				
-
-
-<script type="text/javascript">
-   		$(document).ready(function() {
-                
-                $("#sapxep").click(function(){
-                	$("#dropdown-menu").slideToggle("100");
-                })
-            });
-            
-   </script>
+	</div>
+	</div>
+   </div>
+   <div style="clear: both;"></div>
+  </div>
+  <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

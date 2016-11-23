@@ -34,34 +34,21 @@
 </head>
 <body>
 			<%
-		
-			danhmucsapxepDAO xs = new danhmucsapxepDAO();
-			%>
-								<button class="btn btn-primary btn-md" id="sapxep" >
-			                	Sắp xếp 
-			                	<span class="caret" style="margin-left:5px;"></span>
-			                	</button>
-			                	<ul class="dropdown-menu" id="dropdown-menu">
-			                		<%
-		            					for(danhmucsapxep s : xs.getDanhmucsapxep()){
-		            				%>
-			                		<li><a href="thongtinkhoahoctheosapxep.jsp?Matinhtrang=<%= s.getMatinhtrang()%>"><%= s.getTentinhtrang() %></a></li>
-									<%
-		            					}
-									%>
-			                	</ul>
-	                	
-  				
-
-
-<script type="text/javascript">
-   		$(document).ready(function() {
-                
-                $("#sapxep").click(function(){
-                	$("#dropdown-menu").slideToggle("100");
-                })
-            });
-            
-</script>
+		LoaikhoahocDAO loai = new LoaikhoahocDAO();
+	%>
+	
+    		<div class="col-md-3 col-sm-3 col-xs-3">
+    			<ul class="nav nav-pills nav-stacked">
+				  <li class="active"><a name="xem"><b>Danh sách khóa học</b></a></li>
+				  <% 
+				  	for(Loaikhoahoc l : loai.getListLoaikhoahoc()){
+				  %>
+				  <li><a id="1" href="thongtinkhoahoctheodanhmuc.jsp?Loaikhoahoc=<%=l.getLoaiKH()%>"><b><%=l.getTenloai() %></b></a></li>
+				  <%
+				  	}
+				  %>
+				</ul>
+    		</div>
+			
 </body>
 </html>

@@ -36,46 +36,14 @@
 			<%
 		LoaikhoahocDAO loai = new LoaikhoahocDAO();
 	%>
-	<div class="container" style="background-color: white; padding-top: 5px;">
-    <div class="row">
-    		<div class="col-md-3 col-sm-3 col-xs-3">
-    			<ul class="nav nav-pills nav-stacked">
-				  <li class="active"><a name="xem"><b>Danh sách khóa học</b></a></li>
-				  <% 
-				  	for(Loaikhoahoc l : loai.getListLoaikhoahoc()){
-				  %>
-				  <li><a id="1" href="thongtinkhoahoctheodanhmuc.jsp?Loaikhoahoc=<%=l.getLoaiKH()%>"><b><%=l.getTenloai() %></b></a></li>
-				  <%
-				  	}
-				  %>
-				</ul>
-    		</div>
+
     		<div class="col-md-9 col-sm-9 col-xs-9" id="Danhsachkhoahoc">
 				<div class="row">
 		            <div class="col-md-9 col-sm-6 col-xs-6">
 		                <h1>Danh sách các khóa học</h1>
 		            </div>
 		            <div class="col-md-3" id="danhmucsapxep">
-		            	
-			                	<%
-		
-								danhmucsapxepDAO xs = new danhmucsapxepDAO();
-								%>
-								<button class="btn btn-primary btn-md" id="sapxep" >
-			                	Sắp xếp 
-			                	<span class="caret" style="margin-left:5px;"></span>
-			                	</button>
-			                	<ul class="dropdown-menu" id="dropdown-menu">
-			                		<%
-		            					for(danhmucsapxep s : xs.getDanhmucsapxep()){
-		            				%>
-			                		<li><a href="thongtinkhoahoctheosapxep.jsp?Matinhtrang=<%= s.getMatinhtrang()%>"><%= s.getTentinhtrang() %></a></li>
-									<%
-		            					}
-									%>
-			                	</ul>
-	                	
-
+		           		<jsp:include page="danhmucsapxep.jsp"></jsp:include>
 		            </div>
 				</div>
 			<div class="row">
@@ -120,22 +88,5 @@
 				</nav>
 			</div>
     		</div>
-    </div>
-    </div>
-	
-  				
-
-
-<script type="text/javascript">
-   		$(document).ready(function() {
-                var url;
-                url="danhmucsapxep.jsp";
-                $("#danhmucsapxep").load(url);
-                $("#sapxep").click(function(){
-                	$("#dropdown-menu").slideToggle("100");
-                })
-            });
-            
-   </script>
 </body>
 </html>

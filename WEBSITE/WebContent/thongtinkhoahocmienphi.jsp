@@ -32,31 +32,24 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-			<%
-		LoaikhoahocDAO loai = new LoaikhoahocDAO();
-	%>
-	<div class="container" style="background-color: white; padding-top: 5px;">
+	<div id="wrapper">
+	<jsp:include page="header.jsp"></jsp:include>
+	<div id="noidungchinh">
+    <!-- body -->
+    <div class="container" style="background-color: white; padding-top: 5px;">
     <div class="row">
-    		<div class="col-md-3 col-sm-3 col-xs-3">
-    			<ul class="nav nav-pills nav-stacked">
-				  <li class="active"><a name="xem"><b>Danh sách khóa học</b></a></li>
-				  <% 
-				  	for(Loaikhoahoc l : loai.getListLoaikhoahoc()){
-				  %>
-				  <li><a href="thongtinkhoahoctheodanhmuc.jsp?Loaikhoahoc=<%=l.getLoaiKH()%>"><b><%=l.getTenloai() %></b></a></li>
-				  <%
-				  	}
-				  %>
-				</ul>
-    		</div>
-    		<div class="col-md-9 col-sm-9 col-xs-9" id="Danhsachkhoahoc">
+    	<jsp:include page="loaikhoahoc.jsp"></jsp:include>
+		<div class="col-md-9 col-sm-9 col-xs-9" id="Danhsachkhoahoc">
 				<div class="row">
+				
 		            <div class="col-md-9 col-sm-6 col-xs-6">
-		                <h1>Danh sách các khóa học miễn phí</h1>
+		                <h1>Danh sách khóa học miễn phí</h1>
 		            </div>
-		   
+		            <div class="col-md-3" id="danhmucsapxep">
+		           		<jsp:include page="danhmucsapxep.jsp"></jsp:include>
+		            </div>
 				</div>
-			<div class="row">
+				<div class="row">
 				<c:forEach items="${items.rows}" var="row">	
 
 				<div class="col-lg-4 col-sm-6 images" style="text-align: center;">
@@ -71,34 +64,12 @@
 				</c:forEach>
 		            
 			</div>
-			<div class="row">
-			<nav>
-				  <ul class="pagination">
-				    <li>
-				      <a href="#" aria-label="Previous">
-				        <span aria-hidden="true">&laquo;</span>
-				      </a>
-				    </li>
-				    <li><a href="#">1</a></li>
-				    <li><a href="#">2</a></li>
-				    <li><a href="#">3</a></li>
-				    <li><a href="#">4</a></li>
-				    <li><a href="#">5</a></li>
-				    <li><a href="#">6</a></li>
-				    <li><a href="#">7</a></li>
-				    <li><a href="#">8</a></li>
-				    <li><a href="#">9</a></li>
-				    <li><a href="#">10</a></li>
-				    <li>
-				      <a href="#" aria-label="Next">
-				        <span aria-hidden="true">&raquo;</span>
-				      </a>
-				    </li>
-				  </ul>
-				</nav>
-			</div>
     		</div>
-    </div>
-    </div>
+	</div>
+	</div>
+   </div>
+   <div style="clear: both;"></div>
+  </div>
+  <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
