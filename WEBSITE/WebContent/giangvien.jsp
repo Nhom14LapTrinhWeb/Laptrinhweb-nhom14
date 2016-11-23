@@ -88,18 +88,13 @@
 					<div class="panel panel-primary">
 					<div class="panel-heading" style="text-align: center;" >THÔNG BÁO</div>
 					<table class="table table-bordered" cellpadding="0" rules="all" border="1"  style="width:100%;border-collapse:collapse;" align="center">
-				<thead>
+				
 				<tbody>
 				<tr>
 					<td><li><a>Nghỉ học ngày x tháng y năm NNNN</a></li></td>
 				</tr>
 				</tbody>
-				</thead>
-				
-				
-			</table>
-		
-		
+			</table>		
 	</div>
 </div>
     		</div>

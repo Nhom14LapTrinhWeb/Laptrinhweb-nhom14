@@ -1,5 +1,17 @@
+<%@page import="DayLaNhom14.User"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
+<%	User objUser = (User)session.getAttribute("userLogin"); 
+	String query = "SELECT tentaikhoan,hoten,ngaysinh,diachi,email,sdt,tenvaitro from taikhoan,vaitro where tentaikhoan='"+objUser.getUsername()+"' and taikhoan.mavaitro=vaitro.mavaitro";
+%> 
+<sql:setDataSource
+	driver="com.mysql.jdbc.Driver"
+	url="jdbc:mysql://localhost/hoclaptrinhonline"
+	user="root"
+	password="phihung123789"/>
+<sql:query var="items" sql="<%= query %>"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -27,37 +39,39 @@
 	<div class="panel panel-primary ">
 		<div class="panel-heading " style="text-align: center;" >Thông tin cá nhân</div>
 			<table class="table table-bordered">
-				<tr>
-					<td>Tên tài khoản</td>
-					<td>abc</td>
-				</tr>
-				<tr>
-					<td>Họ và tên</td>
-					<td>xyz</td>
-				</tr>
-				<tr>
-					<td>Ngày sinh</td>
-					<td>02/06/1996</td>
-				</tr>
-				<tr>
-					<td>Địa chỉ</td>
-					<td>Hồ chí minh</td>
-				</tr>
-				<tr>
-					<td>Email</td>
-					<td>asdasd@gmail.com</td>
-				</tr>
-				<tr>
-					<td>Điện thoại</td>
-					<td>01345456789</td>
-				</tr>
-				<tr>
-					<td>Vai trò</td>
-					<td>Học viên</td>
-				</tr>
-			</table>
-			<button class="btn btn-warning pull-right" onclick="location.href='/thaydoithongtin.jsp'">Chỉnh sửa thông tin</button>
-			<button class="btn btn-warning pull-right" onclick="location.href='/doimatkhau.jsp'">Đổi mật khẩu</button>
+				<c:forEach items="${items.rows}" var="row">
+					<tr>
+						<th>Tên tài khoản</th>
+						<td>${row.Tentaikhoan}</td>
+					</tr>
+					<tr>
+						<th>Họ và tên</th>
+						<td>${row.Hoten}</td>
+					</tr>
+					<tr>
+						<th>Ngày sinh</th>
+						<td>${row.Ngaysinh}</td>
+					</tr>
+					<tr>
+						<th>Địa chỉ</th>
+						<td>${row.Diachi}</td>
+					</tr>
+					<tr>
+						<th>Email</th>
+						<td>${row.Email}</td>
+					</tr>
+					<tr>
+						<th>Điện thoại</th>
+						<td>${row.SDT}</td>
+					</tr>
+					<tr>
+						<th>Vai trò</th>
+						<td>${row.Tenvaitro}</td>
+					</tr>
+				</c:forEach>
+				</table>
+				<button id="btnUpdate" class="btn btn-warning pull-right" >Chỉnh sửa thông tin</button>
+				<button id="btnChange" class="btn btn-warning pull-right" >Đổi mật khẩu</button>	
 		</div>
 	</div>
 </body>

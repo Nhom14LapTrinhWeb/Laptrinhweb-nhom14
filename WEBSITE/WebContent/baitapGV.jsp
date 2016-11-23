@@ -1,5 +1,17 @@
+<%@page import="DayLaNhom14.User"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
+<%	User objUser = (User)session.getAttribute("userLogin"); 
+	String query = "SELECT Mabaitap,tenbaitap,tenkhoahoc,Hannop,noidung FROM baitap,khoahoc,thamgia WHERE tentaikhoan='"+objUser.getUsername()+"' and thamgia.makhoahoc=khoahoc.makhoahoc and khoahoc.makhoahoc = baitap.makhoahoc";
+%> 
+<sql:setDataSource
+	driver="com.mysql.jdbc.Driver"
+	url="jdbc:mysql://localhost/hoclaptrinhonline"
+	user="root"
+	password="phihung123789"/>
+<sql:query var="items" sql="<%= query %>"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -32,45 +44,37 @@
 	<div class="panel panel-primary">
 		<div class="panel-heading" style="text-align: center;" >DANH SÁCH BÀI TẬP</div>
 			<table class="table table-bordered" cellpadding="1" rules="all" border="1"  style="width:100%;border-collapse:collapse;" align="center">
-				<thead>
-				<tbody>
+			<thead>
 				<tr  style="height:30px;background-color: #00BFFF;">
-					<td style="width:5%;" align="center"> STT</td>
-					<td style="width:10%;" align="center">Mã bài tập</td>
-					<td style="width:10%;" align="center">Tên bài tập</td>
-					<td style="width:20%;" align="center">Tên khóa học</td>
-					<td style="width:10%;" align="center">Thời gian nộp</td>
-					<td style="width:10%;" align="center">Nội dung</td>
-					<td style="width:10%;" align="center">Link bài tập</td>
+						<th>STT</th>
+						<th>Mã bài tập</th>
+						<th>Tên bài tập</th>
+						<th>Tên khóa học</th>
+						<th>Thời hạn nộp</th>
+						<th>Link bài tập</th>
+						<th>Chọn</th>
 				</tr>
+			</thead>
+				<tbody>
+					<%! int i=0; %>
+					<c:forEach items="${items.rows}" var="row">	
+						<tr>
+							<td><%= i+1 %></td>
+							<td>${row.mabaitap}</td>
+							<td>${row.tenbaitap}</td>	
+							<td>${row.tenkhoahoc}</td>	
+							<td>${row.hannop}</td>	
+							<td><a href="${row.noidung}">Chi tiết</a></td>	
+							<td><input type="checkbox"></input></td>
+						</tr>
+						<% i++; %>
+					</c:forEach>
+					<% i=0; %>
 				</tbody>
-				</thead>
-				<tr>	
-					<td>1</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td><a href="#"></a></td>
-				</tr>
-				<tr>	
-					<td>2</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td><a href="#"></a></td>
-				</tr>
-				
-			</table>
-		</tbody>
-		
+			</table>									
 		 <button class="btn btn-warning pull-right">Thêm</button>
 			<button class="btn btn-warning pull-right">Sửa</button>
-			 <button class="btn btn-warning pull-right">Xóa</button>
-	
+			 <button class="btn btn-warning pull-right">Xóa</button>	
 	</div>
 </div>
 </body>

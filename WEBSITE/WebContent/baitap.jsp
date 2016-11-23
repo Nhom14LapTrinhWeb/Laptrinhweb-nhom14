@@ -47,7 +47,7 @@
 						<th>Tên khóa học</th>
 						<th>Thời hạn nộp</th>
 						<th>Link bài tập</th>
-						<th>Làm bài tập</th>
+						<th>Chọn</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -59,8 +59,8 @@
 							<td>${row.tenbaitap}</td>	
 							<td>${row.tenkhoahoc}</td>	
 							<td>${row.hannop}</td>	
-							<td><a href="${row.noidung}">Chi tiết</a></td>	
-							<td><a class="lambai" href="#">Làm bài</a></td>	
+							<td><a href="${row.noidung}">Chi tiết</a></td>
+							<td><input type="checkbox"></input></td>	
 						</tr>
 						<% i++; %>
 					</c:forEach>

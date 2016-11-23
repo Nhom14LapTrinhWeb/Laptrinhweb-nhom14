@@ -12,7 +12,6 @@
 	user="root"
 	password="phihung123789"/>
 <sql:query var="items" sql="<%= query %>"/>
-<html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
