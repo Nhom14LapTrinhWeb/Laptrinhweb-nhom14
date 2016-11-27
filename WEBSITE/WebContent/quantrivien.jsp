@@ -47,13 +47,16 @@
                 <li><a href="#" id="mokhoahoc">Mở khóa học mới</a></li> 
                 <li><a href="#" id="kehoach">Kế hoạch</a></li>
               </ul>
+              <%	if(objUser.getUsername()!=null) { %>
               <ul class="nav navbar-nav navbar-right">
                <li>
                   <p class="pull-right" style="padding: 10px;">
                       <span class="glyphicon glyphicon-user"></span>
-                      <%= objUser.getUsername() %>
+                      
+                      			<%=objUser.getUsername() %>
                     </p>
                 </li>
+                <%  }%>
                 <li><button type="button" class="btn btn-info btn-md pull-right" onclick="window.location.href='Logout'">
                 <span class="glyphicon glyphicon-log-out"></span>
                 Thoát
@@ -71,11 +74,12 @@
     <!-- body -->
     <div class="container" style="background-color: white; padding-top: 5px;">
       <div class="content col-md-12 ">
-        <div class="content-left col-md-3">
+        <div class="content-left col-md-2">
           <ul class="nav nav-pills nav-stacked">
           <li class="active"><a name="xem"><b>Quản lý</b></a></li>
           <li><a href="#" id="dsHocvien"><b>Danh sách học viên</b></a></li>
           <li><a href="#" id="dsgiangvien"><b>Danh sách giảng viên</b></a></li>
+          <li><a href="#" id="dsLoaikhoahoc"><b>Danh sách loại khóa học</b></a></li>
           <li><a href="#" id="dsKhoahoc"><b>Danh sách khóa học đang mở</b></a></li>
           <li><a href="#"><b>Tin nhắn</b></a></li>
           <li><a href="#"><b>Thống kê</b></a></li>
@@ -84,7 +88,7 @@
         </ul>
         
         </div>
-        <div class="content-right col-md-9" >
+        <div class="content-right col-md-10" >
           <div id="noidungchinh" >
               <div class="row ">
                   <div class="panel panel-success">
@@ -175,6 +179,11 @@
                     url = "danhsachkhoahocdangmo.jsp";
                     $("#noidungchinh").load(url);
             });
+          $("#dsLoaikhoahoc").click(function() {
+              var url;
+              url = "danhsachloaikhoahoc.jsp";
+              $("#noidungchinh").load(url);
+      });
       })  
    </script>
 </body>

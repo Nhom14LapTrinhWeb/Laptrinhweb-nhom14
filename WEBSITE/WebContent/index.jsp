@@ -1,5 +1,7 @@
+<%@page import="Models.Users"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+   <%@page import="DayLaNhom14.User"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
 <sql:setDataSource var="snapshot"
@@ -49,6 +51,37 @@
 		</div>
 </div> -->
 <body>	
+<%
+	Users users =null;
+	if(session.getAttribute("user")!=null)
+	{
+		users=(Users)session.getAttribute("user");
+	}
+%>
+<%
+	if(users!=null){
+%>
+	<script type="text/javascript">
+			                		
+		alert("Đăng ký tài khoản thành công!!");
+	</script>
+<%} %>
+
+<%
+	User user =null;
+	if(session.getAttribute("userLogin")!=null)
+	{
+		user=(User)session.getAttribute("user");
+	}
+%>
+<%
+	if(user!=null){
+%>
+	<script type="text/javascript">
+			                		
+		alert("Đăng nhập thất bại!!Tài khoản không đúng");
+	</script>
+<%} %>
 	<div id="wrapper">
 	<jsp:include page="header.jsp"></jsp:include>
 	<div id="noidungchinh">

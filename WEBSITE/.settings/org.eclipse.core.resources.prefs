@@ -2,3 +2,6 @@ eclipse.preferences.version=1
 encoding//WebContent/Tailieu.jsp=UTF-8
 encoding//WebContent/index.jsp=UTF-8
 encoding//src/DayLaNhom14/Loginform.java=UTF-8
+encoding//src/controller/CheckUsernameServlet.java=UTF-8
+encoding//src/controller/ManagerLoaikhoahocServlet.java=UTF-8
+encoding//src/dao/LoaikhoahocDAO.java=UTF-8

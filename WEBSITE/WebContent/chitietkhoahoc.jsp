@@ -1,6 +1,8 @@
 <%@page import="org.apache.taglibs.standard.lang.jpath.adapter.Convert"%>
 <%@page import="Models.khoahoc"%>
 <%@page import="dao.khoahocDAO"%>
+<%@page import="DayLaNhom14.User"%>
+<%	User objUser = (User)session.getAttribute("userLogin"); %> 
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -32,9 +34,7 @@
     </style>
 </head>
 <body>
-	<!-- header -->
-  	<!-- made row -->
-    <!-- End header -->
+
     <%
 			khoahocDAO kh = new khoahocDAO();
     		khoahoc k = new khoahoc();
@@ -45,6 +45,36 @@
 			}
 			k=kh.getChitietkhoahoc(Makh);
 	%>
+	<%
+	if(objUser!=null)
+	{
+%>
+		<script type="text/javascript">
+   		$(document).ready(function() {
+                $("#dangkihoc1").click(function() {
+                    $(this).attr('href',
+                    		'dangkihoc.jsp?Makhoahoc=<%= k.getMakhoahoc()%>&Tentaikhoan=<%=objUser.getUsername()%>');
+                });
+            });
+
+   		</script>
+<%
+	}
+	else
+	{
+%>
+		<script type="text/javascript">
+   		$(document).ready(function() {
+                $("#dangkihoc1").click(function() {
+                    alert("Vui lòng đăng nhập trước!!");
+                    $(this).attr('href','dangki.jsp');
+                });
+            });
+
+   		</script>
+<%
+	}
+%>
 	<div class="container" id="noidungchinh">
 		<div class="row">
 			<h1 align="center"><%= k.getTenkhoahoc()%></h1>
@@ -59,8 +89,8 @@
 		<div class="row">
 			<h2>Mô tả khóa học</h2>
 			<div class="well">
-				<h3>Thời gian mở khóa học: <%= k.getThoigianmo() %></h3>
-				<h3>Thời gian kết thúc: <%= k.getThoigianketthuc() %></h3>
+				<h3>Thời gian mở khóa học: <%= k.getThoigianmo().toString() %></h3>
+				<h3>Thời gian kết thúc: <%= k.getThoigianketthuc().toString() %></h3>
 				<h3>Thời gian học hàng tuần: <%= k.getLichhoc() %></h3>
 				<h3>Mô tả về khóa học:
 				<%= k.getMota() %>

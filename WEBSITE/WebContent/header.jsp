@@ -1,3 +1,4 @@
+<%@page import="Models.Users"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -97,14 +98,26 @@
 			      </button>
 	            </div>
 	            <div class="collapse navbar-collapse" id="bs-codevn-navbar-collapse-1">
-		            <form class="navbar-form navbar-left">
+		            	<form class="navbar-form navbar-left">
 			                <div class="form-group">
-			                    <input type="text" class="form-control" placeholder="Search">
+			                    <input type="text" class="form-control" placeholder="Search" id="giatritim">
 			                </div>
-			                  <a href="#" class="btn btn-info btn-md">
+			                
+			                  <a id="timkiem" href="#" class="btn btn-info btn-md" onclick="Timkiem()">
 			                    <span class="glyphicon glyphicon-search"></span>
 			                  </a>
 			             </form>
+			             <script type="text/javascript">
+			                	
+			                		function Timkiem(){
+   										var a ="timkiemkhoahoc.jsp?Tukhoa=";
+			                			var inputVal = $('#giatritim').val().toString();
+			                			var c =(a+inputVal).toString();
+			                			$("#timkiem").attr('href',c);
+									}
+			                		
+			                </script>
+
 			            <ul class="nav navbar-nav">
 			            
 			              <li><a href="thongtinkhoahocmienphi.jsp" id="mienphi">Học miễn phí</a></li>
@@ -114,7 +127,7 @@
 			              <li><a href="#" id="gopy">Góp ý</a></li>
 			            </ul>
 			            <ul class="nav navbar-nav navbar-right">
-			              <li><button type="button" class="btn btn-info btn-md" id="dangki" style="">
+			              <li><button type="button" class="btn btn-info btn-md" id="dangki" onclick="window.location.href='dangki.jsp'" style="">
 			              <span class="glyphicon glyphicon-user"></span>
 			              Đăng ký 
 			              </button>
@@ -159,6 +172,7 @@
 	                    </div>
 	                     <a href="#">Quên mật khẩu?</a>
 	                     <div style="text-align: right;">
+	                     	 <input type="hidden" value="login" name="command">
 	                     	 <button class="btn btn-primary" type="submit" id="submit">Đăng nhập</button>
 	                 		 <button type="button" class="btn btn-primary" data-dismiss="modal">Thoát</button>
 	                     </div>
@@ -195,16 +209,6 @@
                     url = "tinnhan.jsp";
                     $("#noidungchinh").load(url);
                 });
-                $("#dangki1").click(function() {
-                    var url;
-                    url = "dangki.jsp";
-                    $("#noidungchinh").load(url);
-                });
-                $("#dangki").click(function() {
-                    var url;
-                    url = "dangki.jsp";
-                    $("#noidungchinh").load(url);
-                });
                 $("#dangkikhoahoc").click(function() {
                     var url;
                     url = "dangkihoc.jsp";
@@ -212,9 +216,6 @@
                 });
                 $('#btnmes').click(function(){
 	   				$('#Message').collapse('toggle');
-	   			});
-	   			$('#btnSent').click(function(){
-	 				alert('Đã gửi thành công');
 	   			});
             });
             

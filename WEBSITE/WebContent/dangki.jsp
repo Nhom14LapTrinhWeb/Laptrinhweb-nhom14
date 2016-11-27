@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,43 +20,52 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    
 </head>
 <body>
+<jsp:include page="header.jsp"></jsp:include>
 	<!-- Menu top -->
   <!-- Đăng ký tài khoản -->
   <div class="container">
     <div class="row">
       <div class="col-md-5">
         <h2 class="head-form" style="text-align: center;">Đăng ký tài khoản</h2>
-        <form class="register">
+        <form class="register" action="DangkitaikhoanServlet" method="post">
           <div id="uname" class="form-group">
             <input type="text" id="username" name="username" class="form-control " ng-model="username" placeholder="Tên đăng nhập">
+            <span id="icon_error"></span><span id="user-result"></span>
             <div id="div1"></div>
           </div>
           <div id="upass" class="form-group">
             <input type="password" id="password" name="password" class="form-control" placeholder="Mật khẩu">
-            
+            <span id="icon_error1"></span><span id="pass1-result"></span>
            <div id="div2"></div>
           </div>
           <div id="upass2" class="form-group">
             <input type="password" id="password2" name="password2" class="form-control" placeholder="Nhập lại mật khẩu">
+
+            <span id="icon_error2"></span><span id="pass2-result"></span>
             <div id="div3"></div>
           </div>
           <div id="uemail" class="form-group">
-            <input type="email" id="email" name="email" class="form-control" placeholder="Email">           
+            <input type="email" id="email" name="email" class="form-control" placeholder="Email">   
+            <span id="icon_error3"></span><span id="email-result"></span>        
             <div id="div4"></div>
           </div>
           <div id="uhoten" class="form-group">
             <input type="text" id="hoten" name="hoten" class="form-control" placeholder="Họ và tên">
-             
+             <span id="icon_error4"></span><span id="hoten-result"></span> 
              <div id="div5"></div>
           </div>
           <div id="usdt" class="form-group">
             <input type="text" id="sdt" name="sdt" class="form-control" placeholder="SĐT">
+            <span id="icon_error5"></span><span id="sdt-result"></span> <br />
             
              <div id="div6"></div>
           </div>
-          <button type="button" id="sub2" class="btn btn-success btn-lg center-block">
+          <span id="icon_error6"></span><span id="check-result"></span>
+          <input type="hidden" value="insert" name="command">
+          <button type="submit" id="sub2" class="btn btn-success btn-lg center-block">
           Đăng ký 
         </button>
         </form>
@@ -83,7 +93,8 @@
 	                    <input type="checkbox">Ghi nhớ tài khoản
 	                </div>
 	                <a href="#">Quên mật khẩu?</a>
-	                 <button type="button" class="btn btn-warning btn-lg pull-right">
+                  <input type="hidden" value="login" name="command">
+	                 <button type="submit" class="btn btn-warning btn-lg pull-right">
 	                     Đăng nhập
 	                 </button>
         		</form>
@@ -96,4 +107,5 @@
     </div>
   </div>
 </body>
+
 </html>

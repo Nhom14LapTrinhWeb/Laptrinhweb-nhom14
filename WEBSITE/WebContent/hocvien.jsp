@@ -59,12 +59,19 @@
 			            </ul>
 			            <ul class="nav navbar-nav navbar-right">
 			              <li>
+			               
 				              <div class="dropdown">
+				             
 					           		<button id="dropbtn" class="btn btn-info btn-md dropdown-toggle" type="button" data-toggle="dropdown">
+					              		<%
+				              				if(objUser.getUsername()!=null){
+				              			%>
 					              		<span class="glyphicon glyphicon-user"></span>
 					              		<%= objUser.getUsername() %>
 					              		<span class="caret"></span>
+					              		<%} %>
 				              		</button>
+				              		
 				              		<ul class="dropdown-menu" id="dr1">
 				              			<li><a id="mypage" href="#"><b>Thông báo mới</b></a></li>
 									    <li><a id="thongtin" href="#"><b>Thông tin cá nhân</b></a></li>
@@ -75,6 +82,7 @@
 									    <li><a id="out" href="Logout"><b>Thoát</b></a></li>
 				              		</ul>
 			               		</div>
+			               		
 			               </li>
 			            </ul>
 			            <div style="clear: both"></div>

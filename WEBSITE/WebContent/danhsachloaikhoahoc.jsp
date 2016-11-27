@@ -1,3 +1,5 @@
+<%@page import="Models.Loaikhoahoc"%>
+<%@page import="dao.LoaikhoahocDAO"%>
 <%@page import="Models.Users"%>
 <%@page import="dao.UsersDAO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
@@ -31,43 +33,32 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+<div >
 <%
-	UsersDAO userdao = new UsersDAO();
+	LoaikhoahocDAO lkhdao = new LoaikhoahocDAO();
 %>
 <form action="DanhsachServlet" method="post">
 	<div class="panel panel-primary" style="text-align: center;">
-	    <div class="panel-heading" >Danh sách các thành viên của website</div>
+	    <div class="panel-heading" >Danh sách các danh mục khóa học của website</div>
 		<table border="1" class="table">
-			<tr>
-				<th>Tên tài khoản</th>	
-				<th>Họ Tên</th>
-				<th>Ngày sinh</th>
-				<th>Địa chỉ</th>
-				<th>Email</th>
-				<th>Số điện thoại</th>	
-				<th>Mật khẩu</th>		
-				<th>Mã Chức vụ</th>	
+			<tr style="text-align: center;">
+				<th>Mã Loại</th>	
+				<th>Tên loại</th>
 				<th>Sửa đổi</th>
 				<th>Xóa</th>	                
 			</tr>
-			<%for(Users u : userdao.getListUser()){
+			<%for(Loaikhoahoc lkh : lkhdao.getListLoaikhoahoc()){
 				
 
 				%>
 			
 
-				<tr>
+				<tr style="text-align: center;">
 								
-					<td><%= u.getTentaikhoan() %></td>	
-					<td><%= u.getHoten() %></td>	
-					<td><%= u.getNgaysinh()%></td>
-					<td><%= u.getDiachi() %></td>
-					<td><%= u.getEmail() %></td>
-					<td><%= u.getSDT() %></td>	 
-					<td><%= u.getMatkhau()%></td>
-					<td><%= u.getMavaitro() %></td>                    
-					<td><input type="submit" name="operation" value="Sửa" onclick="window.location.href='edit.jsp?id=<%= u.getTentaikhoan() %>'"></td>
-					<td><input type="submit" name="operation" value="Xóa" onclick="window.location.href='delete?id=<%= u.getTentaikhoan() %>'"></td>							
+					<td><%= lkh.getLoaiKH() %></td>	
+					<td><%= lkh.getTenloai() %></td>	                 
+					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='sualoaikhoahoc.jsp?command=update&LoaiKH=<%= lkh.getLoaiKH()%>'"></td>
+					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/ManagerLoaikhoahocServlet?command=delete&LoaiKH=<%= lkh.getLoaiKH()%>'"></td>							
 				</tr>
 			<%
 				}
@@ -80,9 +71,10 @@
   	
 	<div class="row" id="chucnang">
                 <ul class="nav navbar-nav">
-                  <li><button class="btn btn-primary" onclick="window.location.href='dangki.jsp'">Thêm tài khoản</button></li>
+                  <li><button class="btn btn-primary" onclick="window.location.href='themloaikhoahoc.jsp'">Thêm loại khóa học</button></li>
                   <li><button class="btn btn-primary" onclick="window.location.href='quantrivien.jsp'">Reload</button></li>
                 </ul>
         </div>
+</div>
 </body>
 </html>

@@ -57,7 +57,10 @@ public class Loginform extends HttpServlet {
 			}
 			else
 			{
-				
+				objUser = new User();
+				objUser.setUsername(user);
+				session = request.getSession();
+				session.setAttribute("userLogin", objUser);
 				response.sendRedirect("index.jsp");
 			}
 			

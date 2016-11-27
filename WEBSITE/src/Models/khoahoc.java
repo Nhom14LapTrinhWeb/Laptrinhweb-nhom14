@@ -1,5 +1,5 @@
 package Models;
-
+import java.sql.Date;
 public class khoahoc {
 	private String Makhoahoc;
 	private String Loaikhoahoc;
@@ -8,15 +8,15 @@ public class khoahoc {
 	private String Lichhoc;
 	private int Hocphi;
 	private String Hinhanh;
-	private String Thoigianmo;
-	private String Thoigianketthuc;
+	private Date Thoigianmo;
+	private Date Thoigianketthuc;
 	private String Mangonngu;
 	private String Mota;
 	private String Videogioithieu;
 	
 	public khoahoc(String makhoahoc, String loaikhoahoc, String tenkhoahoc,
 			String tengiangvien, String lichhoc, int hocphi, String hinhanh,
-			String thoigianmo, String thoigianketthuc, String mangonngu,
+			Date thoigianmo, Date thoigianketthuc, String mangonngu,
 			String mota, String videogioithieu) {
 		super();
 		Makhoahoc = makhoahoc;
@@ -42,16 +42,16 @@ public class khoahoc {
 	public khoahoc() {
 		
 	}
-	public String getThoigianmo() {
+	public Date getThoigianmo() {
 		return Thoigianmo;
 	}
-	public void setThoigianmo(String thoigianmo) {
+	public void setThoigianmo(Date thoigianmo) {
 		Thoigianmo = thoigianmo;
 	}
-	public String getThoigianketthuc() {
+	public Date getThoigianketthuc() {
 		return Thoigianketthuc;
 	}
-	public void setThoigianketthuc(String thoigianketthuc) {
+	public void setThoigianketthuc(Date thoigianketthuc) {
 		Thoigianketthuc = thoigianketthuc;
 	}
 	public String getMangonngu() {

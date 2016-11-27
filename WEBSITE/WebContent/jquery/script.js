@@ -71,103 +71,213 @@ function kiemtrakhoangtrang(a) {
     return false;
 	}
 }
-//kiem tra tinh hop le du lieu
-$(document).ready(function(){
-	$("#sub2").click(function(){
-		var username = $.trim($("#username").val());
-		var password1= $.trim($("#password").val());
-		var password2= $.trim($("#password2").val());
-		var email= $.trim($("#email").val());
-		var hoten= $.trim($("#hoten").val());
-		var sdt= $.trim($("#sdt").val());
-		var flag1=true,flag2=true,flag3=true,flag4=true,flag5=true,flag6=true;
-		if (username == '' || username.length < 4 || kiemtrakhoangtrang(username) || validText(username)){			
-			$("#uname").removeClass("has-feedback has-success");
-			$("#uname").addClass("has-error");
-			$("#div1").removeClass("glyphicon glyphicon-ok form-control-feedback").css("color","red");
-            $("#div1").addClass("alert alert-danger").text("Tên đăng nhập phải lớn hơn 4 ký tự và không được có khoảng trắng");
-            flag1=false;
-        }
-        else{
-			$("#uname").removeClass("has-error");
-            $("#div1").removeClass("alert alert-danger").text("");
-            $("#uname").addClass("has-feedback has-success");
-            $("#div1").addClass("glyphicon glyphicon-ok form-control-feedback").css("color","green");
-        }
- 
-        // Password
-        if (password1.length < 5 || password1==''){
-        	$("#upass").removeClass("has-feedback has-success");
-			$("#upass").addClass("has-error");
-			$("#div2").removeClass("glyphicon glyphicon-ok form-control-feedback").css("color","red");
-            $("#div2").addClass("alert alert-danger").text("Mật khẩu phải lớn hơn 4 ký tự để đảm bảo an toàn");
-            flag2=false;
-        }
-        else{
-        	$("#upass").removeClass("has-error");
-            $("#div2").removeClass("alert alert-danger").text("");
-            $("#upass").addClass("has-feedback has-success");
-            $("#div2").addClass("glyphicon glyphicon-ok form-control-feedback").css("color","green");
-        }
- 
-        // Re password
-        if (password1 != password2 || password2==""){
-        	$("#upass2").removeClass("has-feedback has-success");
-			$("#upass2").addClass("has-error");
-			$("#div3").removeClass("glyphicon glyphicon-ok form-control-feedback").css("color","red");
-            $("#div3").addClass("alert alert-danger").text("Mật khẩu nhập lại không đúng");
-            flag3=false;
-        }
-        else{
-        	$("#upass2").removeClass("has-error");
-            $("#div3").removeClass("alert alert-danger").text("");
-            $("#upass2").addClass("has-feedback has-success");
-            $("#div3").addClass("glyphicon glyphicon-ok form-control-feedback").css("color","green");
-        }
- 
-        // Email
-        if (!isEmail(email)){
-        	$("#uemail").removeClass("has-feedback has-success");
-			$("#uemail").addClass("has-error");
-			$("#div4").removeClass("glyphicon glyphicon-ok form-control-feedback").css("color","red");
-            $("#div4").addClass("alert alert-danger").text("Email không được để trống và phải đúng định dạng");
-            flag4 = false;
-        }
-        else{			
-        	$("#uemail").removeClass("has-error");
-            $("#div4").removeClass("alert alert-danger").text("");
-            $("#uemail").addClass("has-feedback has-success");
-            $("#div4").addClass("glyphicon glyphicon-ok form-control-feedback").css("color","green");
-        }
-        if (hoten == ''){
-        	$("#uhoten").removeClass("has-feedback has-success");
-			$("#uhoten").addClass("has-error");
-			$("#div5").removeClass("glyphicon glyphicon-ok form-control-feedback").css("color","red");
-            $("#div5").addClass("alert alert-danger").text("Không được để trống họ tên");
-            
-            flag5 = false;
-        }
-        else{
-        	$("#uhoten").removeClass("has-error");
-            $("#div5").removeClass("alert alert-danger").text("");
-            $("#uhoten").addClass("has-feedback has-success");
-            $("#div5").addClass("glyphicon glyphicon-ok form-control-feedback").css("color","green");
-        }
-        if (sdt.length <10 || sdt.length>11 || !validatePhone(sdt)){
-        	$("#usdt").removeClass("has-feedback has-success");
-			$("#usdt").addClass("has-error");
-			$("#div6").removeClass("glyphicon glyphicon-ok form-control-feedback").css("color","red");
-            $("#div6").addClass("alert alert-danger").text("Số điện thoại không đúng định dạng");
-            flag6 = false;
-        }
-        else{
-        	$("#usdt").removeClass("has-error");
-            $("#div6").removeClass("alert alert-danger").text("");
-            $("#usdt").addClass("has-feedback has-success");
-            $("#div6").addClass("glyphicon glyphicon-ok form-control-feedback").css("color","green");
-        }
-        /*if(flag1 =false || flag2==false || flag3==false || flag4 =false || flag5==false || flag6==false)
-            return false;*/
-	});
 
-});
+$(document).ready(function () {
+           var flag1=false;
+           var flag2=false;
+           var flag3=false;
+           var flag4=false;
+           var flag5=false;
+           var flag6=false;
+
+           var x_timer;
+           //kiểm tra tai khoan
+           $("#username").keyup(function (e) {
+                clearTimeout(x_timer);
+                var user_name = $(this).val();
+                x_timer = setTimeout(function () {
+                    check_username_ajax(user_name);
+                }, 1000);
+                });
+ 
+           function check_username_ajax(username) {
+            if(username.length<5)
+            {
+                
+                $("#user-result").html("<b style=\"color:red;\">Tên tài khoản phải lớn hơn 4 ký tự</b>");
+                flag1=false;
+            }
+            else
+            {
+                if(kiemtrakhoangtrang(username))
+                {
+                    
+                    $("#user-result").html("<b style=\"color:red;\">Tên tài khoản không được có khoảng trắng</b>");
+                    flag1=false;
+                }
+                else
+                {
+                    $("#user-result").html('<img src="icon/ajax-loader.gif" />');
+                    $.post('CheckUsernameServlet', {'username': username}, function (data) {
+                    $("#user-result").html(data);
+                    flag1=true;
+                 });
+                }
+            }
+                
+           }
+           //Kiểm tra pass 1
+           $("#password").keyup(function (e) {
+                clearTimeout(x_timer);
+                var password1= $.trim($("#password").val());
+                x_timer = setTimeout(function () {
+                    check_pass1_ajax(password1);
+                }, 1000);
+                });
+            function check_pass1_ajax(password1) {
+               if(password1=="")
+                {
+                    $("#icon_error1").html("");
+                    $("#pass1-result").html("");
+                    flag2=false;
+                }
+                else
+                {
+                    if (password1.length <5 || kiemtrakhoangtrang(password1)){
+                        $("#icon_error1").html("<img src=\"icon/not-available.png\" />");
+                        $("#pass1-result").html("<b style=\"color:red;\">Mật khẩu không được có khoảng trắng và lớn hơn 4 ký tự</b>");
+                        flag2=false;
+
+                    }
+                    else
+                    {
+                        $("#icon_error1").html("<img src=\"icon/available.png\" />");
+                        $("#pass1-result").html("<b style=\"color:green;\">Mật khẩu hợp lệ</b>");
+                        flag2=true;
+                    }
+                }       
+           }
+           //Kiểm tra pass 2
+           $("#password2").keyup(function (e) {
+                clearTimeout(x_timer);
+                var password1= $.trim($("#password").val());
+                var password2= $.trim($("#password2").val());
+                x_timer = setTimeout(function () {
+                    check_pass2_ajax(password2,password1);
+                }, 1000);
+                });
+           function check_pass2_ajax(password2,password1) {
+                if(password2=="")
+                {
+                    $("#icon_error2").html("");
+                    $("#pass2-result").html("");
+                    flag3=false;
+                }
+                else
+                {
+                    if (password1 != password2){
+                        $("#icon_error2").html("<img src=\"icon/not-available.png\" />");
+                        $("#pass2-result").html("<b style=\"color:red;\">Mật khẩu không khớp</b>");
+                        flag3=false;
+                    }
+                    else
+                    {
+                        $("#icon_error2").html("<img src=\"icon/available.png\" />");
+                        $("#pass2-result").html("<b style=\"color:green;\">Khớp</b>");
+                        flag3=true;
+                    }
+                }            
+           }
+           //kiểm tra email
+           $("#email").keyup(function (e) {
+                clearTimeout(x_timer);
+                var email= $.trim($("#email").val());
+                x_timer = setTimeout(function () {
+                    check_email_ajax(email);
+                }, 1000);
+                });
+            function check_email_ajax(email) {
+               if(email=="")
+                {
+                    $("#icon_error3").html("");
+                    $("#email-result").html("");
+                    flag4=false;
+                }
+                else
+                {
+                     if (!isEmail(email)){
+                        $("#icon_error3").html("<img src=\"icon/not-available.png\" />");
+                        $("#email-result").html("<b style=\"color:red;\">Email không hợp lệ</b>");
+                        flag4=false;
+                    }
+                    else
+                    {
+                        $("#icon_error3").html("<img src=\"icon/available.png\" />");
+                        $("#email-result").html("<b style=\"color:green;\">Email có thể sử dụng</b>");
+                        flag4=true;
+                    }
+                }       
+           }
+           //kiểm tra họ tên
+           $("#hoten").keyup(function (e) {
+                clearTimeout(x_timer);
+                var hoten= $.trim($("#hoten").val());
+                x_timer = setTimeout(function () {
+                    check_hoten_ajax(hoten);
+                }, 1000);
+                });
+            function check_hoten_ajax(hoten) {
+               if(hoten=="")
+                {
+                    $("#icon_error4").html("");
+                    $("#hoten-result").html("");
+                    flag5=false;
+                }
+                else
+                {
+                     if (hoten.length<4){
+                        $("#icon_error4").html("<img src=\"icon/not-available.png\" />");
+                        $("#hoten-result").html("<b style=\"color:red;\">Họ tên phải lớn hơn 3 ký tự</b>");
+                        flag5=false;
+
+                    }
+                    else
+                    {
+                        $("#icon_error4").html("<img src=\"icon/available.png\" />");
+                        $("#hoten-result").html("<b style=\"color:green;\">Hợp lệ</b>");
+                        flag5=true;
+                    }
+                }       
+           }
+           //kiểm tra số điện thoại
+           $("#sdt").keyup(function (e) {
+                clearTimeout(x_timer);
+                var sdt= $.trim($("#sdt").val());
+                x_timer = setTimeout(function () {
+                    check_sdt_ajax(sdt);
+                }, 1000);
+                });
+            function check_sdt_ajax(sdt) {
+               if(sdt=="")
+                {
+                    $("#icon_error5").html("");
+                    $("#sdt-result").html("");
+                    flag6=false;
+                }
+                else
+                {
+                     if (sdt.length <10 || sdt.length>11 || !validatePhone(sdt)){
+                        $("#icon_error5").html("<img src=\"icon/not-available.png\" />");
+                        $("#sdt-result").html("<b style=\"color:red;\">Số điện thoại chưa đúng</b>");
+                        flag6=false;
+
+                    }
+                    else
+                    {
+                        $("#icon_error5").html("<img src=\"icon/available.png\" />");
+                        $("#sdt-result").html("<b style=\"color:green;\">Số điện thoại hợp lệ</b>");
+                        flag6=true;
+                    }
+                }       
+           }
+           
+           $("#sub2").click(function (e) {
+               if(flag1==false || flag2==false || flag3==false || flag4==false || flag5==false || flag6==false)
+               {
+                    $("#icon_error6").html("<img src=\"icon/not-available.png\" />");
+                    $("#check-result").html("<b style=\"color:red;\">Vui lòng nhập đầy đủ thông tin hợp lệ!</b>");
+                    return false;
+                    
+               }
+           } );
+       });
