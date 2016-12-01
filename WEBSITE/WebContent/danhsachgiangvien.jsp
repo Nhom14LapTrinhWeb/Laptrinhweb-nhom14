@@ -1,3 +1,5 @@
+<%@page import="Models.Users"%>
+<%@page import="dao.UsersDAO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -7,7 +9,7 @@
 	url="jdbc:mysql://localhost/hoclaptrinhonline"
 	user="root"
 	password="phihung123789"/>
-<sql:query var="items" sql="SELECT * FROM taikhoan WHERE Mavaitro='VT02'"/>
+<sql:query var="items" sql="SELECT * FROM taikhoan WHERE Mavaitro='VT01'"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,8 +31,13 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-  	<div class="panel panel-primary" style="text-align: center;">
-	    <div class="panel-heading" >Danh sách các Giảng viên của website</div>
+<%
+	UsersDAO userdao = new UsersDAO();
+	
+%>
+<form action="DanhsachServlet" method="post">
+	<div class="panel panel-primary" style="text-align: center;">
+	    <div class="panel-heading" >Danh sách các thành viên của website</div>
 		<table border="1" class="table">
 			<tr>
 				<th>Tên tài khoản</th>	
@@ -40,24 +47,43 @@
 				<th>Email</th>
 				<th>Số điện thoại</th>	
 				<th>Mật khẩu</th>		
-				<th>Mã Chức vụ</th>
+				<th>Mã Chức vụ</th>	
 				<th>Sửa đổi</th>
-				<th>Xóa</th>		                
+				<th>Xóa</th>	                
 			</tr>
-			<%! int i=0; %>
-			<c:forEach items="${items.rowsByIndex}" var="row">	
+			<%for(Users u : userdao.getListUserByVaiTro("VT02")){
+				
+
+				%>
+			
 
 				<tr>
-					<c:forEach items="${row}" var="col">			
-					<td>${col}</td>			                     
-					</c:forEach>
-					<td><button id="<%= i %>">Sửa</button></td>
-					<td><button >Xóa</button></td>							
+								
+					<td><%= u.getTentaikhoan() %></td>	
+					<td><%= u.getHoten() %></td>	
+					<td><%= u.getNgaysinh()%></td>
+					<td><%= u.getDiachi() %></td>
+					<td><%= u.getEmail() %></td>
+					<td><%= u.getSDT() %></td>	 
+					<td><%= u.getMatkhau()%></td>
+					<td><%= u.getMavaitro() %></td>                    
+					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='suataikhoan.jsp?command=update&TenTK=<%= u.getTentaikhoan()%>'"></td>
+					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/ManagerUsersServlet?command=delete&TenTK=<%= u.getTentaikhoan()%>'"></td>							
 				</tr>
-				<% i++; %>
-			</c:forEach>
-			<% i=0; %>
+			<%
+				}
+			%>
 		</table>
-</div>
+		
+	</div>
+
+</form>
+  	
+	<div class="row" id="chucnang">
+                <ul class="nav navbar-nav">
+                  <li><button class="btn btn-primary" onclick="window.location.href='dangki.jsp'">Thêm tài khoản</button></li>
+                  <li><button class="btn btn-primary" onclick="window.location.href='quantrivien.jsp'">Reload</button></li>
+                </ul>
+        </div>
 </body>
 </html>

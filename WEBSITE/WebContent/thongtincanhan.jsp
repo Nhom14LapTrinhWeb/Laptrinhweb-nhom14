@@ -68,7 +68,7 @@
 					</tr>
 				</c:forEach>
 				</table>
-				<button id="btnUpdate" class="btn btn-warning pull-right" >Chỉnh sửa thông tin</button>
+				<button id="btnUpdate" class="btn btn-warning pull-right" onclick="window.location.href='suataikhoan.jsp?command=update&TenTK=<%= objUser.getUsername()%>'">Chỉnh sửa thông tin</button>
 				<button id="btnChange" class="btn btn-warning pull-right" >Đổi mật khẩu</button>
 		</div>
 	</div>

@@ -1,3 +1,5 @@
+<%@page import="Models.Users"%>
+<%@page import="dao.UsersDAO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -12,7 +14,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Giảng viên</title>
+<title>Danh sách học viên</title>
 <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,8 +31,12 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-  	<div class="panel panel-primary" style="text-align: center;">
-	    <div class="panel-heading" >Danh sách các Học viên của website</div>
+<%
+	UsersDAO userdao = new UsersDAO();
+%>
+<form action="DanhsachServlet" method="post">
+	<div class="panel panel-primary" style="text-align: center;">
+	    <div class="panel-heading" >Danh sách các thành viên của website</div>
 		<table border="1" class="table">
 			<tr>
 				<th>Tên tài khoản</th>	
@@ -39,18 +45,30 @@
 				<th>Địa chỉ</th>
 				<th>Email</th>
 				<th>Số điện thoại</th>	
-				<th>Mật khẩu</th>		
-				<th>Mã Chức vụ</th>		                
+					                
 			</tr>
-			<c:forEach items="${items.rowsByIndex}" var="row">			
-				<tr>
-					<c:forEach items="${row}" var="col">			
-					<td>${col}</td>			                     
-					</c:forEach>							
-				</tr>
+			<%for(Users u : userdao.getListUserByVaiTro("VT01")){
 				
-			</c:forEach>
+
+				%>
+			
+
+				<tr>
+								
+					<td><%= u.getTentaikhoan() %></td>	
+					<td><%= u.getHoten() %></td>	
+					<td><%= u.getNgaysinh()%></td>
+					<td><%= u.getDiachi() %></td>
+					<td><%= u.getEmail() %></td>
+					<td><%= u.getSDT() %></td>	                   						
+				</tr>
+			<%
+				}
+			%>
 		</table>
-</div>
+		
+	</div>
+
+</form>
 </body>
 </html>

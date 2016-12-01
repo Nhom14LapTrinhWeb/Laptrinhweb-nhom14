@@ -52,9 +52,10 @@
 	            <ul class="nav navbar-nav navbar-right">
 	              <li>
 	             	<button class="btn btn-info btn-md pull-right " type="button">
+	             		<%if(objUser.getUsername()!=null){ %>
 					       <span class="glyphicon glyphicon-user"></span>
 					      <%= objUser.getUsername() %>
-					       <span class="" ></span>
+					       <%} %>
 				           </button>
 	              </li>
 	              <li><button type="button" class="btn btn-info btn-md pull-right" data-toggle="modal" data-target="#loginModal" onclick="window.location.href='Logout'">
@@ -77,6 +78,7 @@
 				  <li><a href="#" id="dskh"><b>Danh sách khóa học</b></a></li>				  
 				  <li><a href="#" id="dshv"><b>Danh sách học viên</b></a></li>
 				  <li><a href="#" id="molop"><b>Đăng kí mở lớp</b></a></li>
+				   <li><a href="#" id="dsgv"><b>Xem danh sách giảng viên</b></a></li>
 				  <li><a href="#" id="bt"><b>Bài tập</b></a></li>
 				  <li><a href="#" id="bn"><b>Bài nộp</b></a></li>
 				  <li><a href="#" id="diem1"><b>Điểm</b></a></li>
@@ -130,7 +132,12 @@
    		$(document).ready(function() {
                 $("#dshv").click(function() {
                     var url;
-                    url = "dshv.jsp";
+                    url = "xemdanhsachhocvien.jsp";
+                    $("#noidungload").load(url);
+                });
+                $("#dsgv").click(function() {
+                    var url;
+                    url = "DSGV.jsp";
                     $("#noidungload").load(url);
                 });
                 $("#bt").click(function() {
@@ -148,7 +155,7 @@
                 })
                 $("#xemid").click(function() {
                     var url;
-                    url = "ThongtinGV.jsp";
+                    url = "thongtincanhan.jsp";
                     $("#noidungload").load(url);
                 });
                 $("#molop").click(function() {

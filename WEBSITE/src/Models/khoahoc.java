@@ -2,35 +2,45 @@ package Models;
 import java.sql.Date;
 public class khoahoc {
 	private String Makhoahoc;
-	private String Loaikhoahoc;
 	private String Tenkhoahoc;
-	private String Tengiangvien;
-	private String Lichhoc;
 	private int Hocphi;
-	private String Hinhanh;
+	private String Lichhoc;
 	private Date Thoigianmo;
 	private Date Thoigianketthuc;
+	private String Tengiangvien;
 	private String Mangonngu;
 	private String Mota;
+	private String Hinhanh;
+	private String Loaikhoahoc;
 	private String Videogioithieu;
+	private String Tinhtrang;
 	
-	public khoahoc(String makhoahoc, String loaikhoahoc, String tenkhoahoc,
-			String tengiangvien, String lichhoc, int hocphi, String hinhanh,
-			Date thoigianmo, Date thoigianketthuc, String mangonngu,
-			String mota, String videogioithieu) {
+	
+	
+	public khoahoc(String makhoahoc, String tenkhoahoc, int hocphi,
+			String lichhoc, Date thoigianmo, Date thoigianketthuc,
+			String tengiangvien, String mangonngu, String mota, String hinhanh,
+			String loaikhoahoc, String videogioithieu, String tinhtrang) {
 		super();
 		Makhoahoc = makhoahoc;
-		Loaikhoahoc = loaikhoahoc;
 		Tenkhoahoc = tenkhoahoc;
-		Tengiangvien = tengiangvien;
-		Lichhoc = lichhoc;
 		Hocphi = hocphi;
-		Hinhanh = hinhanh;
+		Lichhoc = lichhoc;
 		Thoigianmo = thoigianmo;
 		Thoigianketthuc = thoigianketthuc;
+		Tengiangvien = tengiangvien;
 		Mangonngu = mangonngu;
 		Mota = mota;
+		Hinhanh = hinhanh;
+		Loaikhoahoc = loaikhoahoc;
 		Videogioithieu = videogioithieu;
+		Tinhtrang = tinhtrang;
+	}
+	public String getTinhtrang() {
+		return Tinhtrang;
+	}
+	public void setTinhtrang(String tinhtrang) {
+		Tinhtrang = tinhtrang;
 	}
 	public String getVideogioithieu() {
 		return Videogioithieu;

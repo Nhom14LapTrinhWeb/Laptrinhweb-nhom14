@@ -31,9 +31,9 @@
 			UsersDAO userdao = new UsersDAO();
 			Users user=new Users();
 			String tentk="";
-			if(request.getParameter("id")!=null)
+			if(request.getParameter("TenTK")!=null)
 			{
-				tentk=Convert.toString(request.getParameter("id"));
+				tentk=Convert.toString(request.getParameter("TenTK"));
 			}
 			user=userdao.getChitietCaNhan(tentk);
 	%>
@@ -43,18 +43,15 @@
     <div class="row">
       <div class="col-md-5">
         <h2 class="head-form" style="text-align: center;">Sửa đổi thông tin tài khoản</h2>
-        <form class="register" action="edit" method="post">
+        <form class="register" action="ManagerUsersServlet" method="post">
           <div id="uname" class="form-group">
-            <input type="text" id="username" name="username" value="<%= user.getTentaikhoan() %>" class="form-control " ng-model="username" placeholder="Tên đăng nhập" disable>
+            <input type="text" id="username1" name="username1" value="<%= user.getTentaikhoan() %>" class="form-control " ng-model="username" placeholder="Tên đăng nhập" disabled>
+            <fieldset disabled></fieldset>
             <span id="icon_error"></span><span id="user-result"></span>
           </div>
           <div id="upass" class="form-group">
             <input type="password" id="password" name="password" value="<%= user.getMatkhau() %>" class="form-control" placeholder="Mật khẩu">
             <span id="icon_error1"></span><span id="pass1-result"></span>
-          </div>
-          <div id="upass2" class="form-group">
-            <input type="password" id="password2" name="password2" class="form-control" placeholder="Nhập lại mật khẩu">
-            <span id="icon_error2"></span><span id="pass2-result"></span>
           </div>
           <div id="uemail" class="form-group">
             <input type="email" id="email" name="email" value="<%= user.getEmail() %>" class="form-control" placeholder="Email">   
@@ -64,22 +61,24 @@
             <input type="text" id="hoten" name="hoten" value="<%= user.getHoten() %>" class="form-control" placeholder="Họ và tên">
              <span id="icon_error4"></span><span id="hoten-result"></span> 
           </div>
-          <div id="usdt" class="form-group">
+          <div  class="form-group">
             <input type="text" id="sdt" name="sdt" value="<%= user.getSDT() %>" class="form-control" placeholder="SĐT">
             <span id="icon_error5"></span><span id="sdt-result"></span> <br />
           </div>
-          <div id="usdt" class="form-group">
-            <input type="text" id="ngaysinh" name="ngaysinh" value="<%= user.getNgaysinh() %>" class="form-control" placeholder="SĐT">
-            <span id="icon_error5"></span><span id="sdt-result"></span> <br />
+          <div  class="form-group">
+            <input type="date" id="ngaysinh" name="ngaysinh" value="<%= user.getNgaysinh() %>" class="form-control" placeholder="SĐT">
+     
           </div>
-          <div id="usdt" class="form-group">
-            <input type="text" id="mavaitro" name="mavaitro" value="<%= user.getMavaitro() %>" class="form-control" placeholder="SĐT">
-            <span id="icon_error5"></span><span id="sdt-result"></span> <br />
+          <div  class="form-group">
+            <input type="text" id="diachi" name="diachi" value="<%= user.getDiachi() %>" class="form-control" placeholder="SĐT">
+            
           </div>
           <span id="icon_error6"></span><span id="check-result"></span>
-          <input type="hidden" value="insert" name="command">
-          <button type="submit" id="sub2" class="btn btn-success btn-lg center-block">
-          Đăng ký 
+           <input type="hidden" value="<%= user.getTentaikhoan() %>" id="username" name="username">
+          <input type="hidden" value="<%= user.getMavaitro() %>" name="vaitro" id="vaitro">
+          <input type="hidden" value="update" name="command">
+          <button type="submit" id="sub3" class="btn btn-success btn-lg center-block">
+          Xác nhận
         </button>
         </form>
         

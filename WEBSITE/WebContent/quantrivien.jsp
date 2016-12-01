@@ -82,9 +82,7 @@
           <li><a href="#" id="dsLoaikhoahoc"><b>Danh sách loại khóa học</b></a></li>
           <li><a href="#" id="dsKhoahoc"><b>Danh sách khóa học đang mở</b></a></li>
           <li><a href="#"><b>Tin nhắn</b></a></li>
-          <li><a href="#"><b>Thống kê</b></a></li>
-          <li><a href="#"><b>Tài khoản của bạn</b></a></li>
-          <li><a href="#"><b>Thoát</b></a></li>
+          <li><a href="#" id="thongtincanhan"><b>Tài khoản của bạn</b></a></li>
         </ul>
         
         </div>
@@ -154,6 +152,11 @@
                     url = "thongbaomoi.jsp";
                     $("#noidungchinh").load(url);
             });
+          $("#thongtincanhan").click(function() {
+              var url;
+              url = "thongtincanhan.jsp";
+              $("#noidungchinh").load(url);
+      });
           $("#mokhoahoc").click(function() {
                     var url;
                     url = "dangkimokhoahoc.jsp";

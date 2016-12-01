@@ -61,44 +61,49 @@ public class UsersDAO {
 		}
 		return false;
 	}
-	public void edit(String Tentaikhoan,String Hoten,Date Ngaysinh,String Diachi,String Email,String SDT,String Matkhau,String Mavaitro )
+	public boolean EditUsers(Users u)
 	{
-		String sql="UPDATE taikhoan set Tentaikhoan = ?,Hoten=?,Ngaysinh=?,Diachi=?,Email=?,SDT=?,Matkhau=?,Mavaitro=?";
+		String sql="UPDATE taikhoan set Hoten=?,Ngaysinh=?,Diachi=?,Email=?,SDT=?,Matkhau=?,Mavaitro=? WHERE Tentaikhoan=?";
 		Connection conn = DBConnect.getConnection();
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, Tentaikhoan);
-			ps.setString(2, Hoten);
-			ps.setDate(3, Ngaysinh);
-			ps.setString(4, Diachi);
-			ps.setString(5, Email);
-			ps.setString(6, SDT);
-			ps.setString(7, Matkhau);
-			ps.setString(8, Mavaitro);
+			
+			ps.setString(1, u.getHoten());
+			ps.setDate(2, u.getNgaysinh());
+			ps.setString(3, u.getDiachi());
+			ps.setString(4, u.getEmail());
+			ps.setString(5, u.getSDT());
+			ps.setString(6, u.getMatkhau());
+			ps.setString(7, u.getMavaitro());
+			ps.setString(8, u.getTentaikhoan());
 			ps.executeUpdate();
+			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return false;
 	}
-	public void delete(String Tentaikhoan)
+	public boolean Delete(String Tentaikhoan)
 	{
-		String sql ="DELETE taikhoan WHERE Tentaikhoan=?";
+		String sql ="DELETE FROM taikhoan WHERE Tentaikhoan=?";
 		Connection conn=DBConnect.getConnection();
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, Tentaikhoan);
 			ps.executeUpdate();
+			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return false;
 	}
-	public ArrayList<Users> getListUser(){
+	public ArrayList<Users> getListUserByVaiTro(String Mavaitro){
 		
 		try {
 			Connection connection = DBConnect.getConnection();
-			String sql = "SELECT * FROM taikhoan";
+			String sql = "SELECT * FROM taikhoan WHERE Mavaitro='"+Mavaitro+"'";
 			CallableStatement ps= connection.prepareCall(sql);
 			ResultSet rs= ps.executeQuery();
 			ArrayList<Users> list=new ArrayList<>();

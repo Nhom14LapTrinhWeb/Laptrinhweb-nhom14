@@ -43,12 +43,13 @@
         <form class="register" action="ManagerLoaikhoahocServlet" method="post">
           <div class="form-group">
 	         	<label for="disabledInput" class="control-label">Mã loại</label>
-	      		<input class="form-control" id="maloai1" name="maloai1" type="text" value="<%= lkh.getLoaiKH()%>">
+	      		<input class="form-control" id="maloai" name="maloai" type="text" value="<%= lkh.getLoaiKH()%>" disabled>
 	    		<fieldset disabled></fieldset>
 	    </div>
           <div id="" class="form-group">
             <input type="text" id="tenloai1" name="tenloai1" class="form-control" placeholder="<%= lkh.getTenloai()%>">
           </div>
+          <input type="hidden" id="maloai1" name="maloai1" class="form-control" value="<%= lkh.getLoaiKH()%>">
           <input type="hidden" value="update" name="command">
           <button type="submit" class="btn btn-success btn-lg center-block">
           Sửa

@@ -1,3 +1,5 @@
+<%@page import="dao.UsersDAO"%>
+<%@page import="Models.Users"%>
 <%@page import="Models.danhmucsapxep"%>
 <%@page import="Models.Loaikhoahoc"%>
 <%@page import="dao.danhmucsapxepDAO"%>
@@ -5,17 +7,15 @@
 <%@page import="dao.vaitroDAO"%>
 <%@page import="Models.ngonngu"%>
 <%@page import="dao.ngonnguDAO"%>
-<%@page import="DayLaNhom14.User"%>
-<%@page import="dao.UsersDAO"%>
-<%@page import="Models.Users"%>
 <%@page import="org.apache.taglibs.standard.lang.jpath.adapter.Convert"%>
 <%@page import="Models.khoahoc"%>
+<%@page import="DayLaNhom14.User"%>
 <%@page import="dao.khoahocDAO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<%	User objUser = (User)session.getAttribute("userLogin"); 
+   <%	User objUser = (User)session.getAttribute("userLogin"); 
 	String query = "SELECT tentaikhoan from taikhoan WHERE tentaikhoan='"+objUser.getUsername()+"'";
-%> 
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -48,107 +48,128 @@
 </head>
 <body>
  <%
- 			ngonnguDAO nndao = new ngonnguDAO();
- 			LoaikhoahocDAO lkhdao = new LoaikhoahocDAO();
- 			danhmucsapxepDAO sxdao = new danhmucsapxepDAO();
- 			////
+		 	ngonnguDAO nndao = new ngonnguDAO();
+			LoaikhoahocDAO lkhdao = new LoaikhoahocDAO();
+			danhmucsapxepDAO sxdao = new danhmucsapxepDAO();	
+ 
+ 			//
+			khoahocDAO kh = new khoahocDAO();
+    		khoahoc k = new khoahoc();
+			String Makh="";
+			if(request.getParameter("MaKH")!=null)
+			{
+				Makh=Convert.toString(request.getParameter("MaKH")) ;
+			}
+			k=kh.getChitietkhoahoc(Makh);
+			
 			UsersDAO userdao = new UsersDAO();
 			Users user=new Users();
 			String tentk="";
-			if(objUser.getUsername()!=null)
+			
+			if(request.getParameter("TenGV")!=null)
 			{
-				tentk=Convert.toString(objUser.getUsername());
+				tentk=Convert.toString(request.getParameter("TenGV"));
 			}
 			user=userdao.getChitietCaNhan(tentk);
+			
+			//
+			String ten="";
+			Users u = new Users();
+			if(objUser.getUsername()!=null)
+			{
+				ten=Convert.toString(objUser.getUsername());
+			}
+			u=userdao.getChitietCaNhan(ten);
 	%>
 	<div class="container">
 		<div class="col-md-6 col-md-offset-3">
 	     	<div class="row">
 	     		<form class="form-horizontal" action="ManagerKhoahocServlet" method="post">
-	       			<h2 class="head-form" align="center">Mở khóa học</h2>
+	       			<h2 class="head-form" align="center">Sửa thông tin khóa học</h2>
 	       			<div class="form-group">
-	      				<input class="form-control" id="makhoahoc" name="makhoahoc" type="text" placeholder="Mã khóa học">
+	      				<input class="form-control" id="makhoahoc1" name="makhoahoc1" type="text" value="<%= k.getMakhoahoc() %>" disabled>
 	    				
 	    			</div>
 	          		<div class="form-group">
 	         			
-	      				<input class="form-control" id="tenkhoahoc" name="tenkhoahoc" type="text" placeholder="Tên khóa học">
+	      				<input class="form-control" id="tenkhoahoc" name="tenkhoahoc" type="text" value="<%= k.getTenkhoahoc() %>">
 	    				<fieldset disabled></fieldset>
 	    			</div>
 	    			<div class="form-group">
 	          			
-	      				<input class="form-control" id="hocphi" name="hocphi" type="text" placeholder="Học phí">
+	      				<input class="form-control" id="hocphi" name="hocphi" type="text" value="<%= k.getHocphi() %>">
 	    				<fieldset disabled></fieldset>
 	      			</div>
 	          		<div class="form-group">
 	          			
-	      				<input class="form-control" id="lichhoc" name="lichhoc" type="text" placeholder="Lịch học" > 
+	      				<input class="form-control" id="lichhoc" name="lichhoc" type="text" value="<%= k.getLichhoc() %>" > 
 	    				<fieldset disabled></fieldset>
 	          		</div>
 	          		<div class="form-group">
 	          			
-	      				<input class="form-control" id="thoigianmo" name="thoigianmo" type="date" placeholder="Thời gian mở " >
+	      				<input class="form-control" id="thoigianmo" name="thoigianmo" type="date" value="<%= k.getThoigianmo() %>" >
 	    				<fieldset disabled></fieldset>
 	      			</div>
 	      			
 	      			<div class="form-group">
 	         			
-	      				<input class="form-control" id="thoigianketthuc" name="thoigianketthuc" type="date" placeholder="Thời gian kết thúc" >
+	      				<input class="form-control" id="thoigianketthuc" name="thoigianketthuc" type="date" value="<%= k.getThoigianketthuc() %>" >
 	    				<fieldset disabled></fieldset>
 	    			</div>
-	    			
 	    			<div class="form-group">
 	         			
-	      				<input class="form-control" id="tengiangvien1" name="tengiangvien1" type="text" value="<%= objUser.getUsername() %>" disabled>
+	      				<input class="form-control" id="tengiangvien1" name="tengiangvien1" type="text" value="<%=user.getTentaikhoan()%>" disabled >
 	    				<fieldset disabled></fieldset>
 	    			</div>
 	    			
 	          		<div class="form-group">
 	         			
-	      				<input class="form-control" id="mota" name="mota" type="text" placeholder="Mô tả" >
+	      				<input class="form-control" id="mota" name="mota" type="text" value="<%= k.getMota() %>" >
 	    				<fieldset disabled></fieldset>
 	    			</div>
 	    			<div class="form-group">
 	         			
-	      				<input class="form-control" id="hinhanh" name="hinhanh" type="text" placeholder="Tên hình hảnh.đuôi" >
+	      				<input class="form-control" id="hinhanh" name="hinhanh" type="text" value="<%= k.getHinhanh() %>" >
 	    				<fieldset disabled></fieldset>
 	    			</div>
+	    			
 	    			<div class="form-group">
 	         			
-	      				<input class="form-control" id="video" name="video" type="text" placeholder="Link mã nhúng video" >
+	      				<input class="form-control" id="video" name="video" type="text" value="<%= k.getVideogioithieu() %>" >
 	    				<fieldset disabled></fieldset>
 	    			</div>
-	    			<h4 class="head-form" align="center">Vui lòng chọn loại khóa học</h4>
-	    			<div class="form-group">
-					  <select class="form-control" id="loaikhoahoc" name="loaikhoahoc"  placeholder="Mã ngôn ngữ">
-					  <%for(Loaikhoahoc lkh : lkhdao.getListLoaikhoahoc()) {%>
-					    <option><%= lkh.getLoaiKH() %></option>
-					    
-					    <%} %>
-					  </select>
-					</div>
 	    			<h4 class="head-form" align="center">Vui lòng chọn mã ngôn ngữ</h4>
 	    			<div class="form-group">
-					  <select class="form-control" id="mangonngu" name="mangonngu"  placeholder="Mã ngôn ngữ">
+					  <select class="form-control" id="mangonngu" name="mangonngu"  value="<%= k.getMangonngu() %>">
 					  <%for(ngonngu nn : nndao.getListNgonNgu() ) {%>
 					    <option><%= nn.getMangonngu() %></option>
 					    
 					    <%} %>
 					  </select>
 					</div>
+					<h4 class="head-form" align="center">Vui lòng chọn loại khóa học</h4>
+	    			<div class="form-group">
+					  <select class="form-control" id="loaikhoahoc" name="loaikhoahoc"  value="<%= k.getLoaikhoahoc() %>">
+					  <%for(Loaikhoahoc lkh : lkhdao.getListLoaikhoahoc()) {%>
+					    <option><%= lkh.getLoaiKH() %></option>
+					    
+					    <%} %>
+					  </select>
+					</div>
 	    			<h4 class="head-form" align="center">Vui lòng chọn tình trạng</h4>
 	    			<div class="form-group">
-					  <select class="form-control" id="tinhtrang" name="tinhtrang"  placeholder="Mã ngôn ngữ">
+					  <select class="form-control" id="tinhtrang" name="tinhtrang"  value="<%= k.getTinhtrang() %>">
 					  <%for(danhmucsapxep sx : sxdao.getDanhmucsapxep()) {%>
 					    <option><%= sx.getMatinhtrang() %></option>
 					    
 					    <%} %>
 					  </select>
 					</div>
-	    				<input type="hidden" id="tengiangvien" name="tengiangvien" value="<%=objUser.getUsername()%>"> 
-	    				<input type="hidden" value="<%= user.getMavaitro() %>" name="vaitro" id="vaitro">
-	    				<input type="hidden" value="insert" name="command">
-	        			<input type="submit"  class="btn btn-success btn-lg center-block" value="Đăng ký" />
+	    				<input  id="tengiangvien" name="tengiangvien" type="hidden" value="<%=user.getTentaikhoan()%>"  >
+	    				<input  id="makhoahoc" name="makhoahoc" type="hidden" value="<%= k.getMakhoahoc() %>" >
+	    				<input type="hidden" value="<%= u.getMavaitro() %>" name="vaitro" id="vaitro">
+	    				<input type="hidden" value="update" name="command">
+	        			<input type="submit"  class="btn btn-success btn-lg center-block" value="Xác nhận" />
 	        		</form>
 	      		</div>
 	      </div>

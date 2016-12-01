@@ -63,43 +63,43 @@
 	       			<h4 class="head-form" align="center">Khóa học</h4>
 	       			<div class="form-group">
 	         			<label for="inputcourse" class="control-label">Tên khóa học</label>
-	      				<input class="form-control" id="tenkhoahoc" name="tenkhoahoc" type="text" value="<%=k.getTenkhoahoc()%>">
+	      				<input class="form-control" id="tenkhoahoc" name="tenkhoahoc" type="text" value="<%=k.getTenkhoahoc()%> " disabled>
 	    				<fieldset disabled></fieldset>
 	    			</div>
 	          		<div class="form-group">
 	         			<label for="inputcourse" class="control-label">Mã khóa học</label>
-	      				<input class="form-control" id="makhoahoc" name="makhoahoc" type="text" value="<%=k.getMakhoahoc()%>">
+	      				<input class="form-control" id="makhoahoc1" name="makhoahoc1" type="text" value="<%=k.getMakhoahoc()%> " disabled>
 	    				<fieldset disabled></fieldset>
 	    			</div>
 	    			<div class="form-group">
 	          			<label for="inputcourse" class="control-label">Lịch học</label>
-	      				<input class="form-control" id="inputcourse" type="text" value="<%=k.getLichhoc() %>">
+	      				<input class="form-control" id="inputcourse" type="text" value="<%=k.getLichhoc() %> " disabled>
 	    				<fieldset disabled></fieldset>
 	      			</div>
 	          		<div class="form-group">
 	          			<label for="inputcourse" class="control-label">Tên giảng viên</label>
-	      				<input class="form-control" id="inputcourse" type="text" value="<%=k.getTengiangvien() %>">
+	      				<input class="form-control" id="inputcourse" type="text" value="<%=k.getTengiangvien() %> " disabled> 
 	    				<fieldset disabled></fieldset>
 	          		</div>
 	          		<div class="form-group">
 	          			<label for="inputcourse" class="control-label">Học phí</label>
-	      				<input class="form-control" id="inputcourse" type="text" value="<%=k.getHocphi() %>" >
+	      				<input class="form-control" id="inputcourse" type="text" value="<%=k.getHocphi() %> " disabled>
 	    				<fieldset disabled></fieldset>
 	      			</div>
 	      			<h4 class="head-form" align="center">Thông tin tài khoản</h4>
 	      			<div class="form-group">
 	         			<label for="disabledInput" class="control-label">Tên tài khoản</label>
-	      				<input class="form-control" id="username" name="username" type="text" value="<%=user.getTentaikhoan()%>" >
+	      				<input class="form-control" id="username1" name="username1" type="text" value="<%=user.getTentaikhoan()%> " disabled>
 	    				<fieldset disabled></fieldset>
 	    			</div>
 	    			<div class="form-group">
 	         			<label for="disabledInput" class="control-label">Họ và tên</label>
-	      				<input class="form-control" id="disabledInput" type="text" value="<%=user.getHoten()%>" >
+	      				<input class="form-control" id="disabledInput" type="text" value="<%=user.getHoten()%>"  disabled>
 	    				<fieldset disabled></fieldset>
 	    			</div>
 	        		<div class="form-group">
 	         			<label for="disabledInput" class="control-label">Email</label>
-	      				<input class="form-control" id="disabledInput" type="Email" value="<%=user.getEmail()%>" >
+	      				<input class="form-control" id="disabledInput" type="Email" value="<%=user.getEmail()%>" disabled>
 	    				<fieldset disabled></fieldset>
 	    			</div>
 	          		
@@ -109,6 +109,8 @@
 	    				<fieldset disabled></fieldset>
 	    			</div>
 	    			<h4 class="head-form" align="center">Vui lòng để thông tin tài khoản chính xác để chúng tôi liên lạc</h4>
+	    				<input type="hidden" id="makhoahoc" name="makhoahoc" value="<%=k.getMakhoahoc()%>">
+	    				<input type="hidden" id="username" name="username" value="<%=user.getTentaikhoan()%> ">
 	    				<input type="hidden" value="insert" name="command">
 	        			<input type="submit" id="contactbtn" class="btn btn-success btn-lg center-block" value="Đăng ký" />
 	        		</form>

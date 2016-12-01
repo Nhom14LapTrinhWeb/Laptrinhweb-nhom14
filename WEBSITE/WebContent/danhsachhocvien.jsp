@@ -50,7 +50,7 @@
 				<th>Sửa đổi</th>
 				<th>Xóa</th>	                
 			</tr>
-			<%for(Users u : userdao.getListUser()){
+			<%for(Users u : userdao.getListUserByVaiTro("VT01")){
 				
 
 				%>
@@ -66,8 +66,8 @@
 					<td><%= u.getSDT() %></td>	 
 					<td><%= u.getMatkhau()%></td>
 					<td><%= u.getMavaitro() %></td>                    
-					<td><input type="submit" name="operation" value="Sửa" onclick="window.location.href='edit.jsp?id=<%= u.getTentaikhoan() %>'"></td>
-					<td><input type="submit" name="operation" value="Xóa" onclick="window.location.href='delete?id=<%= u.getTentaikhoan() %>'"></td>							
+					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='suataikhoan.jsp?command=update&TenTK=<%= u.getTentaikhoan()%>'"></td>
+					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/ManagerUsersServlet?command=delete&TenTK=<%= u.getTentaikhoan()%>'"></td>							
 				</tr>
 			<%
 				}
