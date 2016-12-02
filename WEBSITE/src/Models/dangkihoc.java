@@ -5,13 +5,13 @@ public class dangkihoc {
 	private String Makhoahoc;
 	private float Diemtong;
 	private int Tinhtranghocphi;
-	private String Trangthai;
+	private int Trangthai;
 	public dangkihoc() {
 		super();
 	}
 	
 	public dangkihoc(String tentaikhoan, String makhoahoc, float diemtong,
-			int tinhtranghocphi, String trangthai) {
+			int tinhtranghocphi, int trangthai) {
 		super();
 		Tentaikhoan = tentaikhoan;
 		Makhoahoc = makhoahoc;
@@ -36,11 +36,11 @@ public class dangkihoc {
 		Tinhtranghocphi = tinhtranghocphi;
 	}
 
-	public String getTrangthai() {
+	public int getTrangthai() {
 		return Trangthai;
 	}
 
-	public void setTrangthai(String trangthai) {
+	public void setTrangthai(int trangthai) {
 		Trangthai = trangthai;
 	}
 

@@ -53,7 +53,6 @@
 			            <ul class="nav navbar-nav">
 			              <li><a href="#" id="mienphi">Học miễn phí</a></li>
 			              <li><a href="#" id="khoahoc">Khóa học</a></li> 
-			              <li><a href="#" id="dangkikhoahoc">Đăng kí khóa học</a></li>
 			              <li><a href="#" id="huongdan1">Hướng dẫn</a></li>
 			              <li><a href="#" id="gopy">Góp ý</a></li>
 			            </ul>
@@ -75,7 +74,6 @@
 				              		<ul class="dropdown-menu" id="dr1">
 				              			<li><a id="mypage" href="#"><b>Thông báo mới</b></a></li>
 									    <li><a id="thongtin" href="#"><b>Thông tin cá nhân</b></a></li>
-									    <li><a id="dangky" href="#"><b>Đăng ký khóa học</b></a></li>
 									    <li><a id="khoahoccuatoi" href="#"><b>Khóa học của tôi</b></a></li>
 									    <li><a id="xemdiem" href="#"><b>Xem điểm</b></a></li>
 									    <li><a id="baitap" href="#"><b>Xem bài tập</b></a></li>
@@ -120,11 +118,6 @@ $(document).ready(function(){
 	var url;
 	url = "thongtinkhoahoc.jsp";
 	$("#noidung").load(url);
-	$('#dangky').click(function(){
-		var url;
-		url = "thongtinkhoahoc.jsp";
-		$("#noidung").load(url);
-	});
 	$('#thongbao').click(function(){
 		var url;
 		url = "thongbao.jsp";

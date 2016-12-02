@@ -45,23 +45,19 @@
 						<th>Mã khóa học</th>
 						<th>Tên khóa học</th>
 						<th>Chi tiết khóa học</th>
-						<th>Chọn</th>
+						<th>Xóa</th>
 					</tr>
 				</thead>
 				<tbody>
-					<%! int i=0; %>
 					<c:forEach items="${items.rowsByIndex}" var="row">	
 						<tr>
-							<td><%= i+1 %></td>
 							<c:forEach items="${row}" var="col">			
 								<td>${col}</td>			                     
 							</c:forEach>
-							<td><a id="<%= i %>" href="#">Chi tiết</a></td>
+							<td><a id="" href="#">Chi tiết</a></td>
 							<td><input type="checkbox"></input></td>							
 						</tr>
-					<% i++; %>
 					</c:forEach>
-					<% i=0; %>
 				</tbody>
 			</table>
 			<button class="btn btn-warning pull-right">Hủy đăng ký môn học</button>								

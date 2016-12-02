@@ -35,7 +35,30 @@ public class DangkihocServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		response.setContentType("text/html;charset=UTF-8"); 
+		request.setCharacterEncoding("UTF-8");
+		String command = request.getParameter("command");
+		String url="";String error="";
+		dangkihoc dk = new dangkihoc();
+		switch (command) {
+		case "huy":
+			dk.setTentaikhoan(request.getParameter("TenTK"));
+			dk.setMakhoahoc(request.getParameter("MaKH"));
+			dk.setTrangthai(0);
+			dkdao.HuyThamGia(dk);
+			url="/quantrivien.jsp";
+			break;
+		case "delete":
+			String Tentk=request.getParameter("TenTK");
+			String Makh=request.getParameter("MaKH");
+			dkdao.XoaThamGia(Tentk, Makh);
+			url="/quantrivien.jsp";
+			break;
+		default:
+			break;
+		}
+		RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
+		rd.forward(request, response);
 	}
 
 	/**
@@ -57,13 +80,32 @@ public class DangkihocServlet extends HttpServlet {
 					dk.setTentaikhoan(request.getParameter("username"));
 					dk.setMakhoahoc(request.getParameter("makhoahoc"));
 					dk.setDiemtong(0);
-					dk.setTrangthai("Wait");
+					dk.setTrangthai(1);
 					dk.setTinhtranghocphi(0);
 					dkdao.ThemDangKiHoc(dk);
 					url="/hocvien.jsp";
 					break;
+				case "insert1":
+					dk.setTentaikhoan(request.getParameter("tentaikhoan"));
+					dk.setMakhoahoc(request.getParameter("makhoahoc"));
+					dk.setDiemtong(0);
+					dk.setTinhtranghocphi(Integer.parseInt(request.getParameter("tinhtranghocphi")));
+					dk.setTrangthai(Integer.parseInt(request.getParameter("trangthai")));
+					
+					dkdao.ThemDangKiHoc(dk);
+					url="/quantrivien.jsp";
+					break;
+				case "update":
+					dk.setTentaikhoan(request.getParameter("tentaikhoan"));
+					dk.setMakhoahoc(request.getParameter("makhoahoc"));
+					dk.setDiemtong(Float.parseFloat(request.getParameter("diem")));
+					dk.setTinhtranghocphi(Integer.parseInt(request.getParameter("tinhtranghocphi")));
+					dk.setTrangthai(Integer.parseInt(request.getParameter("trangthai")));
+					
+					dkdao.SuaThamGia(dk);
+					url="/quantrivien.jsp";
+					break;
 				}
-				
 			}
 		}catch(Exception e)
 		{
