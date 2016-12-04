@@ -34,7 +34,6 @@
 <%
 	UsersDAO userdao = new UsersDAO();
 %>
-<form action="DanhsachServlet" method="post">
 	<div class="panel panel-primary" style="text-align: center;">
 	    <div class="panel-heading" >Danh sách các thành viên của website</div>
 		<table border="1" class="table">
@@ -75,8 +74,6 @@
 		</table>
 		
 	</div>
-
-</form>
   	
 	<div class="row" id="chucnang">
                 <ul class="nav navbar-nav">

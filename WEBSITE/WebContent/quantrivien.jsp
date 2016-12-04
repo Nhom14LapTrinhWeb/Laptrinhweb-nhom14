@@ -77,12 +77,12 @@
         <div class="content-left col-md-2">
           <ul class="nav nav-pills nav-stacked">
           <li class="active"><a name="xem"><b>Quản lý</b></a></li>
-          <li><a href="#" id="dsHocvien"><b>Danh sách học viên</b></a></li>
-          <li><a href="#" id="dsgiangvien"><b>Danh sách giảng viên</b></a></li>
-          <li><a href="#" id="dsLoaikhoahoc"><b>Danh sách loại khóa học</b></a></li>
-          <li><a href="#" id="dsKhoahoc"><b>Danh sách khóa học đang mở</b></a></li>
-          <li><a href="#" id="dshvtg"><b>Danh sách HV tham gia KH</b></a></li>
-          <li><a href="#" id="thongtincanhan"><b>Tài khoản của bạn</b></a></li>
+          <li><a href="#" id="dsHocvien"><b>Học viên</b></a></li>
+          <li><a href="#" id="dsgiangvien"><b>Giảng viên</b></a></li>
+          <li><a href="#" id="dsLoaikhoahoc"><b>Loại khóa học</b></a></li>
+          <li><a href="#" id="dsKhoahoc"><b>Khóa học</b></a></li>
+          <li><a href="#" id="dshvtg"><b>Đăng kí học</b></a></li>
+          <li><a href="#" id="thongtincanhan"><b>Cá nhân</b></a></li>
         </ul>
         
         </div>

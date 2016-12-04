@@ -1,3 +1,4 @@
+<%@page import="DayLaNhom14.User"%>
 <%@page import="Models.dangkihoc"%>
 <%@page import="dao.dangkihocDAO"%>
 <%@page import="Models.khoahoc"%>
@@ -6,6 +7,7 @@
 <%@page import="dao.LoaikhoahocDAO"%>
 <%@page import="Models.Users"%>
 <%@page import="dao.UsersDAO"%>
+<% User object = (User)session.getAttribute("userLogin"); %>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -79,7 +81,7 @@
 					<%} %>                
 					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='suadangkihoc.jsp?MaKH=<%=dkh.getMakhoahoc()%>&TenTK=<%= dkh.getTentaikhoan() %>'"></td>
 					<td><input type="button" name="operation" value="Hủy" onclick="window.location.href='/DoAnNhom14/DangkihocServlet?command=huy&MaKH=<%=dkh.getMakhoahoc()%>&TenTK=<%= dkh.getTentaikhoan() %>'"></td>
-					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/DangkihocServlet?command=delete&MaKH=<%=dkh.getMakhoahoc()%>&TenTK=<%= dkh.getTentaikhoan() %>'"></td>			
+					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/DangkihocServlet?command=delete&MaKH=<%=dkh.getMakhoahoc()%>&TenTK=<%= dkh.getTentaikhoan() %>&vaitro=VT03'"></td>			
 				</tr>
 			<%
 				}

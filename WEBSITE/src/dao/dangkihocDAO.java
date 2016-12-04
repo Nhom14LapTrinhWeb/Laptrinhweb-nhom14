@@ -35,6 +35,31 @@ public class dangkihocDAO {
 		}
 		return null;
 	}
+	public static ArrayList<dangkihoc> getListThamGiaByTen(String Tentaikhoan)
+	{
+		Connection conn = DBConnect.getConnection();
+		String sql ="SELECT * FROM thamgia WHERE Tentaikhoan='" + Tentaikhoan+"'";
+		try {
+			PreparedStatement ps = conn.prepareCall(sql);
+			ResultSet rs = ps.executeQuery();
+			ArrayList<dangkihoc> list = new ArrayList<>();
+			while(rs.next())
+			{
+				dangkihoc tg = new dangkihoc();
+				tg.setTentaikhoan(rs.getString("Tentaikhoan"));
+				tg.setMakhoahoc(rs.getString("Makhoahoc"));
+				tg.setDiemtong(rs.getFloat("Diemtong"));
+				tg.setTinhtranghocphi(rs.getInt("Tinhtranghocphi"));
+				tg.setTrangthai(rs.getInt("Trangthai"));
+				list.add(tg);
+			}
+			return list;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 	public static dangkihoc getChiTietThamGia(String Tentaikhoan,String Makhoahoc)
 	{
 		Connection conn = DBConnect.getConnection();
@@ -58,6 +83,7 @@ public class dangkihocDAO {
 		}
 		return null;
 	}
+	
 	public boolean ThemDangKiHoc(dangkihoc dk){
 		Connection conn = DBConnect.getConnection();
 		String sql ="INSERT INTO thamgia VALUES(?,?,?,?,?)";

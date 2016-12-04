@@ -38,6 +38,7 @@ public class DangkihocServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8"); 
 		request.setCharacterEncoding("UTF-8");
 		String command = request.getParameter("command");
+		String vaitro=request.getParameter("vaitro");
 		String url="";String error="";
 		dangkihoc dk = new dangkihoc();
 		switch (command) {
@@ -52,7 +53,16 @@ public class DangkihocServlet extends HttpServlet {
 			String Tentk=request.getParameter("TenTK");
 			String Makh=request.getParameter("MaKH");
 			dkdao.XoaThamGia(Tentk, Makh);
-			url="/quantrivien.jsp";
+			if(vaitro.equals("VT03"))
+			{
+				
+				url="/quantrivien.jsp";
+			}
+			else
+			{
+				url="/hocvien.jsp";
+			}
+			
 			break;
 		default:
 			break;

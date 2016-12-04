@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2016 at 10:34 AM
+-- Generation Time: Dec 04, 2016 at 11:25 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -45,7 +45,8 @@ CREATE TABLE `baitap` (
   `Tenbaitap` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Noidung` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Hannop` date DEFAULT NULL,
-  `Makhoahoc` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL
+  `Makhoahoc` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Link` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -101,10 +102,12 @@ CREATE TABLE `khoahoc` (
 INSERT INTO `khoahoc` (`Makhoahoc`, `Tenkhoahoc`, `Hocphi`, `Lichhoc`, `Thoigianmo`, `Thoigianketthuc`, `Tengiangvien`, `Mangonngu`, `Mota`, `Hinhanh`, `Loaikhoahoc`, `Videogioithieu`, `Tinhtrang`) VALUES
 ('KH01', 'Lập trình C++', 1000000, '12h30 Thứ 3,5,7', '2016-10-30', '2016-12-31', 'nguyenhadong', 'NN01', 'Lớp học C++', 'images/9.png', 'LKH01', 'https://www.youtube.com/embed/NEhdix-PcLk', 'TT02'),
 ('KH02', 'Lập trình C#', 500000, '18h Thứ 3,5,7', '2016-10-30', '2016-12-30', 'Nguyenvantien', 'NN02', 'Lớp học chuẩn bị mở', 'images/1.png', 'LKH01', 'https://www.youtube.com/embed/qFW8v8Ylv6c', 'TT03'),
-('KH03', 'Lập trình PHP', 1000000, '12h30 Thứ 2,4,6', '2016-10-30', '2016-12-31', 'Nguyenvantien', 'NN03', 'Lớp PHP', 'images/3.png', NULL, 'https://www.youtube.com/embed/jt2d1WRb63E', 'TT02'),
-('KH04', 'Lập trình ASP', 1000000, '12h30 Thứ 3,5,7', '2016-10-30', '2016-12-30', 'nguyenhadong', 'NN04', 'Lớp ASP.NET', 'images/4.png', NULL, 'https://www.youtube.com/embed/T_DIUF9xjXU', 'TT04'),
+('KH03', 'Lập trình PHP', 1000000, '12h30 Thứ 2,4,6', '2016-10-30', '2016-12-31', 'Nguyenvantien', 'NN03', 'Lớp PHP', 'images/3.png', 'LKH02', 'https://www.youtube.com/embed/jt2d1WRb63E', 'TT02'),
+('KH04', 'Lập trình ASP', 1000000, '12h30 Thứ 3,5,7', '2016-10-30', '2016-12-30', 'nguyenhadong', 'NN04', 'Lớp ASP.NET', 'images/4.png', 'LKH04', 'https://www.youtube.com/embed/T_DIUF9xjXU', 'TT04'),
 ('KH05', 'Lập trình IOS', 3000000, '14h Thứ 2,4,6', '2016-10-30', '2017-01-31', 'Nguyenvantien', 'NN06', 'Lớp học IOS', 'images/6.jpg', 'LKH03', 'https://www.youtube.com/embed/rUp3bbK70SA', 'TT04'),
-('KH06', 'Lập trình Android', 0, '15h Thứ 3,5,7', '2016-11-25', '2017-01-26', 'nguyenhadong', 'NN06', 'Đây là lớp học nhằm nâng cao kiến thức của các bạn học IT trong các trường đại học quốc tế', 'images/6.jpg', 'LKH03', 'https://www.youtube.com/embed/rUp3bbK70SA', 'TT01');
+('KH06', 'L?p trình Android', 0, '15h Th? 3,5,7', '2016-11-25', '2017-01-26', 'nguyenhadong', 'NN06', 'bbbbb', 'images/6.jpg', 'LKH03', 'https://www.youtube.com/embed/rUp3bbK70SA', 'TT01'),
+('KH07', 'Lap trinh mang', 1000000, '19h thu 2,4,5', '2016-12-16', '2017-05-25', 'nguyenhadong', 'NN05', 'xxxxx', 'ttttt', 'LKH03', 'https://www.youtube.com/embed/6neWcwj0WaQ', 'TT02'),
+('KH09', 'Lap trinh mang', 1000000, '19h thu 2,4,5', '2016-12-09', '2017-04-14', 'admin', 'NN01', 'ccccccccccc', 'cccccccccc', 'LKH01', 'https://www.youtube.com/embed/6neWcwj0WaQ', 'TT01');
 
 -- --------------------------------------------------------
 
@@ -123,7 +126,7 @@ CREATE TABLE `loaikhoahoc` (
 
 INSERT INTO `loaikhoahoc` (`LoaiKH`, `Tenloai`) VALUES
 ('LKH01', 'Lập trình Cơ bản'),
-('LKH02', 'Website'),
+('LKH02', 'Lap trinh Website'),
 ('LKH03', 'Lập trình Di động'),
 ('LKH04', 'Lập trình phần mềm');
 
@@ -138,6 +141,14 @@ CREATE TABLE `loaitailieu` (
   `Tenloai` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Mota` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `loaitailieu`
+--
+
+INSERT INTO `loaitailieu` (`Maloai`, `Tenloai`, `Mota`) VALUES
+('LTL01', 'Xem Video', 'Video bài giảng'),
+('LTL02', 'Xem giáo trình', 'Giáo trình bài giảng');
 
 -- --------------------------------------------------------
 
@@ -184,12 +195,11 @@ CREATE TABLE `taikhoan` (
 --
 
 INSERT INTO `taikhoan` (`Tentaikhoan`, `Hoten`, `Ngaysinh`, `Diachi`, `Email`, `SDT`, `Matkhau`, `Mavaitro`) VALUES
-('abcde', 'MINH HOANG PHAM', NULL, NULL, 'huynhphihung1995@gmail.com', '01225105965', '12345', 'VT01'),
-('admin', 'Tao la ad', '1990-01-27', 'My xuan', 'hung', '0963457892', '123', 'VT03'),
+('abcde', 'MINH HOANG PHAM', '1996-11-14', 'tan thanh', 'huynhphihung1995@gmail.com', '01225105965', '12345', 'VT01'),
+('admin', 'huynh phi hung', '1990-01-12', 'My xuan', 'huynhphihung@gmail.com', '0963457892', '123', 'VT03'),
 ('huynhphihung', 'huỳnh phi hùng', '1995-06-29', 'gggggg', 'huynhphihung@gmail.com', '0963560780', '123', 'VT01'),
 ('nguyenhadong', 'Nguyễn hà đông', '2016-10-06', 'sài gòn', 'nguyenhadong@gmail.com', '0188497852', '123', 'VT02'),
-('Nguyenvantien', 'nguyễn văn tiến', '1993-10-27', 'Sài gòn', 'nguyenvantien@gmail.com', '0964782159', '1234', 'VT02'),
-('qqqqqqq', 'MINH HOANG PHAM', NULL, NULL, 'huynhphihung1995@gmail.com', '01225105965', 'qqqqq', 'VT01');
+('Nguyenvantien', 'nguyễn văn tiến', '1993-10-27', 'Sài gòn', 'nguyenvantien@gmail.com', '0964782159', '1234', 'VT02');
 
 -- --------------------------------------------------------
 
@@ -205,6 +215,15 @@ CREATE TABLE `tailieu` (
   `Makhoahoc` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `tailieu`
+--
+
+INSERT INTO `tailieu` (`Matailieu`, `Tentailieu`, `Link`, `Maloaitailieu`, `Makhoahoc`) VALUES
+('TL01', 'Bài 1:Giới thiệu C++', 'https://www.youtube.com/embed/jrn6bXC6sTU?list=PLRlbFp7jBO4IwyRIILcX1zacu7T5J2v39', 'LTL01', 'KH01'),
+('TL02', 'Bài 2: HelloWorld', 'https://www.youtube.com/embed/1PqxYZ6RSOU?list=PLRlbFp7jBO4IwyRIILcX1zacu7T5J2v39', 'LTL01', 'KH01'),
+('TL03', 'Giáo trình C++', 'http://www.e-ptit.edu.vn/hoctap/hoclieu/NNLTC.pdf', 'LTL02', 'KH01');
+
 -- --------------------------------------------------------
 
 --
@@ -215,8 +234,8 @@ CREATE TABLE `thamgia` (
   `Tentaikhoan` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Makhoahoc` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `Diemtong` float DEFAULT NULL,
-  `Tinhtranghocphi` int(11) DEFAULT NULL,
-  `Trangthai` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL
+  `Tinhtranghocphi` int(1) NOT NULL,
+  `Trangthai` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -224,8 +243,10 @@ CREATE TABLE `thamgia` (
 --
 
 INSERT INTO `thamgia` (`Tentaikhoan`, `Makhoahoc`, `Diemtong`, `Tinhtranghocphi`, `Trangthai`) VALUES
-('abcde', 'KH02', 0, 0, 'Wait'),
-('abcde', 'KH03', 0, 0, 'Wait');
+('abcde', 'KH01', 0, 1, 1),
+('abcde', 'KH03', 0, 1, 1),
+('huynhphihung', 'KH03', 10, 1, 1),
+('huynhphihung', 'KH04', 0, 1, 1);
 
 -- --------------------------------------------------------
 

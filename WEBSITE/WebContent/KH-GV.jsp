@@ -43,7 +43,7 @@
 %>
 <form action="DanhsachServlet" method="post">
 	<div class="panel panel-primary" style="text-align: center;">
-	    <div class="panel-heading" >Danh sách khóa học của bạn</div>
+	    <div class="panel-heading" >Danh sách khóa học bạn đang dạy</div>
 		<table border="1" class="table">
 			<tr style="text-align: center;">
 				<th>Mã KH</th>	

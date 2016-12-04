@@ -1,5 +1,5 @@
-<%@page import="Models.loaitailieu"%>
-<%@page import="dao.loaitailieuDAO"%>
+<%@page import="dao.tailieuDAO"%>
+<%@page import="Models.tailieu"%>
 <%@page import="Models.danhmucsapxep"%>
 <%@page import="dao.danhmucsapxepDAO"%>
 <%@page import="Models.Loaikhoahoc"%>
@@ -18,7 +18,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Thông tin loại khóa học</title>
+<title>Thông tin khóa học</title>
 <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,22 +35,6 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-			<%
-		loaitailieuDAO loai = new loaitailieuDAO();
-	%>
-	
-    		<div class="col-md-3 col-sm-3 col-xs-3">
-    			<ul class="nav nav-pills nav-stacked">
-				  <li class="active"><a name="xem"><b>Danh sách loại tài liệu</b></a></li>
-				  <% 
-				  	for(loaitailieu l : loai.getListLoaitailieu()){
-				  %>
-				  <li><a id="1" href="thongtintailieu.jsp?Loaikhoahoc=<%=l.getMaloai()%>&type=danhmuc"><b><%=l.getTenloai()%></b></a></li>
-				  <%
-				  	}
-				  %>
-				</ul>
-    		</div>
-			
+
 </body>
 </html>
