@@ -10,19 +10,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Models.loaitailieu;
-import dao.loaitailieuDAO;
+import Models.tailieu;
+import dao.tailieuDAO;
 
 /**
- * Servlet implementation class ManagerLoaitailieuServlet
+ * Servlet implementation class ManagerTailieuServlet
  */
-@WebServlet("/ManagerLoaitailieuServlet")
-public class ManagerLoaitailieuServlet extends HttpServlet {
+@WebServlet("/ManagerTailieuServlet")
+public class ManagerTailieuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-     loaitailieuDAO ltldao = new loaitailieuDAO();  
+      tailieuDAO tldao = new tailieuDAO();
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ManagerLoaitailieuServlet() {
+    public ManagerTailieuServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,11 +36,19 @@ public class ManagerLoaitailieuServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String url="";
 		String command =request.getParameter("command");
-		String Maloai=request.getParameter("Maloai");
+		String Matl=request.getParameter("Matl");
+		String vaitro=request.getParameter("vaitro");
 		switch (command) {
 		case "delete":
-			ltldao.XoaLoaiTaiLieu(Maloai);
-			url="/quantrivien.jsp";
+			tldao.XoaTaiLieu(Matl);
+			if(vaitro.equals("VT03"))
+			{
+				url="/quantrivien.jsp";
+			}
+			else
+			{
+				url="/giangvien.jsp";
+			}
 			break;
 
 		default:
@@ -55,19 +64,37 @@ public class ManagerLoaitailieuServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8"); 
 		request.setCharacterEncoding("UTF-8");
+		String vaitro=request.getParameter("vaitro");
+		
 		String command = request.getParameter("command");
-		String maloai =request.getParameter("maloai");
-		String tenloai =request.getParameter("tenloai");
-		String mota =request.getParameter("mota");
+		String matl =request.getParameter("matailieu");
+		String tentl =request.getParameter("tentailieu");
+		String link =request.getParameter("link");
+		String loaitl =request.getParameter("loaitailieu");
+		String makhoahoc =request.getParameter("makhoahoc");
 		String url="";String error="";
 		switch (command) {
 		case "insert":
-			ltldao.ThemLoaiTaiLieu(new loaitailieu(maloai,tenloai,mota));
-			url ="/quantrivien.jsp";
+			tldao.ThemTaiLieu(new tailieu(matl,tentl,link,loaitl,makhoahoc));
+			if(vaitro.equals("VT03"))
+			{
+				url="/quantrivien.jsp";
+			}
+			else
+			{
+				url="/giangvien.jsp";
+			}
 			break;
 		case "update":
-			ltldao.SuaLoaiTaiLieu(new loaitailieu(maloai,tenloai,mota));
-			url ="/quantrivien.jsp";
+			tldao.SuaTaiLieu(new tailieu(matl,tentl,link,loaitl,makhoahoc));
+			if(vaitro.equals("VT03"))
+			{
+				url="/quantrivien.jsp";
+			}
+			else
+			{
+				url="/giangvien.jsp";
+			}
 			break;
 		default:
 			break;

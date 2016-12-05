@@ -82,6 +82,8 @@
           <li><a href="#" id="dsLoaikhoahoc"><b>Loại khóa học</b></a></li>
           <li><a href="#" id="dsKhoahoc"><b>Khóa học</b></a></li>
           <li><a href="#" id="dshvtg"><b>Đăng kí học</b></a></li>
+          <li><a href="#" id="dsltl"><b>Loại tài liệu</b></a></li>
+          <li><a href="#" id="dstl"><b>Tài liệu</b></a></li>
           <li><a href="#" id="thongtincanhan"><b>Cá nhân</b></a></li>
         </ul>
         
@@ -151,7 +153,17 @@
                var url;
                url = "danhsachHVthamgiaKH.jsp";
                $("#noidungchinh").load(url);
-       });
+      		 });
+           $("#dstl").click(function() {
+               var url;
+               url = "danhsachtailieu.jsp";
+               $("#noidungchinh").load(url);
+      		 });
+           $("#dsltl").click(function() {
+               var url;
+               url = "danhsachloaitailieu.jsp";
+               $("#noidungchinh").load(url);
+      		 });
           $("#thongbao").click(function() {
                     var url;
                     url = "thongbaomoi.jsp";

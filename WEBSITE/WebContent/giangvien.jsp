@@ -79,9 +79,7 @@
 				  <li><a href="#" id="dshv"><b>Danh sách học viên</b></a></li>
 				  <li><a href="#" id="molop"><b>Đăng kí mở lớp</b></a></li>
 				   <li><a href="#" id="dsgv"><b>Xem danh sách giảng viên</b></a></li>
-				  <li><a href="#" id="bt"><b>Bài tập</b></a></li>
-				  <li><a href="#" id="bn"><b>Bài nộp</b></a></li>
-				  <li><a href="#" id="diem1"><b>Điểm</b></a></li>
+				  <li><a href="#" id="dstl"><b>Tài liệu</b></a></li>
 				   <li><a href="Logout" ><b>Thoát</b></a></li>
 				</ul>
 			</div>
@@ -140,9 +138,9 @@
                     url = "DSGV.jsp";
                     $("#noidungload").load(url);
                 });
-                $("#bt").click(function() {
+                $("#dstl").click(function() {
                     var url;
-                    url = "baitapGV.jsp";
+                    url = "danhsachtailieu.jsp";
                     $("#noidungload").load(url);
                 });
                 $("#khoahoc").click(function() {

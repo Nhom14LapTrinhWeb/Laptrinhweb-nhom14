@@ -107,6 +107,30 @@ public class tailieuDAO {
 		}
 		return null;
 	}
+	public ArrayList<tailieu> getListTaiLieuByTenTK(String TenGV){
+		Connection conn = DBConnect.getConnection();
+		String sql ="SELECT * FROM khoahoc,tailieu WHERE khoahoc.Tengiangvien='"+TenGV+ "' and khoahoc.Makhoahoc=tailieu.Makhoahoc ";
+		try {
+			PreparedStatement ps = conn.prepareCall(sql);
+			ResultSet rs = ps.executeQuery();
+			ArrayList<tailieu> list = new ArrayList<>();
+			while(rs.next())
+			{
+				tailieu tl = new tailieu();
+				tl.setMatailieu(rs.getString("Matailieu"));
+				tl.setTentailieu(rs.getString("Tentailieu"));
+				tl.setLink(rs.getString("Link"));
+				tl.setMaloaitailieu(rs.getString("Maloaitailieu"));
+				tl.setMakhoahoc(rs.getString("Makhoahoc"));
+				list.add(tl);
+			}
+			return list;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 	public static tailieu getChiTietTaiLieu(String Matailieu)
 	{
 		Connection conn = DBConnect.getConnection();
@@ -175,7 +199,7 @@ public class tailieuDAO {
 	public boolean XoaTaiLieu(String Matailieu)
 	{
 		Connection conn = DBConnect.getConnection();
-		String sql ="DELETE FROM loaitailieu WHERE Matailieu=?";
+		String sql ="DELETE FROM tailieu WHERE Matailieu=?";
 		try {
 			PreparedStatement ps = conn.prepareCall(sql);
 			ps.setString(1,Matailieu);
