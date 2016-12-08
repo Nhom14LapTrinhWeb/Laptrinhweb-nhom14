@@ -14,7 +14,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%	User objUser = (User)session.getAttribute("userLogin"); 
-	String query = "SELECT tentaikhoan from taikhoan WHERE tentaikhoan='"+objUser.getUsername()+"'";
+
 %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -64,7 +64,7 @@
 	<div class="container">
 		<div class="col-md-6 col-md-offset-3">
 	     	<div class="row">
-	     		<form class="form-horizontal" action="ManagerKhoahocServlet" method="post">
+	     		<form class="form-horizontal" action="ManagerKhoahocServlet" method="post" >
 	       			<h2 class="head-form" align="center">Mở khóa học</h2>
 	       			<div class="form-group">
 	      				<input class="form-control" id="makhoahoc" name="makhoahoc" type="text" placeholder="Mã khóa học">
@@ -108,6 +108,7 @@
 	      				<input class="form-control" id="mota" name="mota" type="text" placeholder="Mô tả" >
 	    				<fieldset disabled></fieldset>
 	    			</div>
+	    			
 	    			<div class="form-group">
 	         			
 	      				<input class="form-control" id="hinhanh" name="hinhanh" type="text" placeholder="Tên hình hảnh.đuôi" >
@@ -145,6 +146,7 @@
 					    <%} %>
 					  </select>
 					</div>
+					
 	    				<input type="hidden" id="tengiangvien" name="tengiangvien" value="<%=objUser.getUsername()%>"> 
 	    				<input type="hidden" value="<%= user.getMavaitro() %>" name="vaitro" id="vaitro">
 	    				<input type="hidden" value="insert" name="command">

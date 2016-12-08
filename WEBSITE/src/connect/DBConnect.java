@@ -14,7 +14,7 @@ public class DBConnect {
 		try{
 			
 			Class.forName("com.mysql.jdbc.Driver");
-			conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/hoclaptrinhonline","root","phihung123789");
+			conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/hoclaptrinhonline?characterEncoding=utf8","root","phihung123789");
 		}catch(Exception e){
 			e.printStackTrace();
 		}

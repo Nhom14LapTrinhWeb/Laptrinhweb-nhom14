@@ -2,12 +2,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
-<sql:setDataSource var="snapshot"
-	driver="com.mysql.jdbc.Driver"
-	url="jdbc:mysql://localhost/hoclaptrinhonline"
-	user="root"
-	password="phihung123789"/>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%> 
+<%@page import="DayLaNhom14.User"%>
+<%	User objUser = (User)session.getAttribute("userLogin"); %>   
 <%@page import="Models.Loaikhoahoc"%>
 <%@page import="dao.LoaikhoahocDAO"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -124,7 +121,7 @@
 			              <li><a href="index.jsp" id="khoahoc">Khóa học</a></li> 
 			              <li><a href="#" id="dangkikhoahoc">Đăng kí khóa học</a></li>
 			              <li><a href="#" id="huongdan1">Hướng dẫn</a></li>
-			              <li><a href="#" id="gopy">Góp ý</a></li>
+			              <li><a href="tinnhan.jsp"  id="gopy">Mail</a></li>
 			            </ul>
 			            <ul class="nav navbar-nav navbar-right">
 			              <li><button type="button" class="btn btn-info btn-md" id="dangki" onclick="window.location.href='dangki.jsp'" style="">
@@ -204,11 +201,6 @@
                     $("#noidungchinh").load(url);
                 });
                 
-                $("#gopy").click(function() {
-                    var url;
-                    url = "tinnhan.jsp";
-                    $("#noidungchinh").load(url);
-                });
                 $("#dangkikhoahoc").click(function() {
                     var url;
                     url = "dangkihoc.jsp";

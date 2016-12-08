@@ -1,17 +1,13 @@
+<%@page import="Models.Users"%>
+<%@page import="dao.UsersDAO"%>
 <%@page import="DayLaNhom14.User"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
 <%	User objUser = (User)session.getAttribute("userLogin"); 
-	String query = "SELECT tentaikhoan,hoten,ngaysinh,diachi,email,sdt,tenvaitro from taikhoan,vaitro where tentaikhoan='"+objUser.getUsername()+"' and taikhoan.mavaitro=vaitro.mavaitro";
 %> 
-<sql:setDataSource
-	driver="com.mysql.jdbc.Driver"
-	url="jdbc:mysql://localhost/hoclaptrinhonline"
-	user="root"
-	password="phihung123789"/>
-<sql:query var="items" sql="<%= query %>"/>
+
 <head>
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,40 +29,39 @@
 	<link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+<%
+	UsersDAO udao = new UsersDAO();
+	Users u = udao.getChitietCaNhan(objUser.getUsername());
+%>
 	<div class="row" id="noidung">
 		<div class="panel panel-primary">
 			<div class="panel-heading" style="text-align:center;">Thông tin tài khoản</div>
 				<table class="table table-bordered">
-				<c:forEach items="${items.rows}" var="row">
+				
 					<tr>
 						<th>Tên tài khoản</th>
-						<td>${row.Tentaikhoan}</td>
+						<td><%=u.getTentaikhoan() %></td>
 					</tr>
 					<tr>
 						<th>Họ và tên</th>
-						<td>${row.Hoten}</td>
+						<td><%=u.getHoten() %></td>
 					</tr>
 					<tr>
 						<th>Ngày sinh</th>
-						<td>${row.Ngaysinh}</td>
+						<td><%=u.getNgaysinh() %></td>
 					</tr>
 					<tr>
 						<th>Địa chỉ</th>
-						<td>${row.Diachi}</td>
+						<td><%=u.getDiachi() %></td>
 					</tr>
 					<tr>
 						<th>Email</th>
-						<td>${row.Email}</td>
+						<td><%=u.getEmail() %></td>
 					</tr>
 					<tr>
 						<th>Điện thoại</th>
-						<td>${row.SDT}</td>
+						<td><%=u.getSDT() %></td>
 					</tr>
-					<tr>
-						<th>Vai trò</th>
-						<td>${row.Tenvaitro}</td>
-					</tr>
-				</c:forEach>
 				</table>
 				<button id="btnUpdate" class="btn btn-warning pull-right" onclick="window.location.href='suataikhoan.jsp?command=update&TenTK=<%= objUser.getUsername()%>'">Chỉnh sửa thông tin</button>
 		</div>

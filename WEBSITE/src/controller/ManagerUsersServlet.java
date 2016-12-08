@@ -63,12 +63,13 @@ public class ManagerUsersServlet extends HttpServlet {
 		String email =request.getParameter("email");
 		String hoten =request.getParameter("hoten");
 		String sdt =request.getParameter("sdt");
-		Date ngaysinh =Date.valueOf(request.getParameter("ngaysinh"));
+		
 		String diachi =request.getParameter("diachi");
 		String vaitro =request.getParameter("vaitro");
 		String error ="";
 		switch (command) {
 		case "update":
+			Date ngaysinh =Date.valueOf(request.getParameter("ngaysinh"));
 			if(userdao.EditUsers(new Users(tentk,email,password,vaitro,hoten,sdt,ngaysinh,diachi)))
 			{
 				userdao.EditUsers(new Users(tentk,email,password,vaitro,hoten,sdt,ngaysinh,diachi));
@@ -82,7 +83,9 @@ public class ManagerUsersServlet extends HttpServlet {
 			}
 			
 			break;
-
+		case "quyen":
+			userdao.SetQuyen(tentk, vaitro);
+			url="/quantrivien.jsp";
 		default:
 			break;
 		}

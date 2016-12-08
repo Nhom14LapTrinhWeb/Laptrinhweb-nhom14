@@ -84,6 +84,22 @@ public class UsersDAO {
 		}
 		return false;
 	}
+	public boolean SetQuyen(String Tentaikhoan,String Vaitro)
+	{
+		String sql="UPDATE taikhoan set Mavaitro=? WHERE Tentaikhoan=?";
+		Connection conn = DBConnect.getConnection();
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1,Vaitro);
+			ps.setString(2, Tentaikhoan);
+			ps.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
 	public boolean Delete(String Tentaikhoan)
 	{
 		String sql ="DELETE FROM taikhoan WHERE Tentaikhoan=?";

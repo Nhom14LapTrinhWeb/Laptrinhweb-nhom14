@@ -1,16 +1,11 @@
+<%@page import="dao.khoahocDAO"%>
+<%@page import="Models.khoahoc"%>
 <%@page import="Models.Loaikhoahoc"%>
 <%@page import="dao.LoaikhoahocDAO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
-<sql:setDataSource var="snapshot"
-	driver="com.mysql.jdbc.Driver"
-	url="jdbc:mysql://localhost/hoclaptrinhonline"
-	user="root"
-	password="phihung123789"/>
-<sql:query dataSource="${snapshot}" var="items" sql="SELECT Makhoahoc,Hinhanh,Tenkhoahoc,Tengiangvien,Lichhoc,Thoigianmo FROM khoahoc
-												WHERE Hocphi=0"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -32,6 +27,9 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+	<%
+		khoahocDAO khdao = new khoahocDAO();
+	%>
 	<div id="wrapper">
 	<jsp:include page="header.jsp"></jsp:include>
 	<div id="noidungchinh">
@@ -50,19 +48,18 @@
 		            </div>
 				</div>
 				<div class="row">
-				<c:forEach items="${items.rows}" var="row">	
+				<% for(khoahoc kh : khdao.getListKhoahocMienPhi()){ %>
 
 				<div class="col-lg-4 col-sm-6 images" style="text-align: center;">
-					<a href="chitietkhoahoc.jsp?Makhoahoc=${row.Makhoahoc}" class="thumbnail" style="text-align:left;">
-						<img src="${row.Hinhanh}">
-						<h3><b><c:out value="${row.Tenkhoahoc}" /></b></h3><br />
-						<b>Tên Giảng viên:<c:out value="${row.Tengiangvien}" /></b><br />
-						<b>Khai giảng:<c:out value="${row.Thoigianmo}" /></b><br />
-						<b>Lịch học:<c:out value="${row.Lichhoc}" /></b><br />
+					<a href="chitietkhoahoc.jsp?Makhoahoc=<%= kh.getMakhoahoc() %>" class="thumbnail" style="text-align:left;">
+						<img src="<%= kh.getHinhanh() %>">
+						<h3><b><c:out value="<%= kh.getTenkhoahoc() %>" /></b></h3><br />
+						<b>Tên Giảng viên:<c:out value="<%= kh.getTengiangvien() %>" /></b><br />
+						<b>Lịch học:<c:out value="<%= kh.getLichhoc()%>" /></b><br />
+						<b>Học phí:<c:out value="<%= kh.getHocphi() %>" /></b><br />
 					</a>
 				</div>										
-				</c:forEach>
-		            
+			<%} %>
 			</div>
     		</div>
 	</div>

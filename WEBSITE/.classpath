@@ -15,5 +15,12 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.13-bin.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/JavaKi1/Laptrinhweb-nhom14/WEBSITE/WebContent/library/Java Mail/dsn.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/JavaKi1/Laptrinhweb-nhom14/WEBSITE/WebContent/library/Java Mail/imap.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/JavaKi1/Laptrinhweb-nhom14/WEBSITE/WebContent/library/Java Mail/mailapi.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/JavaKi1/Laptrinhweb-nhom14/WEBSITE/WebContent/library/Java Mail/pop3.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/JavaKi1/Laptrinhweb-nhom14/WEBSITE/WebContent/library/Java Mail/smtp.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/JavaKi1/Laptrinhweb-nhom14/WEBSITE/WebContent/library/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="D:/JavaKi1/Laptrinhweb-nhom14/WEBSITE/WebContent/library/commons-fileupload-1.3.2-bin/commons-fileupload-1.3.2-bin/lib/commons-fileupload-1.3.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

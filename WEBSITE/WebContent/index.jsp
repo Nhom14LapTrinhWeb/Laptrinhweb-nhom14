@@ -1,14 +1,11 @@
 <%@page import="Models.Users"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-   <%@page import="DayLaNhom14.User"%>
+<%@page import="DayLaNhom14.User"%>
+<%	User objUser = (User)session.getAttribute("userLogin"); %> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
-<sql:setDataSource var="snapshot"
-	driver="com.mysql.jdbc.Driver"
-	url="jdbc:mysql://localhost/hoclaptrinhonline"
-	user="root"
-	password="phihung123789"/>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -83,6 +80,7 @@
 	</script>
 <%} %>
 	<div id="wrapper">
+	
 	<jsp:include page="header.jsp"></jsp:include>
 	<div id="noidungchinh">
     <!-- body -->

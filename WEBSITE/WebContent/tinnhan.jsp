@@ -1,3 +1,4 @@
+<%@page import="tools.sendmail"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -39,31 +40,31 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">    
-        <form class="register">
-        	<h2 class="head-form" style="text-align:center;">Tin nhắn</h2>
+        <form class="register" method="post" action="sendmailServlet">
+        	<h2 class="head-form" style="text-align:center;">Gửi Email</h2>
           	<div class="form-group">
-            <input type="text" id="id" class="form-control" placeholder="Họ và tên">
+            <input type="text" id="hoten" class="form-control" placeholder="Họ tên">
           	</div>
          	 <div class="form-group">
-            <input type="password" id="sdt" class="form-control" placeholder="Số điện thoại">
+            <input type="text" id="sdt" class="form-control" placeholder="Số điện thoại">
          	 </div>
          	 <div class="form-group">
             <input type="email" id="email" class="form-control" placeholder="Email">
          	 </div>
          	 <div class="form-group">
-            <label for="Phanhoiykien">Phản hồi ý kiến</label>
-             <textarea class="form-control" id="Phanhoiykien" rows="3"></textarea>
-        	 </div>
+            <input type="text" id="tieude" class="form-control" placeholder="Tiêu đề">
+         	 </div>
+         	 <div class="form-group">
+            <label for="noidung">Nội dung</label>
+             <textarea class="form-control" id="noidung" rows="3"></textarea>
+        	 </div>  	 
         	 <div class="form-group">
-        	 	<label for="dinhkem">Gửi đính kèm:</label>
-        	 	<input id="dinhkem" type="file" name="img">
-        	 </div>      	 
-        	 <div class="form-group">
-        	   <input class="btn btn-success btn-lg center-block" type="submit" value="Xác nhận">
+        	   <input class="btn btn-success btn-lg center-block" type="submit" value="Xác nhận" id="xacnhan">
         	 </div>
         </form>
       </div>     
     </div>
   </div>
+
 </body>
 </html>

@@ -80,23 +80,12 @@
 				  <li><a href="#" id="molop"><b>Đăng kí mở lớp</b></a></li>
 				   <li><a href="#" id="dsgv"><b>Xem danh sách giảng viên</b></a></li>
 				  <li><a href="#" id="dstl"><b>Tài liệu</b></a></li>
+				  <li><a href="#" id="dsnn"><b>Ngôn ngữ</b></a></li>
 				   <li><a href="Logout" ><b>Thoát</b></a></li>
 				</ul>
 			</div>
     		<div class=" col-md-9 " id="noidungload" align="center">
-    			   <div class="row">
-					<div class="panel panel-primary">
-					<div class="panel-heading" style="text-align: center;" >THÔNG BÁO</div>
-					<table class="table table-bordered" cellpadding="0" rules="all" border="1"  style="width:100%;border-collapse:collapse;" align="center">
-				
-				<tbody>
-				<tr>
-					<td><li><a>Nghỉ học ngày x tháng y năm NNNN</a></li></td>
-				</tr>
-				</tbody>
-			</table>		
-	</div>
-</div>
+    			   <jsp:include page="thongbao.jsp"></jsp:include>
     		</div>
     		</div>
     	</div>
@@ -136,6 +125,11 @@
                 $("#dsgv").click(function() {
                     var url;
                     url = "DSGV.jsp";
+                    $("#noidungload").load(url);
+                });
+                $("#dsnn").click(function() {
+                    var url;
+                    url = "ngonngu.jsp";
                     $("#noidungload").load(url);
                 });
                 $("#dstl").click(function() {
@@ -179,8 +173,10 @@
                 $('#btnmes').click(function(){
 	   				$('#Message').collapse('toggle');
 	   			});
-	   			$('#btnSent').click(function(){
-	 				alert('Đã gửi thành công');
+	   			$('#thongbao').click(function(){
+	   				var url;
+                    url = "thongbao.jsp";
+                    $("#noidungload").load(url);
 	   			});
             });
             

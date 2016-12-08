@@ -8,12 +8,7 @@
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
-<sql:setDataSource var="snapshot"
-	driver="com.mysql.jdbc.Driver"
-	url="jdbc:mysql://localhost/hoclaptrinhonline"
-	user="root"
-	password="phihung123789"/>
-<sql:query dataSource="${snapshot}" var="items" sql="SELECT Makhoahoc,Hinhanh,Tenkhoahoc,Tengiangvien,Lichhoc,Thoigianmo FROM khoahoc"/>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -36,16 +31,16 @@
 </head>
 <body>
 			<%
-		loaitailieuDAO loai = new loaitailieuDAO();
+		LoaikhoahocDAO loai = new LoaikhoahocDAO();
 	%>
 	
     		<div class="col-md-3 col-sm-3 col-xs-3">
     			<ul class="nav nav-pills nav-stacked">
 				  <li class="active"><a name="xem"><b>Danh sách loại tài liệu</b></a></li>
 				  <% 
-				  	for(loaitailieu l : loai.getListLoaitailieu()){
+				  	for(Loaikhoahoc l : loai.getListLoaikhoahoc()){
 				  %>
-				  <li><a id="1" href="thongtintailieu.jsp?Loaikhoahoc=<%=l.getMaloai()%>&type=danhmuc"><b><%=l.getTenloai()%></b></a></li>
+				  <li><a id="1" href="thongtinkhoahoctheodanhmuc.jsp?Loaikhoahoc=<%=l.getLoaiKH()%>&type=danhmuc"><b><%=l.getTenloai()%></b></a></li>
 				  <%
 				  	}
 				  %>

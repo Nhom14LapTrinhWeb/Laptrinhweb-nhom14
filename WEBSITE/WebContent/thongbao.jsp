@@ -1,3 +1,7 @@
+<%@page import="dao.thongbaoDAO"%>
+<%@page import="Models.thongbao"%>
+<%@page import="DayLaNhom14.User"%>
+<%	User objUser = (User)session.getAttribute("userLogin"); %> 
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -23,22 +27,66 @@
 	<link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+<%
+	thongbaoDAO tbdao = new thongbaoDAO();
+	if(objUser.getUsername().equals("admin")){
+%>
+	<div class="panel panel-primary" style="text-align: center;">
+	    <div class="panel-heading" >Danh sách thông báo</div>
+		<table border="1" class="table">
+			<tr>
+				<th>Mã thông báo</th>	
+				<th>Tên thông báo</th>
+				<th>Nội dung</th>	
+				<th>Sửa đổi</th>
+				<th>Xóa</th>	                
+			</tr>
+			<%for(thongbao tb : tbdao.getListThongBao()){
+				
+
+				%>
+			
+
+				<tr>
+								
+					<td><%= tb.getMathongbao() %></td>	
+					<td><%= tb.getTenthongbao() %></td>	
+					<td><%=tb.getNoidung()%></td>               
+					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='themsuathongbao.jsp?commandd=update&MaTB=<%= tb.getMathongbao()%>'"></td>
+					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/ManagerThongbaoServlet?command=delete&MaTB=<%=  tb.getMathongbao()%>'"></td>							
+				</tr>
+			<%
+				}
+			%>
+		</table>
+		
+	</div>
+  	
+	<div class="row" id="chucnang">
+                <ul class="nav navbar-nav">
+                  <li><button class="btn btn-primary" onclick="window.location.href='themsuathongbao.jsp?commandd=insert'">Thêm</button></li>
+                  <li><button class="btn btn-primary" onclick="window.location.href='quantrivien.jsp'">Reload</button></li>
+                </ul>
+        </div>
+<%}else{ %>
 <div class="row">
 	<div class="panel panel-primary">
 		<div class="panel-heading" style="text-align: center;">Xem thông báo mới</div>
 			<table class="table" border="1">
-				<thead>
 					<tr>
-						<th>STT</th>
-						<th>Mã thông báo</th>
-						<th>Tên thông báo</th>
+						<th>Tên</th>
+						<th>Nội dung</th>
 					</tr>
-				</thead>
-				<tbody>
+				<%for(thongbao tb : tbdao.getListThongBao()){ %>
+					<tr>
+						<td><%= tb.getTenthongbao() %></td>
+						<td><%= tb.getNoidung() %></td>
+					</tr>
 					
-				</tbody>
+					<%} %>
 			</table>							
 	</div>
 </div>
+<%} %>
 </body>
 </html>

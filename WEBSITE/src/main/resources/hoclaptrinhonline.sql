@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2016 at 11:25 AM
+-- Generation Time: Dec 08, 2016 at 02:41 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -37,21 +37,6 @@ CREATE TABLE `bainop` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `baitap`
---
-
-CREATE TABLE `baitap` (
-  `Mabaitap` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `Tenbaitap` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Noidung` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Hannop` date DEFAULT NULL,
-  `Makhoahoc` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Link` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `danhgia`
 --
 
@@ -60,17 +45,6 @@ CREATE TABLE `danhgia` (
   `Makhoahoc` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `MaGV` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Noidung` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `gv_nn`
---
-
-CREATE TABLE `gv_nn` (
-  `Mangonngu` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `Tentaikhoan` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -107,7 +81,8 @@ INSERT INTO `khoahoc` (`Makhoahoc`, `Tenkhoahoc`, `Hocphi`, `Lichhoc`, `Thoigian
 ('KH05', 'Lập trình IOS', 3000000, '14h Thứ 2,4,6', '2016-10-30', '2017-01-31', 'Nguyenvantien', 'NN06', 'Lớp học IOS', 'images/6.jpg', 'LKH03', 'https://www.youtube.com/embed/rUp3bbK70SA', 'TT04'),
 ('KH06', 'L?p trình Android', 0, '15h Th? 3,5,7', '2016-11-25', '2017-01-26', 'nguyenhadong', 'NN06', 'bbbbb', 'images/6.jpg', 'LKH03', 'https://www.youtube.com/embed/rUp3bbK70SA', 'TT01'),
 ('KH07', 'Lap trinh mang', 1000000, '19h thu 2,4,5', '2016-12-16', '2017-05-25', 'nguyenhadong', 'NN05', 'xxxxx', 'ttttt', 'LKH03', 'https://www.youtube.com/embed/6neWcwj0WaQ', 'TT02'),
-('KH09', 'Lap trinh mang', 1000000, '19h thu 2,4,5', '2016-12-09', '2017-04-14', 'admin', 'NN01', 'ccccccccccc', 'cccccccccc', 'LKH01', 'https://www.youtube.com/embed/6neWcwj0WaQ', 'TT01');
+('KH08', 'Lap trinh mang', 1000000, '19h thu 2,4,5', '2016-12-17', '2016-12-31', 'admin', 'NN01', 'aaaaa', 'ttttt', 'LKH03', 'Ba ria vung tau', 'TT01'),
+('KH09', 'Lap trinh mang', 1000000, '19h thu 2,4,5', '2016-12-09', '2017-04-14', 'admin', 'NN01', 'bbbbbbb', 'cccccccccc', 'LKH01', 'https://www.youtube.com/embed/6neWcwj0WaQ', 'TT01');
 
 -- --------------------------------------------------------
 
@@ -148,7 +123,8 @@ CREATE TABLE `loaitailieu` (
 
 INSERT INTO `loaitailieu` (`Maloai`, `Tenloai`, `Mota`) VALUES
 ('LTL01', 'Xem Video', 'Video bài giảng'),
-('LTL02', 'Xem giáo trình', 'Giáo trình bài giảng');
+('LTL02', 'Xem giáo trình', 'Giáo trình bài giảng'),
+('LTL03', 'Bài tập', 'Các bài tập tự làm cho các bạn học viên');
 
 -- --------------------------------------------------------
 
@@ -222,7 +198,8 @@ CREATE TABLE `tailieu` (
 INSERT INTO `tailieu` (`Matailieu`, `Tentailieu`, `Link`, `Maloaitailieu`, `Makhoahoc`) VALUES
 ('TL01', 'Bài 1:Giới thiệu C++', 'https://www.youtube.com/embed/jrn6bXC6sTU?list=PLRlbFp7jBO4IwyRIILcX1zacu7T5J2v39', 'LTL01', 'KH01'),
 ('TL02', 'Bài 2: HelloWorld', 'https://www.youtube.com/embed/1PqxYZ6RSOU?list=PLRlbFp7jBO4IwyRIILcX1zacu7T5J2v39', 'LTL01', 'KH01'),
-('TL03', 'Giáo trình C++', 'http://www.e-ptit.edu.vn/hoctap/hoclieu/NNLTC.pdf', 'LTL02', 'KH01');
+('TL03', 'Giáo trình C++', 'http://www.e-ptit.edu.vn/hoctap/hoclieu/NNLTC.pdf', 'LTL02', 'KH01'),
+('TL04', 'HomeWork', 'http://vietjack.com', 'LTL03', 'KH01');
 
 -- --------------------------------------------------------
 
@@ -247,6 +224,25 @@ INSERT INTO `thamgia` (`Tentaikhoan`, `Makhoahoc`, `Diemtong`, `Tinhtranghocphi`
 ('abcde', 'KH03', 0, 1, 1),
 ('huynhphihung', 'KH03', 10, 1, 1),
 ('huynhphihung', 'KH04', 0, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `thongbao`
+--
+
+CREATE TABLE `thongbao` (
+  `Mathongbao` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `Tenthongbao` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `Noidung` longtext COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `thongbao`
+--
+
+INSERT INTO `thongbao` (`Mathongbao`, `Tenthongbao`, `Noidung`) VALUES
+('TB01', 'Thông báo nghỉ học', 'Nghỉ học vào ngày 30/12/2016');
 
 -- --------------------------------------------------------
 
@@ -302,26 +298,12 @@ ALTER TABLE `bainop`
   ADD KEY `bainop_ibfk_1` (`Tentaikhoan`);
 
 --
--- Indexes for table `baitap`
---
-ALTER TABLE `baitap`
-  ADD PRIMARY KEY (`Mabaitap`),
-  ADD KEY `baitap_ibfk_1` (`Makhoahoc`);
-
---
 -- Indexes for table `danhgia`
 --
 ALTER TABLE `danhgia`
   ADD PRIMARY KEY (`Tentaikhoan`,`Makhoahoc`,`MaGV`),
   ADD KEY `Danhgia_ibfk_2` (`Makhoahoc`),
   ADD KEY `Danhgia_ibfk_3` (`MaGV`);
-
---
--- Indexes for table `gv_nn`
---
-ALTER TABLE `gv_nn`
-  ADD PRIMARY KEY (`Mangonngu`,`Tentaikhoan`),
-  ADD KEY `Tentaikhoan` (`Tentaikhoan`);
 
 --
 -- Indexes for table `khoahoc`
@@ -399,25 +381,12 @@ ALTER TABLE `bainop`
   ADD CONSTRAINT `bainop_ibfk_1` FOREIGN KEY (`Tentaikhoan`) REFERENCES `taikhoan` (`Tentaikhoan`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
--- Constraints for table `baitap`
---
-ALTER TABLE `baitap`
-  ADD CONSTRAINT `baitap_ibfk_1` FOREIGN KEY (`Makhoahoc`) REFERENCES `khoahoc` (`Makhoahoc`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `danhgia`
 --
 ALTER TABLE `danhgia`
   ADD CONSTRAINT `Danhgia_ibfk_1` FOREIGN KEY (`Tentaikhoan`) REFERENCES `taikhoan` (`Tentaikhoan`),
   ADD CONSTRAINT `Danhgia_ibfk_2` FOREIGN KEY (`Makhoahoc`) REFERENCES `khoahoc` (`Makhoahoc`),
   ADD CONSTRAINT `Danhgia_ibfk_3` FOREIGN KEY (`MaGV`) REFERENCES `taikhoan` (`Tentaikhoan`);
-
---
--- Constraints for table `gv_nn`
---
-ALTER TABLE `gv_nn`
-  ADD CONSTRAINT `gv_nn_ibfk_1` FOREIGN KEY (`Mangonngu`) REFERENCES `ngonngu` (`Mangonngu`),
-  ADD CONSTRAINT `gv_nn_ibfk_2` FOREIGN KEY (`Tentaikhoan`) REFERENCES `taikhoan` (`Tentaikhoan`);
 
 --
 -- Constraints for table `khoahoc`

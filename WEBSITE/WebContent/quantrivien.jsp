@@ -84,30 +84,15 @@
           <li><a href="#" id="dshvtg"><b>Đăng kí học</b></a></li>
           <li><a href="#" id="dsltl"><b>Loại tài liệu</b></a></li>
           <li><a href="#" id="dstl"><b>Tài liệu</b></a></li>
+          <li><a href="#" id="dsnn"><b>Ngôn ngữ</b></a></li>
+          <li><a href="#" id="bn"><b>Bổ nhiệm</b></a></li>
           <li><a href="#" id="thongtincanhan"><b>Cá nhân</b></a></li>
         </ul>
         
         </div>
         <div class="content-right col-md-10" >
           <div id="noidungchinh" >
-              <div class="row ">
-                  <div class="panel panel-success">
-                    <div class="panel-heading">Danh sách Thông báo mới</div>
-                      <div class="panel-body">
-                        <ul>
-                          <a><li>Khóa học C# chiều thứ 6 ngày 20/12/2016 nghỉ học </li></a>
-                          <a><li>Khóa học PHP khóa 4 khai giảng vào ngày 12/11/2016 </li></a>
-                        </ul>
-                      </div>
-                  </div>
-              </div>
-              <div class="row" id="chucnang">
-                <ul class="nav navbar-nav">
-                  <li><button class="btn btn-primary">Thêm Thông báo</button></li>
-                  <li><button class="btn btn-primary">Sửa Thông báo</button></li>
-                  <li><button class="btn btn-primary">Xóa Thông báo</button></li>
-                </ul>
-              </div>
+          	<jsp:include page="thongbao.jsp"></jsp:include>
           </div>
 
         </div>
@@ -149,9 +134,19 @@
                     url = "thongbaomoi.jsp";
                     $("#noidungchinh").load(url);
             });
+           $("#bn").click(function() {
+               var url;
+               url = "vaitro.jsp";
+               $("#noidungchinh").load(url);
+       });
            $("#dshvtg").click(function() {
                var url;
                url = "danhsachHVthamgiaKH.jsp";
+               $("#noidungchinh").load(url);
+      		 });
+           $("#dsnn").click(function() {
+               var url;
+               url = "ngonngu.jsp";
                $("#noidungchinh").load(url);
       		 });
            $("#dstl").click(function() {
@@ -166,7 +161,7 @@
       		 });
           $("#thongbao").click(function() {
                     var url;
-                    url = "thongbaomoi.jsp";
+                    url = "thongbao.jsp";
                     $("#noidungchinh").load(url);
             });
           $("#thongtincanhan").click(function() {
