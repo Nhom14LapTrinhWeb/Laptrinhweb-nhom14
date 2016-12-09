@@ -95,8 +95,6 @@
   </div>
   <jsp:include page="footer.jsp"></jsp:include>
 </body>
-
- <sql:query dataSource="${snapshot}" var="laptrinhcoban" sql="SELECT Hinhanh,Tenkhoahoc,Tengiangvien,Lichhoc,Thoigianmo FROM khoahoc where Loaikhoahoc='LKH01'"/>
    <script type="text/javascript">
    		$("#btnmes").click(function(){
    			$("#Message").collapse('toggle');
