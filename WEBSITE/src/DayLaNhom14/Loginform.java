@@ -51,16 +51,13 @@ public class Loginform extends HttpServlet {
 			{
 				objUser = new User();
 				objUser.setUsername(user);
+				objUser.setVaitro(quyen);
 				session = request.getSession();
 				session.setAttribute("userLogin", objUser);
 				response.sendRedirect("hocvien.jsp");
 			}
 			else
 			{
-				objUser = new User();
-				objUser.setUsername(user);
-				session = request.getSession();
-				session.setAttribute("userLogin", objUser);
 				response.sendRedirect("index.jsp");
 			}
 			
@@ -71,6 +68,7 @@ public class Loginform extends HttpServlet {
 			{
 				objUser = new User();
 				objUser.setUsername(user);
+				objUser.setVaitro(quyen);
 				session = request.getSession();
 				session.setAttribute("userLogin", objUser);
 				response.sendRedirect("giangvien.jsp");
@@ -87,6 +85,7 @@ public class Loginform extends HttpServlet {
 				/*ServletRequest session = null;
 				session.setAttribute("TentaikhoanHV",user);*/
 				objUser = new User();
+				objUser.setVaitro(quyen);
 				objUser.setUsername(user);
 				session = request.getSession();
 				session.setAttribute("userLogin", objUser);
