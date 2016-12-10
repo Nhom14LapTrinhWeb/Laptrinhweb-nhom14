@@ -3,7 +3,6 @@
 <%@page import="dao.khoahocDAO"%>
 <%@page import="Models.danhmucsapxep"%>
 <%@page import="dao.danhmucsapxepDAO"%>
-<%@page import="org.apache.taglibs.standard.lang.jpath.adapter.Convert"%>
 
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
@@ -52,7 +51,7 @@
 					String Matt="";
 					if(request.getParameter("Matinhtrang")!=null)
 					{
-						Matt=Convert.toString(request.getParameter("Matinhtrang")) ;
+						Matt=request.getParameter("Matinhtrang");
 					}
 				%>
 				

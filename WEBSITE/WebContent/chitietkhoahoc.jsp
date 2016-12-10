@@ -1,4 +1,4 @@
-<%@page import="org.apache.taglibs.standard.lang.jpath.adapter.Convert"%>
+
 <%@page import="Models.khoahoc"%>
 <%@page import="dao.khoahocDAO"%>
 <%@page import="DayLaNhom14.User"%>
@@ -41,7 +41,7 @@
 			String Makh="";
 			if(request.getParameter("Makhoahoc")!=null)
 			{
-				Makh=Convert.toString(request.getParameter("Makhoahoc")) ;
+				Makh=request.getParameter("Makhoahoc") ;
 			}
 			k=kh.getChitietkhoahoc(Makh);
 	%>

@@ -7,8 +7,6 @@
 <%@page import="Models.thongbao"%>
 <%@page import="dao.thongbaoDAO"%>
 <%@page import="DayLaNhom14.User"%>
-<%@page import="org.apache.taglibs.standard.lang.jpath.adapter.Convert"%>
-
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%	User objUser = (User)session.getAttribute("userLogin"); 

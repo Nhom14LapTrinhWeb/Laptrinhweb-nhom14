@@ -1,4 +1,4 @@
-<%@page import="org.apache.taglibs.standard.lang.jpath.adapter.Convert"%>
+
 <%@page import="Models.Users"%>
 <%@page import="dao.UsersDAO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
@@ -33,7 +33,7 @@
 			String tentk="";
 			if(request.getParameter("TenTK")!=null)
 			{
-				tentk=Convert.toString(request.getParameter("TenTK"));
+				tentk=request.getParameter("TenTK");
 			}
 			user=userdao.getChitietCaNhan(tentk);
 	%>

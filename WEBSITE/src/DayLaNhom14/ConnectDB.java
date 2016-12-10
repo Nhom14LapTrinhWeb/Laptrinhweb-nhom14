@@ -21,7 +21,7 @@ public class ConnectDB {
 		ResultSet rs = null;
 		boolean kt=false;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/hoclaptrinhonline","root","phihung123789");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hoclaptrinhonline?characterEncoding=utf8","root","phihung123789");
 			stm=conn.createStatement();
 			rs=stm.executeQuery("SELECT * FROM taikhoan WHERE Tentaikhoan ='"+username+"' AND Matkhau='"+pass+
 					"'AND  Mavaitro='VT01'");
@@ -48,7 +48,7 @@ public class ConnectDB {
 		boolean kt=false;
 		
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/hoclaptrinhonline","root","phihung123789");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hoclaptrinhonline?characterEncoding=utf8","root","phihung123789");
 			stm=conn.createStatement();
 			rs=stm.executeQuery("SELECT * FROM taikhoan WHERE Tentaikhoan ='"+username+"' AND Matkhau='"+pass+
 					"'AND Mavaitro='VT02'");
@@ -73,7 +73,7 @@ public class ConnectDB {
 		boolean kt=false;
 		
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/hoclaptrinhonline","root","phihung123789");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hoclaptrinhonline?characterEncoding=utf8","root","phihung123789");
 			stm=conn.createStatement();
 			rs=stm.executeQuery("SELECT * FROM taikhoan WHERE Tentaikhoan ='"+username+"' AND Matkhau='"+pass+
 					"'AND  Mavaitro='VT03'");

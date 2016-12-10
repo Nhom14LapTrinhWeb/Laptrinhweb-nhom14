@@ -1,5 +1,4 @@
 <%@page import="Models.khoahoc"%>
-<%@page import="org.apache.taglibs.standard.lang.jpath.adapter.Convert"%>
 <%@page import="dao.khoahocDAO"%>
 <%@page import="Models.Loaikhoahoc"%>
 <%@page import="dao.LoaikhoahocDAO"%>
@@ -50,7 +49,7 @@
 					String Chuoi="";
 					if(request.getParameter("Tukhoa")!=null)
 					{
-						Chuoi=Convert.toString(request.getParameter("Tukhoa")) ;
+						Chuoi=request.getParameter("Tukhoa") ;
 					}
 				%>
 				

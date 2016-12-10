@@ -1,6 +1,6 @@
 <%@page import="dao.UsersDAO"%>
 <%@page import="Models.Users"%>
-<%@page import="org.apache.taglibs.standard.lang.jpath.adapter.Convert"%>
+
 <%@page import="Models.khoahoc"%>
 <%@page import="dao.khoahocDAO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
@@ -42,7 +42,7 @@
 			String Makh="";
 			if(request.getParameter("Makhoahoc")!=null)
 			{
-				Makh=Convert.toString(request.getParameter("Makhoahoc")) ;
+				Makh=request.getParameter("Makhoahoc") ;
 			}
 			k=kh.getChitietkhoahoc(Makh);
 			
@@ -51,7 +51,7 @@
 			String tentk="";
 			if(request.getParameter("Tentaikhoan")!=null)
 			{
-				tentk=Convert.toString(request.getParameter("Tentaikhoan"));
+				tentk=request.getParameter("Tentaikhoan");
 			}
 			user=userdao.getChitietCaNhan(tentk);
 	%>

@@ -7,7 +7,7 @@
 <%@page import="dao.vaitroDAO"%>
 <%@page import="Models.ngonngu"%>
 <%@page import="dao.ngonnguDAO"%>
-<%@page import="org.apache.taglibs.standard.lang.jpath.adapter.Convert"%>
+
 <%@page import="Models.khoahoc"%>
 <%@page import="DayLaNhom14.User"%>
 <%@page import="dao.khoahocDAO"%>
@@ -57,7 +57,7 @@
 			String Makh="";
 			if(request.getParameter("MaKH")!=null)
 			{
-				Makh=Convert.toString(request.getParameter("MaKH")) ;
+				Makh=request.getParameter("MaKH") ;
 			}
 			k=kh.getChitietkhoahoc(Makh);
 			
@@ -67,7 +67,7 @@
 			
 			if(request.getParameter("TenGV")!=null)
 			{
-				tentk=Convert.toString(request.getParameter("TenGV"));
+				tentk=request.getParameter("TenGV");
 			}
 			user=userdao.getChitietCaNhan(tentk);
 			
@@ -76,7 +76,7 @@
 			Users u = new Users();
 			if(objUser.getUsername()!=null)
 			{
-				ten=Convert.toString(objUser.getUsername());
+				ten=objUser.getUsername();
 			}
 			u=userdao.getChitietCaNhan(ten);
 	%>

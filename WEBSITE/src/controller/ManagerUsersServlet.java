@@ -73,13 +73,40 @@ public class ManagerUsersServlet extends HttpServlet {
 			if(userdao.EditUsers(new Users(tentk,email,password,vaitro,hoten,sdt,ngaysinh,diachi)))
 			{
 				userdao.EditUsers(new Users(tentk,email,password,vaitro,hoten,sdt,ngaysinh,diachi));
-				url="/quantrivien.jsp";
+				if(vaitro.equals("VT01")){
+					url="/hocvien.jsp";
+				}
+				else 
+				{
+					if(vaitro.equals("VT02"))
+					{
+						url="/giangvien.jsp";
+					}
+					else
+					{
+						url="/quantrivien.jsp";
+					}
+				}
+				
 			}
 			else
 			{
 				error="Failed!!";
 				request.setAttribute("error",error);
-				url="/quantrivien.jsp";
+				if(vaitro.equals("VT01")){
+					url="/hocvien.jsp";
+				}
+				else 
+				{
+					if(vaitro.equals("VT02"))
+					{
+						url="/giangvien.jsp";
+					}
+					else
+					{
+						url="/quantrivien.jsp";
+					}
+				}
 			}
 			
 			break;

@@ -42,9 +42,6 @@ public class DangkitaikhoanServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	}
-	protected void processRequest(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
 		String command = request.getParameter("command");
 		String url="";
 		Users user = new Users();
@@ -63,18 +60,19 @@ public class DangkitaikhoanServlet extends HttpServlet {
 				HttpSession session =request.getSession();
 				session.setAttribute("user", user);
 				url="/index.jsp";
-				RequestDispatcher rd =getServletContext().getRequestDispatcher(url);
-				rd.forward(request, response);
+				
 			}
 			else
 			{
-				response.sendRedirect("dangki.jsp");
+				url="/dangki.jsp";
 			}
 			
 			break;
 		default:
 			break;
 		}
-		
+		RequestDispatcher rd =getServletContext().getRequestDispatcher(url);
+		rd.forward(request, response);
 	}
+	
 }
