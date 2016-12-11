@@ -71,9 +71,18 @@ function kiemtrakhoangtrang(a) {
     return false;
 	}
 }
-
+function validateText(a) {
+    var filter = /\W/;
+    if (filter.test(a)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 $(document).ready(function () {
-           var flag1=false;
+           var flag = false;
+		   var flag1=false;
            var flag2=false;
            var flag3=false;
            var flag4=false;
@@ -82,6 +91,7 @@ $(document).ready(function () {
 
            var x_timer;
            //kiểm tra tai khoan
+           
            $("#username").keyup(function (e) {
                 clearTimeout(x_timer);
                 var user_name = $(this).val();
@@ -93,7 +103,6 @@ $(document).ready(function () {
            function check_username_ajax(username) {
             if(username.length<5)
             {
-                
                 $("#user-result").html("<b style=\"color:red;\">Tên tài khoản phải lớn hơn 4 ký tự</b>");
                 flag1=false;
             }
@@ -101,8 +110,12 @@ $(document).ready(function () {
             {
                 if(kiemtrakhoangtrang(username))
                 {
-                    
                     $("#user-result").html("<b style=\"color:red;\">Tên tài khoản không được có khoảng trắng</b>");
+                    flag1=false;
+                }
+                else if(validateText(username))
+                {
+                    $("#user-result").html("<b style=\"color:red;\">Tên tài khoản không được có kí tự đặc biệt</b>");
                     flag1=false;
                 }
                 else
@@ -173,7 +186,7 @@ $(document).ready(function () {
                     else
                     {
                         $("#icon_error2").html("<img src=\"icon/available.png\" />");
-                        $("#pass2-result").html("<b style=\"color:green;\">Khớp</b>");
+                        $("#pass2-result").html("<b style=\"color:green;\">Mật khẩu trùng khớp</b>");
                         flag3=true;
                     }
                 }            
@@ -279,5 +292,30 @@ $(document).ready(function () {
                     return false;
                     
                }
-           } );
+           });
+           function check_usernamelogin_ajax(username) {
+        	   if(validateText(username) || username=="")
+               {
+        		   var re = /\W/;
+        		   var name = username.split(re);
+        		   $("#inputUserName").val(name);
+                   flag=false;
+               }
+        	   else
+        	   {
+                   flag=true;
+        	   }
+           }
+           $('#submitlogin').click(function(e){
+        	   var user_name = $("#inputUserName").val();
+               if(check_usernamelogin_ajax(user_name))
+               {
+                  $('#LoginForm').submit();
+               }
+        	   if(flag==false){
+        		   $("#error").html("<img src=\"icon/not-available.png\" />");
+                   $("#result").html("<b style=\"color:red;\">Tên tài khoản không được để trống hoặc có kí tự đặc biệt</b>");
+                   return false;
+        	   }
+           });
        });
