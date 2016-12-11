@@ -1,5 +1,21 @@
 <%@page import="DayLaNhom14.User"%>
-<%	User objUser = (User)session.getAttribute("userLogin"); %> 
+<%	User objUser = (User)session.getAttribute("userLogin"); 
+	try
+	{
+		if(objUser.getVaitro().equals("quantrivien"))
+		{
+			response.sendRedirect("quantrivien.jsp");
+		}
+		if(objUser.getVaitro().equals("hocvien"))
+		{
+			response.sendRedirect("hocvien.jsp");
+		}
+	}
+	catch(Exception ex)
+	{
+		response.sendRedirect("index.jsp");
+	}
+%> 
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -52,10 +68,13 @@
 	            <ul class="nav navbar-nav navbar-right">
 	              <li>
 	             	<button class="btn btn-info btn-md pull-right " type="button">
-	             		<%if(objUser.getUsername()!=null){ %>
+	             		<%try
+	             		{
+	             			if(objUser.getUsername()!=null){ %>
 					       <span class="glyphicon glyphicon-user"></span>
 					      <%= objUser.getUsername() %>
-					       <%} %>
+					       <%}}
+					       catch(Exception ex){}%>
 				           </button>
 	              </li>
 	              <li><button type="button" class="btn btn-info btn-md pull-right" data-toggle="modal" data-target="#loginModal" onclick="window.location.href='Logout'">

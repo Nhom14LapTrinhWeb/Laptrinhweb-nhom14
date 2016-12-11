@@ -12,4 +12,12 @@ public class User {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	String vaitro;
+	public String getVaitro() {
+		return vaitro;
+	}
+	public void setVaitro(String vaitro) {
+		this.vaitro = vaitro;
+	}
+	
 }
