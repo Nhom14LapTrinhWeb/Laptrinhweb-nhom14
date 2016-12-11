@@ -40,23 +40,23 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">    
-        <form class="register" method="post" action="sendmailServlet">
+        <form class="register" method="get" action="sendmailServlet">
         	<h2 class="head-form" style="text-align:center;">Gửi Email</h2>
           	<div class="form-group">
-            <input type="text" id="hoten" class="form-control" placeholder="Họ tên">
+            <input type="text" name="hoten" id="hoten" class="form-control" placeholder="Họ tên">
           	</div>
          	 <div class="form-group">
-            <input type="text" id="sdt" class="form-control" placeholder="Số điện thoại">
+            <input type="text" name="sdt" id="sdt" class="form-control" placeholder="Số điện thoại">
          	 </div>
          	 <div class="form-group">
-            <input type="email" id="email" class="form-control" placeholder="Email">
+            <input type="email" name="email" id="email" class="form-control" placeholder="Email">
          	 </div>
          	 <div class="form-group">
-            <input type="text" id="tieude" class="form-control" placeholder="Tiêu đề">
+            <input type="text" name="tieude" id="tieude" class="form-control" placeholder="Tiêu đề">
          	 </div>
          	 <div class="form-group">
             <label for="noidung">Nội dung</label>
-             <textarea class="form-control" id="noidung" rows="3"></textarea>
+             <textarea class="form-control" name="noidung" id="noidung" rows="3"></textarea>
         	 </div>  	 
         	 <div class="form-group">
         	   <input class="btn btn-success btn-lg center-block" type="submit" value="Xác nhận" id="xacnhan">

@@ -119,7 +119,6 @@
 			            
 			              <li><a href="thongtinkhoahocmienphi.jsp" id="mienphi">Học miễn phí</a></li>
 			              <li><a href="index.jsp" id="khoahoc">Khóa học</a></li> 
-			              <li><a href="#" id="dangkikhoahoc">Đăng kí khóa học</a></li>
 			              <li><a href="#" id="huongdan1">Hướng dẫn</a></li>
 			              <li><a href="tinnhan.jsp"  id="gopy">Mail</a></li>
 			            </ul>
