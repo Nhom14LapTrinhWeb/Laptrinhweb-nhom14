@@ -24,7 +24,7 @@ public class ConnectDB {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hoclaptrinhonline?characterEncoding=utf8","root","phihung123789");
 			stm=conn.createStatement();
 			rs=stm.executeQuery("SELECT * FROM taikhoan WHERE Tentaikhoan ='"+username+"' AND Matkhau='"+pass+
-					"' AND Mavaitro='VT01'");
+					"'AND  Mavaitro='VT01'");
 			kt = rs.next();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

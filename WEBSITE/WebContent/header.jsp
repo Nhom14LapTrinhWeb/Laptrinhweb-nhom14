@@ -119,6 +119,7 @@
 			            
 			              <li><a href="thongtinkhoahocmienphi.jsp" id="mienphi">Học miễn phí</a></li>
 			              <li><a href="index.jsp" id="khoahoc">Khóa học</a></li> 
+			              <li><a href="#" id="dangkikhoahoc">Đăng kí khóa học</a></li>
 			              <li><a href="#" id="huongdan1">Hướng dẫn</a></li>
 			              <li><a href="tinnhan.jsp"  id="gopy">Mail</a></li>
 			            </ul>
@@ -149,7 +150,7 @@
 	                  <h4 class="modal-title" align="center">Đăng nhập</h4>
 	                </div>
 	                <div class="modal-body">
-	                  <form id="LoginForm" action="Loginform" method="post">
+	                  <form action="Loginform" method="post">
 	                    <div class="form-group">
 	                      <input type="radio" name="quyen" value="hocvien" checked="true">Học viên
 	                      <input type="radio" name="quyen" value="giangvien">Giảng viên
@@ -158,7 +159,6 @@
 	                    <div class="form-group">
 	                      <label for="inputUserName">Tên đăng nhập</label>
 	                      <input type="text" class="form-control input-lg" placeholder="Username" id="inputUserName" name="inputUserName">
-	                      <span id="error"></span><span id="result"></span>
 	                    </div>
 	                    <div class="form-group">
 	                      <label for="inputPassword">Mật khẩu</label>
@@ -170,7 +170,7 @@
 	                     <a href="#">Quên mật khẩu?</a>
 	                     <div style="text-align: right;">
 	                     	 <input type="hidden" value="login" name="command">
-	                     	 <button class="btn btn-primary" type="submit" id="submitlogin">Đăng nhập</button>
+	                     	 <button class="btn btn-primary" type="submit" id="submit">Đăng nhập</button>
 	                 		 <button type="button" class="btn btn-primary" data-dismiss="modal">Thoát</button>
 	                     </div>
 	                  </form>   

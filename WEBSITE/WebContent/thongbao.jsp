@@ -1,16 +1,7 @@
-<%@page import="java.util.concurrent.ExecutionException"%>
 <%@page import="dao.thongbaoDAO"%>
 <%@page import="Models.thongbao"%>
 <%@page import="DayLaNhom14.User"%>
-<%	User objUser = (User)session.getAttribute("userLogin"); 
-	try
-	{
-		objUser.getVaitro();
-	}
-	catch(Exception ex)
-	{
-		response.sendRedirect("index.jsp");
-	}%> 
+<%	User objUser = (User)session.getAttribute("userLogin"); %> 
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -37,8 +28,6 @@
 </head>
 <body>
 <%
-	try
-	{
 	thongbaoDAO tbdao = new thongbaoDAO();
 	if(objUser.getUsername().equals("admin")){
 %>
@@ -66,7 +55,9 @@
 					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='themsuathongbao.jsp?commandd=update&MaTB=<%= tb.getMathongbao()%>'"></td>
 					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/ManagerThongbaoServlet?command=delete&MaTB=<%=  tb.getMathongbao()%>'"></td>							
 				</tr>
-			<%}%>
+			<%
+				}
+			%>
 		</table>
 		
 	</div>
@@ -96,8 +87,6 @@
 			</table>							
 	</div>
 </div>
-<%}
-}
-catch(Exception ex){}%>
+<%} %>
 </body>
 </html>

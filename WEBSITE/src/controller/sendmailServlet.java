@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import sun.rmi.server.Dispatcher;
 import tools.sendmail;
 
 /**
@@ -29,9 +30,16 @@ public class sendmailServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	@SuppressWarnings("static-access")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		sendmail sm = new sendmail();
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	@SuppressWarnings("static-access")
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 sendmail sm = new sendmail();
 		response.setContentType("text/html;charset=UTF-8"); 
 		request.setCharacterEncoding("UTF-8");
 		String Email= request.getParameter("email");
@@ -40,24 +48,10 @@ public class sendmailServlet extends HttpServlet {
 		String sdt= request.getParameter("sdt");
 		String hoten= request.getParameter("hoten");
 		String url="";
-		if(sm.sendMail("huynhphihung1995@gmail.com",tieude,noidung)){
-			sm.sendMail("huynhphihung1995@gmail.com",tieude,noidung);
-			url="/index.jsp";
-		}
-		else
-		{
-			url="/tinnhan.jsp";
-		}
+		sm.sendMail("huynhphihung1995@gmail.com", "hhhh","gggggg");
+		url="/index.jsp";
 		RequestDispatcher rd =getServletContext().getRequestDispatcher(url);
 		rd.forward(request, response);
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	@SuppressWarnings("static-access")
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 
 	}
 
 }

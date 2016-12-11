@@ -3,21 +3,6 @@
 <%@page import="DayLaNhom14.User"%>
 <%
 	User objUser = (User)session.getAttribute("userLogin");
-	try
-	{
-		if(objUser.getVaitro().equals("giangvien"))
-		{
-			response.sendRedirect("giangvien.jsp");
-		}
-		if(objUser.getVaitro().equals("hocvien"))
-		{
-			response.sendRedirect("hocvien.jsp");
-		}
-	}
-	catch(Exception ex)
-	{
-		response.sendRedirect("index.jsp");
-	}
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -62,10 +47,7 @@
                 <li><a href="#" id="mokhoahoc">Mở khóa học mới</a></li> 
                 <li><a href="#" id="kehoach">Kế hoạch</a></li>
               </ul>
-              <%try
-              {
-            	  if(objUser.getUsername()!=null) { %>
-              
+              <%	if(objUser.getUsername()!=null) { %>
               <ul class="nav navbar-nav navbar-right">
                <li>
                   <p class="pull-right" style="padding: 10px;">
@@ -74,8 +56,7 @@
                       			<%=objUser.getUsername() %>
                     </p>
                 </li>
-                <%  }}
-                catch(Exception ex){}%>
+                <%  }%>
                 <li><button type="button" class="btn btn-info btn-md pull-right" onclick="window.location.href='Logout'">
                 <span class="glyphicon glyphicon-log-out"></span>
                 Thoát
