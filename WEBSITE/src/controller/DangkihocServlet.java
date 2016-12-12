@@ -46,8 +46,15 @@ public class DangkihocServlet extends HttpServlet {
 			dk.setTentaikhoan(request.getParameter("TenTK"));
 			dk.setMakhoahoc(request.getParameter("MaKH"));
 			dk.setTrangthai(0);
-			dkdao.HuyThamGia(dk);
-			url="/quantrivien.jsp";
+			try
+			{
+				dkdao.HuyThamGia(dk);
+				url="/quantrivien.jsp";
+			}catch(Exception e)
+			{
+				
+			}
+			
 			break;
 		case "delete":
 			String Tentk=request.getParameter("TenTK");

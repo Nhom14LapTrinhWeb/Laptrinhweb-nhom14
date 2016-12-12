@@ -48,7 +48,7 @@ public class ManagerKhoahocServlet extends HttpServlet {
 			switch(command)
 			{
 			case "delete":
-				if(vaitro=="VT03")
+				if(vaitro.equals("VT03"))
 				{
 					khdao.XoaKhoaHoc(Makhoahoc);
 					url="/quantrivien.jsp";

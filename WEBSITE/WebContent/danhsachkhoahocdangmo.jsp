@@ -1,3 +1,4 @@
+<%@page import="DayLaNhom14.User"%>
 <%@page import="Models.khoahoc"%>
 <%@page import="dao.khoahocDAO"%>
 <%@page import="Models.Loaikhoahoc"%>
@@ -6,6 +7,7 @@
 <%@page import="dao.UsersDAO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    <%	User objUser = (User)session.getAttribute("userLogin");%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -32,6 +34,8 @@
 <div >
 <%
 	khoahocDAO khdao = new khoahocDAO();
+	UsersDAO udao = new UsersDAO();
+	Users u = udao.getChitietCaNhan(objUser.getUsername());
 %>
 <form action="DanhsachServlet" method="post">
 	<div class="panel panel-primary" style="text-align: center;">
@@ -69,8 +73,8 @@
 					<td><%= kh.getMangonngu() %></td>
 					<td><%= kh.getMota() %></td>
 					<td><%= kh.getLoaikhoahoc() %></td>                 
-					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='suakhoahoc.jsp?command=update&MaKH=<%= kh.getMakhoahoc()%>&TenGV=<%= kh.getTengiangvien() %>'"></td>
-					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/ManagerKhoahocServlet?command=delete&MaKH=<%= kh.getMakhoahoc()%>'"></td>			
+					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='suakhoahoc.jsp?command=update&MaKH=<%= kh.getMakhoahoc()%>&vaitro=<%= u.getMavaitro() %>'"></td>
+					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/ManagerKhoahocServlet?command=delete&MaKH=<%= kh.getMakhoahoc()%>&vaitro=<%= u.getMavaitro() %>'"></td>			
 				</tr>
 			<%
 				}
@@ -83,7 +87,7 @@
   	
 	<div class="row" id="chucnang">
                 <ul class="nav navbar-nav">
-                  <li><button class="btn btn-primary" onclick="window.location.href='dangkimokhoahoc.jsp'">Thêm loại khóa học</button></li>
+                  <li><button class="btn btn-primary" onclick="window.location.href='dangkimokhoahoc.jsp'">Thêm khóa học</button></li>
                   <li><button class="btn btn-primary" onclick="window.location.href='quantrivien.jsp'">Reload</button></li>
                 </ul>
         </div>

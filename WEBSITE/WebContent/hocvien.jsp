@@ -94,7 +94,7 @@
 				              			<li><a id="mypage" href="#"><b>Thông báo mới</b></a></li>
 									    <li><a id="thongtin" href="#"><b>Thông tin cá nhân</b></a></li>
 									    <li><a id="khoahoccuatoi" href="#"><b>Khóa học của tôi</b></a></li>
-									    <li><a id="baitap" href="#"><b>Xem bài tập</b></a></li>
+									    
 									    <li><a id="out" href="Logout"><b>Thoát</b></a></li>
 				              		</ul>
 			               		</div>

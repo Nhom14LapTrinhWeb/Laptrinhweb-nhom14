@@ -97,7 +97,7 @@
 				  <li><a href="#" id="dskh"><b>Danh sách khóa học</b></a></li>				  
 				  <li><a href="#" id="dshv"><b>Danh sách học viên</b></a></li>
 				  <li><a href="#" id="molop"><b>Đăng kí mở lớp</b></a></li>
-				   <li><a href="#" id="dsgv"><b>Xem danh sách giảng viên</b></a></li>
+				  
 				  <li><a href="#" id="dstl"><b>Tài liệu</b></a></li>
 				  <li><a href="#" id="dsnn"><b>Ngôn ngữ</b></a></li>
 				   <li><a href="Logout" ><b>Thoát</b></a></li>
