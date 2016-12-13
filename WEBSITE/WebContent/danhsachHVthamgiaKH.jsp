@@ -74,8 +74,8 @@
 						<td>Đã hủy</td>
 					<%} %>                
 					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='suadangkihoc.jsp?MaKH=<%=dkh.getMakhoahoc()%>&TenTK=<%= dkh.getTentaikhoan() %>'"></td>
-					<td><input type="button" name="operation" value="Hủy" onclick="window.location.href='/DoAnNhom14/DangkihocServlet?command=huy&MaKH=<%=dkh.getMakhoahoc()%>&TenTK=<%= dkh.getTentaikhoan() %>'"></td>
-					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/DangkihocServlet?command=delete&MaKH=<%=dkh.getMakhoahoc()%>&TenTK=<%= dkh.getTentaikhoan() %>&vaitro=VT03'"></td>			
+					<td><input type="button" name="operation" value="Hủy" onclick="window.location.href='DangkihocServlet?command=huy&MaKH=<%=dkh.getMakhoahoc()%>&TenTK=<%= dkh.getTentaikhoan() %>'"></td>
+					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='DangkihocServlet?command=delete&MaKH=<%=dkh.getMakhoahoc()%>&TenTK=<%= dkh.getTentaikhoan() %>&vaitro=VT03'"></td>			
 				</tr>
 			<%
 				}

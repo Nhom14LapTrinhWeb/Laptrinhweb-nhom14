@@ -64,7 +64,7 @@
 					<td><%= tb.getTenthongbao() %></td>	
 					<td><%=tb.getNoidung()%></td>               
 					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='themsuathongbao.jsp?commandd=update&MaTB=<%= tb.getMathongbao()%>'"></td>
-					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/ManagerThongbaoServlet?command=delete&MaTB=<%=  tb.getMathongbao()%>'"></td>							
+					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='ManagerThongbaoServlet?command=delete&MaTB=<%=  tb.getMathongbao()%>'"></td>							
 				</tr>
 			<%}%>
 		</table>

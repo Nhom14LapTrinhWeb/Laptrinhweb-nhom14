@@ -52,7 +52,7 @@
 					<td><%= lkh.getLoaiKH() %></td>	
 					<td><%= lkh.getTenloai() %></td>	                 
 					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='sualoaikhoahoc.jsp?command=update&LoaiKH=<%= lkh.getLoaiKH()%>'"></td>
-					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/ManagerLoaikhoahocServlet?command=delete&LoaiKH=<%= lkh.getLoaiKH()%>'"></td>							
+					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='ManagerLoaikhoahocServlet?command=delete&LoaiKH=<%= lkh.getLoaiKH()%>'"></td>							
 				</tr>
 			<%
 				}

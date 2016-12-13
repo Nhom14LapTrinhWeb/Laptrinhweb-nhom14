@@ -64,7 +64,7 @@
 					<td><%=tl.getMaloaitailieu()%></td> 
 					<td><%=tl.getMakhoahoc()%></td>             
 					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='themsuatailieu.jsp?commandd=update&Matl=<%= tl.getMatailieu()%>&vaitro=<%=u.getMavaitro() %>'"></td>
-					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/ManagerTailieuServlet?command=delete&Matl=<%= tl.getMatailieu()%>&vaitro=<%=u.getMavaitro() %>'"></td>							
+					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='ManagerTailieuServlet?command=delete&Matl=<%= tl.getMatailieu()%>&vaitro=<%=u.getMavaitro() %>'"></td>							
 				</tr>
 			<%
 				}

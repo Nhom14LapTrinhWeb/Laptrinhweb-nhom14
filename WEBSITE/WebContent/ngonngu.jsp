@@ -53,7 +53,7 @@
 					<td><%= nn.getMangonngu() %></td>	
 					<td><%= nn.getTenngonngu() %></td>	             
 					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='themsuangonngu.jsp?commandd=update&MaNN=<%= nn.getMangonngu()%>'"></td>
-					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/ManagerNgonnguServlet?command=delete&MaNN=<%= nn.getMangonngu()%>'"></td>							
+					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='ManagerNgonnguServlet?command=delete&MaNN=<%= nn.getMangonngu()%>'"></td>							
 				</tr>
 			<%
 				}

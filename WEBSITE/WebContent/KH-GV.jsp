@@ -72,7 +72,7 @@
 					<td><%= kh.getMota() %></td>
 					<td><%= kh.getLoaikhoahoc() %></td>                 
 					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='suakhoahoc.jsp?command=update&MaKH=<%= kh.getMakhoahoc()%>&TenGV=<%= kh.getTengiangvien() %>'"></td>
-					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/ManagerKhoahocServlet?command=delete&MaKH=<%= kh.getMakhoahoc()%>'"></td>			
+					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='ManagerKhoahocServlet?command=delete&MaKH=<%= kh.getMakhoahoc()%>&vaitro=VT02'"></td>			
 				</tr>
 			<%
 				}

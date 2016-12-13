@@ -18,7 +18,7 @@ import tools.sendmail;
 @WebServlet("/sendmailServlet")
 public class sendmailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-      
+	sendmail sm = new sendmail();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -39,7 +39,7 @@ public class sendmailServlet extends HttpServlet {
 	 */
 	@SuppressWarnings("static-access")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 sendmail sm = new sendmail();
+		 
 		response.setContentType("text/html;charset=UTF-8"); 
 		request.setCharacterEncoding("UTF-8");
 		String Email= request.getParameter("email");

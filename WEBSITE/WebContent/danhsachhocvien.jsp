@@ -61,7 +61,7 @@
 					<td><%= u.getMatkhau()%></td>
 					<td><%= u.getMavaitro() %></td>                    
 					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='suataikhoan.jsp?command=update&TenTK=<%= u.getTentaikhoan()%>'"></td>
-					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/ManagerUsersServlet?command=delete&TenTK=<%= u.getTentaikhoan()%>'"></td>							
+					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='ManagerUsersServlet?command=delete&TenTK=<%= u.getTentaikhoan()%>'"></td>							
 				</tr>
 			<%
 				}

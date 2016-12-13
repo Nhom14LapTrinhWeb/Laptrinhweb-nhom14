@@ -61,7 +61,7 @@
 					<td><input type="button" name="operation" value="Học" onclick="window.location.href='loaitailieu.jsp?MaKH=<%= kh.getMakhoahoc()%>&TenTK=<%=dkh.getTentaikhoan()%>'"></td>
 					<%}else{ %>
 					<td>Chưa có</td> 
-					<td><input type="button" name="operation" value="Hủy" onclick="window.location.href='/DoAnNhom14/DangkihocServlet?command=delete&MaKH=<%= dkh.getMakhoahoc()%>&TenTK=<%=dkh.getTentaikhoan()%>&vaitro=VT01'"></td>			
+					<td><input type="button" name="operation" value="Hủy" onclick="window.location.href='DangkihocServlet?command=delete&MaKH=<%= dkh.getMakhoahoc()%>&TenTK=<%=dkh.getTentaikhoan()%>&vaitro=VT01'"></td>			
 					<%} %>
 				</tr>
 			<%

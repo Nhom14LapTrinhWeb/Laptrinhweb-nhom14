@@ -90,6 +90,16 @@ public class ManagerKhoahocServlet extends HttpServlet {
 		String tinhtrang =request.getParameter("tinhtrang");
 		String vaitro1=request.getParameter("vaitro");
 		String url="";String error="";
+		if(vaitro1.equals("VT03"))
+		{
+			url="/quantrivien.jsp";
+		}
+		else
+		{
+			url="/giangvien.jsp";
+		
+		}
+		
 		if(tenkh=="" || makh=="" )
 		{
 			error="Nhap day du thong tin";

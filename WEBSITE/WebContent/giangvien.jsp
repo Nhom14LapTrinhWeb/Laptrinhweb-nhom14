@@ -62,8 +62,8 @@
 	             </form>
 	            <ul class="nav navbar-nav">
 	              <li><a href="#" id="thongbao">Thông báo mới</a></li>       
-	              <li><a href="Tailieu.jsp" id="tl">Tài liệu</a></li>
-	              <li><a href="#" id="gopy">Góp ý</a></li>
+	              <li><a href="#" id="dstl">Tài liệu</a></li>
+	              <li><a href="tinnhan.jsp" id="gopy">Góp ý</a></li>
 	            </ul>
 	            <ul class="nav navbar-nav navbar-right">
 	              <li>

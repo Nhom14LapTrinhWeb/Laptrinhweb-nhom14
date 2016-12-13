@@ -52,7 +52,7 @@
 					<td><%= tl.getTenloai() %></td>	
 					<td><%=tl.getMota()%></td>               
 					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='themsualoaitailieu.jsp?commandd=update&Maloai=<%= tl.getMaloai()%>'"></td>
-					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/ManagerLoaitailieuServlet?command=delete&Maloai=<%= tl.getMaloai()%>'"></td>							
+					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='ManagerLoaitailieuServlet?command=delete&Maloai=<%= tl.getMaloai()%>'"></td>							
 				</tr>
 			<%
 				}

@@ -8,11 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import dao.dangkihocDAO;
-import Models.Loaikhoahoc;
-import Models.Users;
 import Models.dangkihoc;
 
 /**
@@ -38,13 +34,14 @@ public class DangkihocServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8"); 
 		request.setCharacterEncoding("UTF-8");
 		String command = request.getParameter("command");
-		String vaitro=request.getParameter("vaitro");
+		String Tentk=request.getParameter("TenTK");
+		String Makh=request.getParameter("MaKH");
 		String url="";String error="";
 		dangkihoc dk = new dangkihoc();
 		switch (command) {
 		case "huy":
-			dk.setTentaikhoan(request.getParameter("TenTK"));
-			dk.setMakhoahoc(request.getParameter("MaKH"));
+			dk.setTentaikhoan(Tentk);
+			dk.setMakhoahoc(Makh);
 			dk.setTrangthai(0);
 			try
 			{
@@ -57,8 +54,8 @@ public class DangkihocServlet extends HttpServlet {
 			
 			break;
 		case "delete":
-			String Tentk=request.getParameter("TenTK");
-			String Makh=request.getParameter("MaKH");
+			String vaitro=request.getParameter("vaitro");
+			
 			dkdao.XoaThamGia(Tentk, Makh);
 			if(vaitro.equals("VT03"))
 			{

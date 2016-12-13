@@ -63,7 +63,7 @@
 
 				<tr style="text-align: center;">
 								
-					<td><%= kh.getMakhoahoc() %></td>	
+					<td><a href="chitietkhoahoc.jsp?Makhoahoc=<%=kh.getMakhoahoc()%>"><%= kh.getMakhoahoc() %></a></td>	
 					<td><%= kh.getTenkhoahoc() %></td>	
 					<td><%= kh.getHocphi() %></td>
 					<td><%= kh.getLichhoc() %></td>
@@ -74,7 +74,7 @@
 					<td><%= kh.getMota() %></td>
 					<td><%= kh.getLoaikhoahoc() %></td>                 
 					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='suakhoahoc.jsp?command=update&MaKH=<%= kh.getMakhoahoc()%>&vaitro=<%= u.getMavaitro() %>'"></td>
-					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='/DoAnNhom14/ManagerKhoahocServlet?command=delete&MaKH=<%= kh.getMakhoahoc()%>&vaitro=<%= u.getMavaitro() %>'"></td>			
+					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='ManagerKhoahocServlet?command=delete&MaKH=<%= kh.getMakhoahoc()%>&vaitro=<%= u.getMavaitro() %>'"></td>			
 				</tr>
 			<%
 				}
