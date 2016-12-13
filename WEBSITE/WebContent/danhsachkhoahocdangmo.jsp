@@ -52,6 +52,7 @@
 				<th>Mã ngôn ngữ</th>
 				<th>Mô tả</th>
 				<th>Loại KH</th>
+				<th>Xem</th>
 				<th>Sửa đổi</th>
 				<th>Xóa</th>	                
 			</tr>
@@ -72,7 +73,8 @@
 					<td><%= kh.getTengiangvien() %></td>
 					<td><%= kh.getMangonngu() %></td>
 					<td><%= kh.getMota() %></td>
-					<td><%= kh.getLoaikhoahoc() %></td>                 
+					<td><%= kh.getLoaikhoahoc() %></td>    
+					<td><a href="loaitailieu.jsp?MaKH=<%= kh.getMakhoahoc() %>">Xem</a></td>             
 					<td><input type="button" name="operation" value="Sửa" onclick="window.location.href='suakhoahoc.jsp?command=update&MaKH=<%= kh.getMakhoahoc()%>&vaitro=<%= u.getMavaitro() %>'"></td>
 					<td><input type="button" name="operation" value="Xóa" onclick="window.location.href='ManagerKhoahocServlet?command=delete&MaKH=<%= kh.getMakhoahoc()%>&vaitro=<%= u.getMavaitro() %>'"></td>			
 				</tr>

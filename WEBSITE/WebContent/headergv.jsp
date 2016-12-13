@@ -88,48 +88,6 @@
 	          </div>
 	          </nav>
 	          </div>
-   <div class="container" style="background-color: white; padding-top: 5px;">
-    	<div class="content col-md-12 ">
-    		<div class="content-left col-md-3 col-sm-6 col-xs-6">    			
-    			<ul class="nav nav-pills nav-stacked">
-				  <li class="active" align="center"><a name="menu"><b>Trang của bạn</b></a></li>
-				  <li><a href="#" id="xemid"><b>Thông tin cá nhân</b></a></li>
-				  <li><a href="#" id="dskh"><b>Danh sách khóa học</b></a></li>				  
-				  <li><a href="#" id="dshv"><b>Danh sách học viên</b></a></li>
-				  <li><a href="#" id="molop"><b>Đăng kí mở lớp</b></a></li>
-				  
-				  <li><a href="#" id="dstl2"><b>Tài liệu</b></a></li>
-				  <li><a href="#" id="dsnn"><b>Ngôn ngữ</b></a></li>
-				   <li><a href="Logout" ><b>Thoát</b></a></li>
-				</ul>
-			</div>
-    		<div class=" col-md-9 " id="noidungload" align="center">
-    			   <jsp:include page="thongbao.jsp"></jsp:include>
-    		</div>
-    		</div>
-    	</div>
- 
-   <footer>
-	<div class="row">
-		<div class="navbar navbar-default">
-			<div class="container">
-			   	<ol class="breadcrumb">
-			   		<li><a href="index.jsp">Home</a></li>
-			   		<li><a href="tinnhan.jsp">Contact</a></li>   		
-			   		<li><a href="huongdansd.html">About</a></li>
-			   		<li id="time">
-			   			<script type="text/javascript">
-			   				document.getElementById('time').innerHTML=Date();
-			   			</script>
-			   		</li>
-			   		<li align="right">Copyright © <a href="http://itclass.vn">ITclass.vn</a></li>
-			   		
-			   	</ol>
-			</div> 	
-		</div>
-	</div>
-	
-   </footer>
    
 	<script type="text/javascript">
    		$("#btnmes").click(function(){

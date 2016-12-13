@@ -1,3 +1,6 @@
+<%@page import="Models.Users"%>
+<%@page import="dao.UsersDAO"%>
+<%@page import="DayLaNhom14.User"%>
 <%@page import="Models.tailieu"%>
 <%@page import="dao.tailieuDAO"%>
 <%@page import="Models.loaitailieu"%>
@@ -8,6 +11,7 @@
 <%@page import="dao.LoaikhoahocDAO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+   <% User object = (User)session.getAttribute("userLogin"); %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>   
 
@@ -32,7 +36,19 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<jsp:include page="headerhv.jsp"></jsp:include>
+<%
+	UsersDAO udao = new UsersDAO();
+Users u = udao.getChitietCaNhan(object.getUsername());
+if(u.getMavaitro().equals("VT01")){
+%>
+	<jsp:include page="headerhv.jsp"></jsp:include>
+<%}else{ 
+		if(u.getMavaitro().equals("VT02")){%>
+			<jsp:include page="headergv.jsp"></jsp:include>
+		<%}else{ %>
+			<jsp:include page="headeram.jsp"></jsp:include>
+			<% } 
+}%>
    		<%
 	String type="";
 	if(request.getParameter("type")!=null){
@@ -94,7 +110,13 @@
 		
 	</div>
 		            
-			</div>>
+			</div>
+			<div class="row" id="chucnang">
+                <ul class="nav navbar-nav">
+                  <li><button class="btn btn-primary" onclick="window.location.href='themsuatailieu.jsp?commandd=insert&vaitro=<%=u.getMavaitro()%>'">Thêm</button></li>
+            
+                </ul>
+        </div>
     		</div>
     	<%}
     	if(type.equals("danhmuc")){ %>
@@ -125,10 +147,18 @@
 			</div>
 		            
 	</div>
+	<div class="row" id="chucnang">
+                <ul class="nav navbar-nav">
+                  <li><button class="btn btn-primary" onclick="window.location.href='themsuatailieu.jsp?commandd=insert&vaitro=<%=u.getMavaitro()%>'">Thêm</button></li>
+            
+                </ul>
+        </div>
    </div>
     	<%} %>
+    	
 	</div>
     </div>
+    
     </div>
 			
 </body>
